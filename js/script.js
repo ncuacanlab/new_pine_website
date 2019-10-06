@@ -55,31 +55,31 @@ $(function() {
     /**--------------------------------------------------*/
       $('a[href="#Upload"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#up").offset().top-110)
+                    scrollTop:($("#up").offset().top-125)
                 }, "show");
                 
         });
 
       $('a[href="#Raw"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#raw").offset().top-120)
+                    scrollTop:($("#raw").offset().top-125)
                 }, "show");
         });
 
       $('a[href="#Download"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#dow").offset().top-120)
+                    scrollTop:($("#dow").offset().top-125)
                 }, "show");
         });
 
       $('a[href="#Analysis"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#ana").offset().top-120)
+                    scrollTop:($("#ana").offset().top-125)
                 }, "show");
         });
     $('a[href="#Managment"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#man").offset().top-120)
+                    scrollTop:($("#man").offset().top-125)
                 }, "show");
         });
            
