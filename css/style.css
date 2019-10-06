@@ -735,98 +735,12 @@ li.listitem a:hover{
 }
 
 /*網頁縮小至768*/
-@media screen and (max-width: 768px) {
- 
-    #column1{
-        width:20%;
-        height: 100%;
-        position: fixed;
-        margin-top:37px;
-        background-color: #DBBAA2;
-        float: left;
-    }
+@media screen and (max-width: 920px) {
 
-    .listitem{
-        border:none;
-        font-size: 12px;
-        line-height: 30px;
-    }
-
-    .pic_content {
-        padding-left: 5%;
-        font-size: 12px;
+    #set_pine{
+        width: 20%;
+        height: 100px;
     }
     
-    .set_content_title_font_size{
-        font-size:16px;
-    }
-}
 
-/*網頁縮小至500*/
-@media screen and (max-width: 768px) {
- 
-    #column1{
-        width:30%;
-        height: 100%;
-        position: fixed;
-        margin-top:37px;
-        background-color: #DBBAA2;
-        float: left;
-    }
-
-    #column2{
-        margin-top:40px;
-        margin-left: 32%;
-        float:left;
-        width: 68%;
-    }
-
-    .listitem{
-        border:none;
-        font-size: 12px;
-        line-height: 30px;
-    }
-
-    .pic_content {
-        padding-left: 5%;
-        font-size: 12px;
-    }
-    
-    .set_content_title_font_size{
-        font-size:16px;
-    }
-}
-/*326*/
-@media screen and (max-width: 768px) {
- 
-    #column1{
-        width:30%;
-        height: 100%;
-        position: fixed;
-        margin-top:37px;
-        background-color: #DBBAA2;
-        float: left;
-    }
-
-    #column2{
-        margin-top:40px;
-        margin-left: 32%;
-        float:left;
-        width: 68%;
-    }
-
-    .listitem{
-        border:none;
-        font-size: 12px;
-        line-height: 30px;
-    }
-
-    .pic_content {
-        padding-left: 5%;
-        font-size: 12px;
-    }
-    
-    .set_content_title_font_size{
-        font-size:16px;
-    }
 }
