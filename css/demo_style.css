@@ -184,6 +184,7 @@ p.lead {
 .nav-menu {
     padding: 0;
     transition: all 0.3s ease;
+    height: 116px;
    /* */
 
 }
@@ -238,9 +239,33 @@ p.lead {
 
 /* HERO
 ----------------------*/
+.container{
+    height: 116px;
+} 
 
+.row{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    height: 116px;
+}
+.navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .5rem 1rem !important;
+}
 header {
-    padding: 100px 0 0;
+    padding: 116px 0 0;
     text-align: center;
     color: #FFF;
 }
@@ -265,7 +290,7 @@ header {
     width: 60%;
     margin-left: 25%;
     
-    
+
 /*padding-left: 30%;*/
     /*padding-top: 10%;*/
 

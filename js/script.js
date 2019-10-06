@@ -62,24 +62,24 @@ $(function() {
 
       $('a[href="#Raw"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#raw").offset().top-110)
+                    scrollTop:($("#raw").offset().top-120)
                 }, "show");
         });
 
       $('a[href="#Download"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#dow").offset().top-110)
+                    scrollTop:($("#dow").offset().top-120)
                 }, "show");
         });
 
       $('a[href="#Analysis"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#ana").offset().top-110)
+                    scrollTop:($("#ana").offset().top-120)
                 }, "show");
         });
     $('a[href="#Managment"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#man").offset().top-110)
+                    scrollTop:($("#man").offset().top-120)
                 }, "show");
         });
            
