@@ -1,140 +1,144 @@
 <html data-lt-installed="true">
-	<head>
-		<title>PINE</title>
-		<script src="public/javascripts/jquery-3.3.1.min.js"></script>
-		<script src="public/javascripts/bootstrap.min.js"></script>
-		<script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.js"></script>
-		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.js "></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js "></script>
-    <script src="http://cdn.kendostatic.com/2013.3.1119/js/kendo.core.min.js"></script>
-		<script type="module">
-  import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.esm.browser.js'
-</script>
-		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
 
-		<link rel="stylesheet" href="public/stylesheets/bootstrap.min.css" type="text/css">
-		<link rel="stylesheet" href="public/stylesheets/upload.css" type="text/css">
-	</head>
-	<body style="">
-		<div id="wrapper" class="">
-			<div id="sidebar-wrapper" class="sidebar-nav">
-				<ul class="sidebar-nav">
-					<li class="sidebar-brand">
-						<a href="#">Pine</a>
-                 	</li>
-                 	 <li><a href="#" class="dropdown-toggle">Upload <span class="caret"></span></a></li> <!----> 
-                 	 <li><a href="/download">Download</a></li> 
-                 	 <li><a href="/analysis">Analysis</a></li>
-                 	 <li><a href="/management">Management</a></li>
-                 	 <li><a href="/">Logout</a></li></ul></div>
-                 	 <div id="page-content-wrapper">
-                 	 	<button type="button" data-toggle="offcanvas" class="hamburger is-closed">
-                 	 		<span class="hamb-top"></span>
-                 	 		<span class="hamb-middle"></span>
-                 	 		<span class="hamb-bottom"></span>
-                 	 	</button> 
-                 	 	<div class="container">
-                 	 		<div class="panel panel-default">
-                 	 			<div class="panel-body">
-                 	 				<h1>Upload(Raw)</h1>
-                 	 				<div class="box m-form">
-                 	 					<h5 class="label">Select table</h5> 
-                 	 					<select>
-                 	 						<option>test 1</option>
-                 	 						<option>test 2</option>
-                 	 					</select>
-                 	 				</div>
-                 	 			</div> 
-                 	 			<br>
-                 	 			<div class="dropbox p-3" >
-                 	 				<h2 class="text-center" id = "h2_content">Drag &amp; Drop raw data to here</h2>
-                 	 			</div>
-                 	 			<br>
-                 	 		</div>
-                 	 	</div>
-                 	</div>
-                 </div>
-                 <script>
-                 	$(function () {
-                 		var file_name;
-                 		var file_size;
-                 		var file_type;
-			            var $drop = $(".dropbox");
-			            //抑制瀏覽器原有的拖拉操作效果
-			            function stopEvent(evt) {
-			                evt.stopPropagation();
-			                evt.preventDefault();
-			            }
-			            $drop.bind("dragover", function (e) {
-			                //滑鼠經過上方時加入特效
-			                stopEvent(e);
-			                $(e.target).addClass("hover");
-			            }).bind("dragleave", function (e) {
-			                //滑鼠移開時移除特效
-			                stopEvent(e);
-			                $(e.target).removeClass("hover");
-			            }).bind("drop", function (e) {
-			                //拖放操作完成事件
-			                stopEvent(e);
-			                $(e.target).removeClass("hover");
-			                //由dataTransfer.files取得檔案資訊
-			                var files = e.originalEvent.dataTransfer.files;
-			                var imageFiles = $.map(files, function (f, i) {
-			                    //只留下type為image/*者，例如: image/gif, image/jpeg, image/png...
-			                    file_type = f.type;
-			                    return f;
+<head>
+	<title>PINE</title>
+	<script src="public/javascripts/jquery-3.3.1.min.js"></script>
+	<script src="public/javascripts/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.js "></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js "></script>
+	<script src="http://cdn.kendostatic.com/2013.3.1119/js/kendo.core.min.js"></script>
+	<script type="module">
+		import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.esm.browser.js'
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
 
-			                });
-			                if($("#h2_content")!= null)
-			                {
-			                	$("#h2_content").remove();
-			                }
+	<link rel="stylesheet" href="public/stylesheets/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="public/stylesheets/upload.css" type="text/css">
+</head>
 
-			                
-			                
+<body style="">
+	<div id="wrapper" class="">
+		<div id="sidebar-wrapper" class="sidebar-nav">
+			<ul class="sidebar-nav">
+				<li class="sidebar-brand">
+					<a href="#">Pine</a>
+				</li>
+				<li><a href="#" class="dropdown-toggle">Upload <span class="caret"></span></a></li>
+				<!---->
+				<li><a href="/download">Download</a></li>
+				<li><a href="/analysis">Analysis</a></li>
+				<li><a href="/management">Management</a></li>
+				<li><a href="/">Logout</a></li>
+			</ul>
+		</div>
+		<div id="page-content-wrapper">
+			<button type="button" data-toggle="offcanvas" class="hamburger is-closed">
+				<span class="hamb-top"></span>
+				<span class="hamb-middle"></span>
+				<span class="hamb-bottom"></span>
+			</button>
+			<div class="container">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h1>Upload(Raw)</h1>
+						<div class="box m-form">
+							<h5 class="label">Select table</h5>
+							<select>
+								<option>test 1</option>
+								<option>test 2</option>
+							</select>
+						</div>
+					</div>
+					<br>
+					<div class="dropbox p-3">
+						<h2 class="text-center" id="h2_content">Drag &amp; Drop raw data to here</h2>
+					</div>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function () {
+			var file_name;
+			var file_size;
+			var file_type;
+			var $drop = $(".dropbox");
+			//抑制瀏覽器原有的拖拉操作效果
+			function stopEvent(evt) {
+				evt.stopPropagation();
+				evt.preventDefault();
+			}
+			$drop.bind("dragover", function (e) {
+				//滑鼠經過上方時加入特效
+				stopEvent(e);
+				$(e.target).addClass("hover");
+			}).bind("dragleave", function (e) {
+				//滑鼠移開時移除特效
+				stopEvent(e);
+				$(e.target).removeClass("hover");
+			}).bind("drop", function (e) {
+				//拖放操作完成事件
+				stopEvent(e);
+				$(e.target).removeClass("hover");
+				//由dataTransfer.files取得檔案資訊
+				var files = e.originalEvent.dataTransfer.files;
+				var imageFiles = $.map(files, function (f, i) {
+					//只留下type為image/*者，例如: image/gif, image/jpeg, image/png...
+					file_type = f.type;
+					return f;
 
- 							var files = e.originalEvent.dataTransfer.files;
-			                var imageFiles = $.map(files, function (f, i) {
-			                    //只留下type為image/*者，例如: image/gif, image/jpeg, image/png...
-			                    return f;
-			                });
-
-			                //清除ViewModel
-			                //vm.images.removeAll(); vm.currImage(null);
-			                //逐一讀入各圖檔，取得DataURI，顯示在網頁上
-			                $.each(imageFiles, function (i, file) {
-			                    //使用File API讀取圖檔內容轉為DataUri
-			                    
-			                    file_name = file.name;
-			                	file_size = file.size;
-			                });
+				});
+				if ($("#h2_content") != null) {
+					$("#h2_content").remove();
+				}
 
 
-			                var div_content = '<div class="border m-2 d-inline-block p-4"><h5 class="pt-0">' + file_name + file_size + '</h5> <h5 class="pt-0">'  + file_type + ' </h5> <div "class="progress" id = "progress_content"><div class = "aa"><div class="progress-bar progress-bar-striped progress-bar-animated  change_value background_animation style="width : 100%">0%</div></div></div></div>';
 
-			          		$(".dropbox").append(div_content);
-			          		
-			          		var element = document.getElementsByClassName("change_value");
-			          		var time = 0;
-			          		var id = window.setInterval(time_going,6);
-			          		function time_going(){
-			          			time = time + 1;
-			          			element[element.length - 1].innerHTML = time + "%";
-			          			// element[element.length - 1].style.width = time + "%";
-			          			if(time == 100)
-			          			{
-			          				clearInterval(id);
-			          				time = 0;
-			          			}
-			          				
-			          		}
-			          			
-			            });
-        			});
-        		</script>
-        	</body>
-        </html>
+
+				var files = e.originalEvent.dataTransfer.files;
+				var imageFiles = $.map(files, function (f, i) {
+					//只留下type為image/*者，例如: image/gif, image/jpeg, image/png...
+					return f;
+				});
+
+				//清除ViewModel
+				//vm.images.removeAll(); vm.currImage(null);
+				//逐一讀入各圖檔，取得DataURI，顯示在網頁上
+				$.each(imageFiles, function (i, file) {
+					//使用File API讀取圖檔內容轉為DataUri
+
+					file_name = file.name;
+					file_size = file.size;
+				});
+
+
+				var div_content = '<div class="border m-2 d-inline-block p-4"><h5 class="pt-0">' + file_name + file_size + '</h5> <h5 class="pt-0">' + file_type + ' </h5> <div "class="progress" id = "progress_content"><div class = "aa"><div class="progress-bar progress-bar-striped progress-bar-animated  change_value background_animation style="width : 100%">0%</div></div></div></div>';
+
+				$(".dropbox").append(div_content);
+
+				var element = document.getElementsByClassName("change_value");
+				var time = 0;
+				var id = window.setInterval(time_going, 6);
+				function time_going() {
+					time = time + 1;
+					element[element.length - 1].innerHTML = time + "%";
+					// element[element.length - 1].style.width = time + "%";
+					if (time == 100) {
+						clearInterval(id);
+						time = 0;
+					}
+
+				}
+
+			});
+		});
+	</script>
+</body>
+
+</html>
