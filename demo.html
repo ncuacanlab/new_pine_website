@@ -42,17 +42,17 @@ URI     : https://colorlib.com
             <div class="row">
                 <div class="col-md-12">
                     <nav class="navbar navbar-dark navbar-expand-lg">
-                        
-                            <embed src="img/PINE.svg" id="set_pine" alt="logo"/> 
+
+                            <embed src="img/PINE.svg" id="set_pine" alt="logo"/>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
                         <div class="collapse navbar-collapse" id="navbar">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item"> <a class="nav-link " href="index.html">HOME</a> </li>
 
                                 <li class="nav-item"> <a class="nav-link active" href="#">DEMO <span class="sr-only">(current)</span></a> </li>
-                                
+
                                 <li class="nav-item"> <a class="nav-link " href="https://140.115.54.213:9000">PINE Server</a> </li>
-                                
+
                                 <li class="nav-item"> <a class="nav-link" href="#">Source on Github</a> </li>
                                 <!-- <li class="nav-item"><a href="#" class="btn btn-outline-light my-3 my-sm-0 ml-lg-3">Download</a></li> -->
                             </ul>
@@ -64,7 +64,7 @@ URI     : https://colorlib.com
     </div>
 
 
-    
+
 <!---------------------------------------------------------------------------------------------->
     <div class = "clearfix" id = "web_content">
             <!-- list-->
@@ -74,29 +74,31 @@ URI     : https://colorlib.com
                         <li class = "listitem clearfix"><a href= "#Upload"> Upload</a>
                             <ul class="listitem set_li_position">Type
                                 <li class = "listitem set_li_position"><a href="#Raw"> Raw</a>
-                                
+
                             </ul>
                         </li>
                         <li class = "listitem clearfix"><a href='#Download'> Download</a></li>
                         <li class = "listitem clearfix"><a href='#Analysis'> Analysis</a></li>
-                        
-                        <li class = "listitem clearfix"><a href='#Managment'> Managment</a></li>
+
+                        <li class = "listitem clearfix"><a href='#Managment'> Managment</a>
+                            <li class = "listitem set_li_position"><a href="#management_demo"> Management demo</a>
+                        </li>
                     </ul>
                 </div>
             </div>
                 <!-- content -->
             <div id = "column2" >
-                        
+
                         <div class="content" >
                             <div id="up" class="anchor"><p class="set_content_title_font_size"><b><u>Upload</u></b></p></div>
-                            
+
                             <ul class="content set_content_title_font_size">
-                                
-                                
-                            
+
+
+
                                 <li>
                                     <div id="raw" class="anchor">Raw</div>
-                                    
+
                                     <div>
                                         <p class="content">
                                             After user input the account and password and login in PINE, user will see the upload page and user can choose the options in the Select Table.
@@ -110,15 +112,15 @@ URI     : https://colorlib.com
                                             After progress bar is to 100%, that means you have finished uploading.
 
                                         </p>
-                                        <img class="content set_upload_page" 
+                                        <img class="content set_upload_page"
                                              src="img/after_upload.png" />
                                     </div>
                                 </li>
-                                
+
                             </ul>
                         </div>
 
-                        
+
 
                         <div class="content">
                             <div id = "dow">
@@ -131,7 +133,7 @@ URI     : https://colorlib.com
                                     <p class="content">
                                         If you want to download data from the database, you can select download button in the menu on the left of the page after you login. Then you’ll see the download page.
                                     </p>
-                                    <img class="content set_upload_page" 
+                                    <img class="content set_upload_page"
                                          src="img/download_page.JPG"/>
                                 </div>
                                 <div>
@@ -139,14 +141,14 @@ URI     : https://colorlib.com
                                         First, at ‘Select attributes’ area, you need to select data you want to download and set some its attributes of it.
                                         For example, we select three attribute, Tb2, Tm2 and Time. Of course, you can push ‘X’ to delete the attribute you don’t want.
                                     </p>
-                                    <img class="content set_upload_page" 
+                                    <img class="content set_upload_page"
                                          src="img/download_select_attributes.JPG">
                                 </div>
                                 <div>
                                     <p class="content">
                                         Then you can push the ‘Search’ button. System will show you all selected data at the bottom.
                                     </p>
-                                    <img class="content set_upload_page" 
+                                    <img class="content set_upload_page"
                                          src="img/download_search.JPG"
                                          >
                                 </div>
@@ -160,7 +162,7 @@ URI     : https://colorlib.com
                                 </div>
                             </div>
                         </div>
-                        <br>                    
+                        <br>
                             <!----------------  Analysis-------------------->
 
                         <div class="content">
@@ -169,9 +171,9 @@ URI     : https://colorlib.com
                                     <b><u>Analysis</u></b>
                                 </p>
                             </div>
-                            
+
                             <div class="content set_content_title_font_size">
-                               
+
                                     <img class="content set_upload_page"
                                          src="img/F5.png">
                                     <p class="pic_content">
@@ -235,63 +237,69 @@ URI     : https://colorlib.com
 
                                     </p>
                                     <p class="content">
-                                        As shown in Figure 13, users first select a model type, either machine learning or deep learning, in the data analyzing step. For the former (resp., latter) type, SVC and SVR (resp., DNN and CNN) can be further selected in the current version of PINE. In Figure 13, the deep learning model CNN is selected. Afterwards, the hyper-parameters for training the model is set, such as the number of CNN layers, the number of neurons in each layer, and so on. After selecting and setting all parameters, users can press the “Next” button to active the model training process in this step. 
+                                        As shown in Figure 13, users first select a model type, either machine learning or deep learning, in the data analyzing step. For the former (resp., latter) type, SVC and SVR (resp., DNN and CNN) can be further selected in the current version of PINE. In Figure 13, the deep learning model CNN is selected. Afterwards, the hyper-parameters for training the model is set, such as the number of CNN layers, the number of neurons in each layer, and so on. After selecting and setting all parameters, users can press the “Next” button to active the model training process in this step.
                                     </p>
                                     <img class="content set_upload_page"
                                          src="img/13.png" >
                                     <p class="pic_content">
-                                        Figure 13 Data analyzing step to select a specific model, and set all hyper-parameters for training the model 
+                                        Figure 13 Data analyzing step to select a specific model, and set all hyper-parameters for training the model
                                     </p>
 
                                     <p class="content">
-                                        As shown in Figure14, the results of the model training process, such as validation loss and validation accuracy, are displayed in this step. If users feel that the results are good enough, they can press the “Download model” button to download the model under training. The downloaded model is a suite of three files: example.py (a canonical file for running the model training process manually), modelTraining.py (the source code for training the model), and model.h5 (the weights of the trained mode). Fig. 15 shows the source code for training the model. It is useful for experienced users to enhance the training process by modifying the source code directly for further improving the model performance. For example, as shown in the codes marked by a red rectangle, a user can directly modify the modelTraining.py file to add a layer of 8 neurons into the CNN and utilize the example.py file to call the modified modelTraining.py file to initiate the training process of the new model.. 
+                                        As shown in Figure14, the results of the model training process, such as validation loss and validation accuracy, are displayed in this step. If users feel that the results are good enough, they can press the “Download model” button to download the model under training. The downloaded model is a suite of three files: example.py (a canonical file for running the model training process manually), modelTraining.py (the source code for training the model), and model.h5 (the weights of the trained mode). Fig. 15 shows the source code for training the model. It is useful for experienced users to enhance the training process by modifying the source code directly for further improving the model performance. For example, as shown in the codes marked by a red rectangle, a user can directly modify the modelTraining.py file to add a layer of 8 neurons into the CNN and utilize the example.py file to call the modified modelTraining.py file to initiate the training process of the new model..
                                     </p>
                                     <img class="content set_upload_page"
                                          src="img/13.png" >
                                     <p class="pic_content">
-                                        Figure 14 Results presenting step to display the results of the model training process 
-                                    </p> 
+                                        Figure 14 Results presenting step to display the results of the model training process
+                                    </p>
                                     <img class="content set_upload_page"
                                          src="img/15.png" >
                                     <p class="pic_content">
                                         Figure 15 The source code for training the model
-                                    </p>     
+                                    </p>
                             </div>
                         </div>
-
-
+                        
                         <div class="content">
                             <div id="man">
                                 <p class="set_content_title_font_size">
                                     <b><u>Managment</u></b>
                                 </p>
                             </div>
-                            
+
                             <div class="content set_content_title_font_size">
                                 <div>
                                     <p class="content">
                                         This function is for manager to manage users’ permission. You can access through the ‘Management’ button in the menu.
                                     </p>
-                                    <img class="content set_upload_page" 
+                                    <img class="content set_upload_page"
                                          src="img/Management_SearchSub3_1.JPG"/>
                                     <p class="content">
                                         First, you can see search page. It’ll show the users’ names and their roles. You can find any user by searching him. For example, if you want to find some users in group sub3_1, you can just type sub3_1 in the ‘Search’ blank.
                                     </p>
-                                    <img class="content set_upload_page" 
+                                    <img class="content set_upload_page"
                                          src="img/Management_SearchUser.JPG">
                                     <p class = "content">
-                                        To add the roles of sub3_2@test.com into sub3_1, you can click it and choose sub3_1 in Roles in the page below. 
+                                        To add the roles of sub3_2@test.com into sub3_1, you can click it and choose sub3_1 in Roles in the page below.
                                     </p>
-                                    <img class="content set_picture_hight" 
+                                    <img class="content set_picture_hight"
                                          src="img/Management_Update.JPG">
                                     <p class="content">
                                         Finally, chick ‘Update’ button to confirm and the user, sub3_2@test.com, can access resources in group sub3_1.
                                     </p>
-                                    <img class="content set_picture_hight" 
+                                    <img class="content set_picture_hight"
                                          src="img/Management_changeRoles.JPG"
                                          >
                                 </div>
                             </div>
+
+                            <li>
+                                <div id="management_demo" class="anchor">Magagement demo</div>
+                                <iframe src="management_demo.html" width="800" height="300" frameborder="0" scrolling="no"></iframe>
+                            </li>
+
+                            
                         </div>
                     </div>
             </div>

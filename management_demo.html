@@ -1,0 +1,204 @@
+<html><head>
+        <title>Management demo</title>
+        <link rel="icon" href="img/pine_title.ico" type="image/x-icon">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Mobland - Mobile App Landing Page Template">
+    
+        <!-- Font -->
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Themify Icons -->
+        <link rel="stylesheet" href="css/themify-icons.css">
+        <!-- Owl carousel -->
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <!-- Main css -->
+        <link rel="stylesheet" href="css/demo_style.css">
+
+        <style>
+        .multiselect{
+            width: 200px;
+            height: 30px;
+        }
+        .selectBox{
+            position: relative;
+        }
+        .selectBox select{
+            width: 100%;
+            height: 100%;
+        }
+        .overSelect{
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+        }
+        #checkboxes{
+            display: none;
+            border: 1px #dadada solid;
+        }
+        #checkboxes label{
+            display: block;
+        }
+        #checkboxes label:hover{
+            background-color: #1e90ff;
+        }
+        </style>
+        
+    </head>
+    
+    <body>
+        <div id="Management_page" class="panel panel-default" style="display:''">
+            <div class="panel-body">
+                <!-- Combobox -->
+                <h1>Management</h1>
+                <div class="box m-form">
+                    <div class="combobox">
+                        <div>
+                            <table id="my-table" class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th data-dynatable-column="User" width="35%">
+                                            <a>User</a>
+                                        </th>
+                                        <th data-dynatable-column="Roles" width="65%">
+                                            <a>Roles</a>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align: left;">
+                                            <a href="#" onclick="Edit('sub3_1@test.com')">
+                                                <span>sub3_1@test.com</span>
+                                            </a>
+                                        </td>
+                                        <td id="roles_1" style="text-align: left;">
+                                            sub3_1
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;">
+                                            <a href="#" onclick="Edit('sub3_2@test.com')">
+                                                <span>sub3_2@test.com</span>
+                                            </a>
+                                        </td>
+    
+                                        <td id="roles_2" style="text-align: left;">
+                                            sub3_2
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Combobox -->
+            </div>
+        </div>
+
+        <div id="Edit_page" class="container" style="display:none">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <div class="col-sm-6 col-md-4 col-md-offset-4">
+                    <div class="account-wall">
+                        <h2 class="text-center h2">Edit User</h2>
+                        <div class="user-info">
+                            <h6>Username</h6>
+                            <input
+                                id="Edit_page_Username"
+                                type="text"
+                                class="targetUser"
+                                disabled
+                                value=""
+                            />
+                            <h6>Roles</h6>
+                            <form>
+                                <div class="multiselect">
+                                    <div class="selectBox" onclick="showCheckboxes()">
+                                        <select>
+                                            <option>Select an option</option>
+                                        </select>
+                                        <div class="overSelect"></div>
+                                    </div>
+                                    <div id="checkboxes">
+                                        <label for="sub3_1"><input type="checkbox" id="sub3_1" onclick="role_onclick()" checked/>sub3_1</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <form>
+                            <button class="btn-lg btn-primary" onclick="Upload()">Update</button>
+                            <a href="#" onclick="Cancel()" style="margin-left: 30px;">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script type="text/javascript">
+            var roles = [[true,false],[false,true]];
+            var selected_Username;
+            var is_sub3_1 = false;
+            var expanded = false;
+
+            function Edit(Username){
+                selected_Username = Username;
+                if (selected_Username == "sub3_1@test.com"){
+                    is_sub3_1 = roles[0][0];
+                } else {
+                    is_sub3_1 = roles[1][0];
+                }
+                document.getElementById("Edit_page_Username").value = selected_Username;
+                document.getElementById("sub3_1").checked = is_sub3_1;
+                document.getElementById("Management_page").style.display = "none";
+                document.getElementById("Edit_page").style.display = '';
+            }
+
+            function Upload(){
+                if (selected_Username == "sub3_1@test.com"){
+                    roles[0][0] = is_sub3_1;
+                    if (is_sub3_1){
+                        document.getElementById("roles_1").innerHTML = "sub3_1";
+                    } else {
+                        document.getElementById("roles_1").innerHTML = "";
+                    }
+                } else {
+                    roles[1][0] = is_sub3_1;
+                    if (is_sub3_1){
+                        document.getElementById("roles_2").innerHTML = "sub3_1, sub3_2";
+                    } else {
+                        document.getElementById("roles_2").innerHTML = "sub3_2";
+                    }
+                }
+                Cancel();
+            }
+
+            function Cancel(){
+                document.getElementById("Management_page").style.display = '';
+                document.getElementById("Edit_page").style.display = "none";
+                document.getElementById("checkboxes").style.display = "none";
+                expanded = false;
+            }
+
+            function showCheckboxes(){
+                var checkboxes = document.getElementById("checkboxes");
+                if (!expanded){
+                    checkboxes.style.display = "block";
+                    expanded = true;
+                } else {
+                    checkboxes.style.display = "none";
+                    expanded = false;
+                }
+            }
+
+            function role_onclick(){
+                if (is_sub3_1){
+                    is_sub3_1 = false;
+                } else {
+                    is_sub3_1 = true;
+                }
+            }
+        </script>    
+    </body></html>
