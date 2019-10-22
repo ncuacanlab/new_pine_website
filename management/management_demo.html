@@ -1,0 +1,162 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="javascripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.dynatable.js"></script>
+    <script type="text/javascript" src="javascripts/fSelect.js"></script>
+
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/fSelect.css">
+    <link rel="stylesheet" href="stylesheets/jquery.dynatable.css">
+    <link rel="stylesheet" href="stylesheets/edit.css">
+</head>
+
+<body>
+    <div id="Management_page" class="container" style="display: '';">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <!-- Combobox -->
+                <h1>Management</h1>
+                <div class="box m-form">
+                    <div class="combobox">
+                        <div>
+                            <table id="my-table" class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th data-dynatable-column="User" width="35%">
+                                            <a>User</a>
+                                        </th>
+                                        <th data-dynatable-column="Roles" width="65%">
+                                            <a>Roles</a>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align: left;">
+                                            <a href="#" onclick="Management_Edit(0)">
+                                                <span>User1@test.com</span>
+                                            </a>
+                                        </td>
+                                        <td id="User1_Roles" style="text-align: left;">
+                                            group_1,group_3
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;">
+                                            <a href="#" onclick="Management_Edit(1)">
+                                                <span>User2@test.com</span>
+                                            </a>
+                                        </td>
+
+                                        <td id="User2_Roles" style="text-align: left;">
+                                            group_2,group_3
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Combobox -->
+            </div>
+        </div>
+    </div>
+
+    <div id="Edit_page" class="container" style="display:none">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                <div class="account-wall">
+                    <h2 class="text-center h2">Edit User</h2>
+                    <div class="user-info">
+                        <h6>Username</h6>
+                        <input id="Edit_page_Username" type="text" class="targetUser" disabled value="" />
+                        <h6>Roles</h6>
+
+                        <select id="roles" multiple="multiple">
+                            <option value="group_1">group_1</option>
+                            <option value="group_2">group_2</option>
+                            <option value="group_3">group_3</option>
+                        </select>
+                    </div>
+                    <form class="form-update">
+                        <button onclick="Management_Update()" class="btn btn-lg btn-primary btn-block"
+                            style="margin-bottom: 20px;">Update</button>
+                    </form>
+                    <a href="#" onclick="Management_Cancel()">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var SelectUser = 0;
+        var Users = [{
+            Username: "User1@test.com",
+            roles: ["group_1", "group_3"]
+        }, {
+            Username: "User2@test.com",
+            roles: ["group_2", "group_3"]
+        }]
+
+        function Management_Edit(SelectUser) { //在 Management_page 點擊用戶時, 更新 Edit_page, 並切換頁面
+            this.SelectUser = SelectUser;
+            var options = document.getElementById("roles").children;
+
+            for (var i = 0; i < 3; i++) {
+                Users[SelectUser].roles.forEach(function (role) {
+                    if (options[i].value == role) {
+                        options[i].selected = true;
+                    }
+                })
+            }
+            document.getElementById("Edit_page_Username").value = Users[SelectUser].Username;
+            document.getElementById("Management_page").style.display = 'none';
+            document.getElementById("Edit_page").style.display = '';
+        }
+
+        function Management_Update() { //在 Edit_page 點擊 Update, 更新 User_Roles 和 Management_page, 並切換頁面
+            getMultipleSelectedValue();
+            Users[SelectUser].roles.sort();
+            if (SelectUser == 0) {
+                document.getElementById("User1_Roles").innerHTML = Users[SelectUser].roles.toString();
+            } else if (SelectUser == 1) {
+                document.getElementById("User2_Roles").innerHTML = Users[SelectUser].roles.toString();
+            }
+            Management_Cancel();
+        }
+
+        function Management_Cancel() {
+            var options = document.getElementById("roles").children;
+            for (var i = 0; i < 3; i++) {
+                options[i].selected = false;
+            }
+            document.getElementById("Management_page").style.display = '';
+            document.getElementById("Edit_page").style.display = "none";
+        }
+
+        function getMultipleSelectedValue() {
+            var x = document.getElementById("roles");
+            var temp_roles = [];
+            for (var i = 0; i < x.options.length; i++) { // 將勾選的 roles 加入 User 的 roles
+                if (x.options[i].selected == true) {
+                    temp_roles.push(x.children[i].value);
+                }
+            }
+            Users[SelectUser].roles = temp_roles;
+        }
+
+        $(document).ready(function () { // 載入 fSelect 模組
+            $("#roles").fSelect({
+                placeholder: "Select some roles",
+                numDisplayed: 0,
+                overflowText: "{n} selected",
+                noResultsText: "No results found",
+                searchText: "Search",
+                showSearch: true
+            });
+        });
+    </script>
+</body>
+
+</html>
