@@ -239,9 +239,9 @@ p.lead {
 
 /* HERO
 ----------------------*/
-.container{
+/* .container{
     height: 116px;
-} 
+}  */
 
 .row{
     display: -ms-flexbox;
@@ -772,7 +772,7 @@ li.listitem a:hover{
 }
 
 .anchor{
-    margin-top:0px; 
+    margin-top: 0px; 
 }
 #footer_set{
     z-index: 2;
