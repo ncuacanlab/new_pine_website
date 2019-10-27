@@ -37,12 +37,13 @@ body {
 }
 
 a {
-    color: #e38cb7;
+    color: #787577 !important;
 }
 
 a:hover,
 a:focus {
-    color: #d6619c;
+    color: #e38cb7 !important;
+    text-decoration: none !important;
 }
 
 h1 {

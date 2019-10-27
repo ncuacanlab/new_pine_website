@@ -29,6 +29,11 @@ URI     : https://colorlib.com
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <!-- Main css -->
     <link href="css/demo_style.css" rel="stylesheet">
+    <script src="public/javascripts/jquery-3.3.1.min.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="public/javascripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="public/stylesheets/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="public/stylesheets/upload.css" type="text/css">
 </head>
 
 <body data-spy="scroll" data-target="#navbar" data-offset="30">
@@ -72,9 +77,9 @@ URI     : https://colorlib.com
                 <div>
                     <ul class = "listbar clearfix">
                         <li class = "listitem clearfix"><a href= "#Upload"> Upload</a>
-                            <ul class="listitem set_li_position">Type
-                                <li class = "listitem set_li_position"><a href="#Raw"> Raw</a>
-                                
+                            <ul class="listitem">
+                                <li class = "listitem "><a href="#Raw"> Raw</a>
+                                <li class = "listitem "><a href="#Upload_demo"> Upload_demo</a>
                             </ul>
                         </li>
                         <li class = "listitem clearfix"><a href='#Download'> Download</a></li>
@@ -94,13 +99,13 @@ URI     : https://colorlib.com
                                 <li>
                                     <div id="raw" class="anchor">Raw</div>
                                     
-                                    <div>
-                                        <p class="content">
-                                            1.  Users can choose the options which you want to upload in the Select Table.
-                                        </p>
-                                        <img class="content set_upload_page"
-                                             src="img/upload_page.png" />
-                                    </div>
+                                        <div>
+                                            <p class="content">
+                                                1.  Users can choose the options which you want to upload in the Select Table.
+                                            </p>
+                                            <img class="content set_upload_page"
+                                                 src="img/upload_page.png" />
+                                        </div>
                                     <div>
                                         <p class="content">
                                             2. when window shows up, users can click and drag the data to window.
@@ -117,9 +122,36 @@ URI     : https://colorlib.com
                                              src="img/after_upload.png" />
                                     </div>
                                 </li>
+                            </ul>
+
+                            <ul class="content ">
+                                <li>
+                                    <div id="up_demo" class="anchor set_content_title_font_size"><u></u>Upload Demo</div>
+                                        <div class="panel panel-default content">
+                                            <div class="panel-body">
+                                                <h5 class="label">Select table</h5> 
+                                                <select>
+                                                    <option>test1</option>
+                                                    <option>test2</option>
+                                                </select>
+                                            </div>
+                                        </div>    
+                                    
+                                </li>
+                                <br>
+                                <li>
+                                    <div class="dropbox" >
+                                        <h2 class="text-center " id = "h2_content">Drag &amp; Drop raw data to here</h2>
+                                    </div>
+                                </li>
+                                
+                                <br>    
                                 
                             </ul>
+                            
                         </div>
+
+
 
                         
 
