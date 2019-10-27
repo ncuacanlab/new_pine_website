@@ -60,6 +60,13 @@ $(function() {
                 
         });
 
+      $('a[href="#Upload_demo"]').click(function() {
+                $("html, body").animate({
+                    scrollTop:($("#up_demo").offset().top-125)
+                }, "show");
+                
+        });
+
       $('a[href="#Raw"]').click(function() {
                 $("html, body").animate({
                     scrollTop:($("#raw").offset().top-125)

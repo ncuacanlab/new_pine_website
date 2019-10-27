@@ -37,12 +37,13 @@ body {
 }
 
 a {
-    color: #e38cb7;
+    color: #787577 ;
 }
 
 a:hover,
 a:focus {
-    color: #d6619c;
+    color: #e38cb7 ;
+    text-decoration: none ;
 }
 
 h1 {
@@ -239,9 +240,9 @@ p.lead {
 
 /* HERO
 ----------------------*/
-/*.container{
-    height: 100px;
-} */
+.container{
+    height: 116px;
+} 
 
 .row{
     display: -ms-flexbox;
