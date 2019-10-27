@@ -239,9 +239,9 @@ p.lead {
 
 /* HERO
 ----------------------*/
-.container{
-    height: 116px;
-} 
+/*.container{
+    height: 100px;
+} */
 
 .row{
     display: -ms-flexbox;
