@@ -22,7 +22,7 @@ function Download_searchInTheList(searchText, currentPage) {
     if (searchText == undefined) {
         Download.filteredItems = Download.items;
     } else {
-        Download.filteredItems = Download.items.filter(function (v) {
+        Download.filteredItems = Download.items.filter(function(v) {
             if (searchText.search('=') === -1) {
                 for (let i in v) {
                     if (v[i].toString().toUpperCase().search(searchText.toUpperCase()) > -1) {
@@ -36,8 +36,7 @@ function Download_searchInTheList(searchText, currentPage) {
                         if (v[t[0]].toString().toUpperCase().search(t[1].toUpperCase()) > -1) {
                             return v;
                         }
-                    }
-                    catch (err) {
+                    } catch (err) {
                         return v;
                     }
                 }
@@ -91,7 +90,7 @@ function Download_selectPage(page) {
     }
     Download_refreshPage();
 
-    Download.paginatedItems = Download.filteredItems.filter(function (v, k) {
+    Download.paginatedItems = Download.filteredItems.filter(function(v, k) {
         return Math.ceil((k + 1) / Download.pagination.itemPerPage) == Download.pagination.currentPage;
     });
     console.log(Download.paginatedItems);
@@ -203,7 +202,7 @@ function Download_search() {
     document.getElementById("Download_searchItem").disabled = false;
     document.getElementById("Download_searchItemBtn").disabled = false;
     d3.csv("/download/demo.csv")
-        .then(function (result) {
+        .then(function(result) {
             if (result.length <= 0) {
                 return 0;
             }
@@ -222,7 +221,7 @@ function Download_search() {
             document.getElementById("Download_totalNumber").innerText = Download.items.length;
             Download_searchInTheList(undefined);
         })
-        .catch(function (error) {
+        .catch(function(error) {
             console.log(error);
         });
 }
@@ -244,8 +243,8 @@ function Download_tabulate() {
         .data(columns)
         .enter()
         .append('th')
-        .attr("class", "m-table-index")
-        .text(function (d) { return d })
+        .attr("class", "Download-table-index")
+        .text(function(d) { return d })
 
     var rows = new_table.selectAll('tr')
         .data(data)
@@ -253,14 +252,14 @@ function Download_tabulate() {
         .append('tr')
 
     var cells = rows.selectAll('td')
-        .data(function (row) {
-            return columns.map(function (column) {
+        .data(function(row) {
+            return columns.map(function(column) {
                 return { column: column, value: row[column] }
             })
         })
         .enter()
         .append('td')
-        .text(function (d) { return d.value })
+        .text(function(d) { return d.value })
 
     return new_table;
 }
@@ -299,7 +298,7 @@ function Download_exportToCsv(filename, rows) {
         temp2 = [];
     }
     console.log(temp);
-    var process = function (rows) {
+    var process = function(rows) {
         let csvfile = ''
         for (var i = 0; i < rows.length; i++) {
             var finalVal = '';
@@ -317,17 +316,17 @@ function Download_exportToCsv(filename, rows) {
             }
             csvfile += finalVal + '\n';
         }
-        return new P(function (resolve) {
+        return new P(function(resolve) {
             resolve(csvfile);
         })
     };
     process(temp)
-        .then(function (resp) {
+        .then(function(resp) {
             var zip = new JSZip()
             var testcontecnt = '\ufeff' + resp
             zip.file("download.csv", testcontecnt, { base64: false });
             zip.generateAsync({ type: "blob" })
-                .then(function (content) {
+                .then(function(content) {
                     saveAs(content, "download.zip")
                 })
             self.isDownloading = false;

@@ -54,22 +54,21 @@ body{
 	margin-top: 10px;
 }
 
-.m-table {
+.Download-table {
   margin-top: 20px;
   overflow: auto;
 }
-.m-table tr th {
+.Download-table tr th {
   background: #c0c0c0;
   color: #393939;
 }
 
-.m-table .table{
+.Download-table .table{
 	margin-bottom:0px;
 }
 
-.m-table-index {
+.Download-table-index {
   width: 20px;
-  color: #393939;
 }
 
 .m-tags-items {

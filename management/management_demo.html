@@ -95,13 +95,6 @@
         var UsersName = ["User1@test.com", "User2@test.com"];
         var UserRoles = ["group_1,group_3", "group_2,group_3"];
         var Users = [];
-        // var Users = [{
-        //     User: "User1@test.com",
-        //     Roles: "group_1,group_3"
-        // }, {
-        //     User: "User2@test.com",
-        //     Roles: "group_2,group_3"
-        // }]
 
         function Management_Edit(SelectUser) { //在 Management_page 點擊用戶時, 更新 Edit_page, 並切換頁面
             this.SelectUser = SelectUser;
@@ -124,12 +117,6 @@
 
         function Management_Update() { //在 Edit_page 點擊 Update, 更新 User_Roles 和 Management_page, 並切換頁面
             getMultipleSelectedValue();
-            // Users[SelectUser].roles.sort();
-            // if (SelectUser == 0) {
-            //     document.getElementById("User1_Roles").innerHTML = Users[SelectUser].roles.toString();
-            // } else if (SelectUser == 1) {
-            //     document.getElementById("User2_Roles").innerHTML = Users[SelectUser].roles.toString();
-            // }
             Table_refresh();
             Management_Cancel();
         }
@@ -157,11 +144,7 @@
         }
 
         // var myRecords = JSON.parse(Users.text());
-        var dyn_Table = $("#my-table").dynatable({
-            // dataset: {
-            //     records: Users
-            // }
-        }).data('dynatable');
+        var dyn_Table = $("#my-table").dynatable().data('dynatable');
 
         $(document).ready(function() { // 載入 fSelect 模組
             $("#roles").fSelect({
@@ -174,8 +157,6 @@
             });
             Users = dyn_Table.records.getFromTable();
             console.log(Users);
-
-            // $("#my-table").dynatable(Users).data('dynatable');
         });
 
         function Select_refresh() { // 更新 Select table
@@ -183,16 +164,8 @@
         }
 
         function Table_refresh() {
-            // $("#my-table").data('dynatable').settings.dataset.records = Users.Factors;
-            // $("#my-table").data('dynatable').dom.update();
-            // console.log(dyn_Table.settings.dataset);
-            console.log(Users);
             dyn_Table.settings.dataset.originalRecords = Users;
-            // console.log(dyn_Table);
-            // dyn_Table.records.updateFromJson(Users[0]);
-            // dyn_Table.dom.update();
             dyn_Table.process();
-            // dyn_Table.reload();
         }
     </script>
 </body>

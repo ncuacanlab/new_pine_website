@@ -176,7 +176,7 @@
         <!-- 表格頁數功能 -->
 
         <!-- Download頁面下方表格顯示 -->
-        <div class="m-table" id="Download_myTable"></div>
+        <div class="Download-table" id="Download_myTable"></div>
         <!-- Download頁面下方表格顯示 -->
 
     </div>
@@ -428,7 +428,7 @@
                 .data(columns)
                 .enter()
                 .append('th')
-                .attr("class", "m-table-index")
+                .attr("class", "Download-table-index")
                 .text(function (d) { return d })
 
             var rows = new_table.selectAll('tr')
