@@ -23,11 +23,11 @@
                             <table id="my-table" class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th data-dynatable-column="User" width="35%">
-                                            <a>User</a>
+                                        <th data-dynatable-column="User" class="dynatable-head" width="35%">
+                                            <a class="dynatable-sort-header" href="#">User</a>
                                         </th>
-                                        <th data-dynatable-column="Roles" width="65%">
-                                            <a>Roles</a>
+                                        <th data-dynatable-column="Roles" class="dynatable-head" width="65%">
+                                            <a class="dynatable-sort-header" href="#">Roles</a>
                                         </th>
                                     </tr>
                                 </thead>
@@ -38,7 +38,8 @@
                                                 <span>User1@test.com</span>
                                             </a>
                                         </td>
-                                        <td id="User1_Roles" style="text-align: left;">
+                                        <!-- <td id="User1_Roles" style="text-align: left;"> -->
+                                        <td>
                                             group_1,group_3
                                         </td>
                                     </tr>
@@ -49,7 +50,8 @@
                                             </a>
                                         </td>
 
-                                        <td id="User2_Roles" style="text-align: left;">
+                                        <!-- <td id="User2_Roles" style="text-align: left;"> -->
+                                        <td>
                                             group_2,group_3
                                         </td>
                                     </tr>
@@ -66,7 +68,7 @@
     <div id="Edit_page" class="container" style="display:none">
         <div class="d-flex flex-column justify-content-center align-items-center">
             <div class="col-sm-6 col-md-4 col-md-offset-4">
-                <div class="account-wall">
+                <div class="account-wall" style="overflow: visible;">
                     <h2 class="text-center h2">Edit User</h2>
                     <div class="user-info">
                         <h6>Username</h6>
@@ -74,16 +76,15 @@
                         <h6>Roles</h6>
 
                         <select id="roles" multiple="multiple">
-                            <option value="group_1">group_1</option>
-                            <option value="group_2">group_2</option>
-                            <option value="group_3">group_3</option>
+                            <option value="group_1" selected>group_1</option>
+                            <option value="group_2" selected>group_2</option>
+                            <option value="group_3" selected>group_3</option>
                         </select>
                     </div>
                     <form class="form-update">
-                        <button onclick="Management_Update()" class="btn btn-lg btn-primary btn-block"
-                            style="margin-bottom: 20px;">Update</button>
+                        <a onclick="Management_Update()" class="btn btn-lg btn-primary btn-block" style="margin-bottom: 20px; color: aliceblue;">Update</a>
                     </form>
-                    <a href="#" onclick="Management_Cancel()">Cancel</a>
+                    <a href='#' onclick="Management_Cancel()">Cancel</a>
                 </div>
             </div>
         </div>
@@ -91,38 +92,45 @@
 
     <script type="text/javascript">
         var SelectUser = 0;
-        var Users = [{
-            Username: "User1@test.com",
-            roles: ["group_1", "group_3"]
-        }, {
-            Username: "User2@test.com",
-            roles: ["group_2", "group_3"]
-        }]
+        var UsersName = ["User1@test.com", "User2@test.com"];
+        var UserRoles = ["group_1,group_3", "group_2,group_3"];
+        var Users = [];
+        // var Users = [{
+        //     User: "User1@test.com",
+        //     Roles: "group_1,group_3"
+        // }, {
+        //     User: "User2@test.com",
+        //     Roles: "group_2,group_3"
+        // }]
 
         function Management_Edit(SelectUser) { //在 Management_page 點擊用戶時, 更新 Edit_page, 並切換頁面
             this.SelectUser = SelectUser;
             var options = document.getElementById("roles").children;
 
+            var userInfo = UserRoles[SelectUser].split(',');
+            console.log(userInfo);
             for (var i = 0; i < 3; i++) {
-                Users[SelectUser].roles.forEach(function (role) {
-                    if (options[i].value == role) {
-                        options[i].selected = true;
-                    }
-                })
+                if (userInfo.indexOf(options[i].value) == -1) {
+                    options[i].selected = false;
+                } else {
+                    options[i].selected = true;
+                }
             }
-            document.getElementById("Edit_page_Username").value = Users[SelectUser].Username;
+            document.getElementById("Edit_page_Username").value = UsersName[SelectUser];
             document.getElementById("Management_page").style.display = 'none';
             document.getElementById("Edit_page").style.display = '';
+            Select_refresh();
         }
 
         function Management_Update() { //在 Edit_page 點擊 Update, 更新 User_Roles 和 Management_page, 並切換頁面
             getMultipleSelectedValue();
-            Users[SelectUser].roles.sort();
-            if (SelectUser == 0) {
-                document.getElementById("User1_Roles").innerHTML = Users[SelectUser].roles.toString();
-            } else if (SelectUser == 1) {
-                document.getElementById("User2_Roles").innerHTML = Users[SelectUser].roles.toString();
-            }
+            // Users[SelectUser].roles.sort();
+            // if (SelectUser == 0) {
+            //     document.getElementById("User1_Roles").innerHTML = Users[SelectUser].roles.toString();
+            // } else if (SelectUser == 1) {
+            //     document.getElementById("User2_Roles").innerHTML = Users[SelectUser].roles.toString();
+            // }
+            Table_refresh();
             Management_Cancel();
         }
 
@@ -131,6 +139,7 @@
             for (var i = 0; i < 3; i++) {
                 options[i].selected = false;
             }
+            Select_refresh();
             document.getElementById("Management_page").style.display = '';
             document.getElementById("Edit_page").style.display = "none";
         }
@@ -143,10 +152,18 @@
                     temp_roles.push(x.children[i].value);
                 }
             }
-            Users[SelectUser].roles = temp_roles;
+            UserRoles[SelectUser] = temp_roles.sort().toString();
+            Users[SelectUser].Roles = temp_roles.sort().toString();
         }
 
-        $(document).ready(function () { // 載入 fSelect 模組
+        // var myRecords = JSON.parse(Users.text());
+        var dyn_Table = $("#my-table").dynatable({
+            // dataset: {
+            //     records: Users
+            // }
+        }).data('dynatable');
+
+        $(document).ready(function() { // 載入 fSelect 模組
             $("#roles").fSelect({
                 placeholder: "Select some roles",
                 numDisplayed: 0,
@@ -155,7 +172,28 @@
                 searchText: "Search",
                 showSearch: true
             });
+            Users = dyn_Table.records.getFromTable();
+            console.log(Users);
+
+            // $("#my-table").dynatable(Users).data('dynatable');
         });
+
+        function Select_refresh() { // 更新 Select table
+            $("#roles").fSelect('reload');
+        }
+
+        function Table_refresh() {
+            // $("#my-table").data('dynatable').settings.dataset.records = Users.Factors;
+            // $("#my-table").data('dynatable').dom.update();
+            // console.log(dyn_Table.settings.dataset);
+            console.log(Users);
+            dyn_Table.settings.dataset.originalRecords = Users;
+            // console.log(dyn_Table);
+            // dyn_Table.records.updateFromJson(Users[0]);
+            // dyn_Table.dom.update();
+            dyn_Table.process();
+            // dyn_Table.reload();
+        }
     </script>
 </body>
 
