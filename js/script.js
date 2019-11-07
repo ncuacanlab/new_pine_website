@@ -79,6 +79,12 @@ $(function() {
                 }, "show");
         });
 
+      $('a[href="#Download_demo"]').click(function() {
+                $("html, body").animate({
+                    scrollTop:($("#dow_demo").offset().top-125)
+                }, "show");
+        });
+
       $('a[href="#Analysis"]').click(function() {
                 $("html, body").animate({
                     scrollTop:($("#ana").offset().top-125)
@@ -87,6 +93,11 @@ $(function() {
     $('a[href="#Managment"]').click(function() {
                 $("html, body").animate({
                     scrollTop:($("#man").offset().top-125)
+                }, "show");
+        });
+    $('a[href="#Management_demo]').click(function() {
+                $("html, body").animate({
+                    scrollTop:($("#man_demo").offset().top-125)
                 }, "show");
         });
            
