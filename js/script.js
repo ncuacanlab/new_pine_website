@@ -95,9 +95,14 @@ $(function() {
                     scrollTop:($("#man").offset().top-125)
                 }, "show");
         });
-    $('a[href="#Management_demo]').click(function() {
+    $('a[href="#Management_demo"]').click(function() {
                 $("html, body").animate({
                     scrollTop:($("#man_demo").offset().top-125)
+                }, "show");
+        });
+    $('a[href="#Analysis_demo"]').click(function() {
+                $("html, body").animate({
+                    scrollTop:($("#ana_demo").offset().top-125)
                 }, "show");
         });
            
