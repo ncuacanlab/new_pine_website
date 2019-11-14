@@ -57,10 +57,18 @@ URI     : https://colorlib.com
     <!-- Analysis_demo javascripts + css -->
     <script type="text/javascript" src="js/analysis/javascripts/list.js"></script>
     <link rel="stylesheet" href="css/analysis/a.css">
+    
 </head>
 
 <body data-spy="scroll" data-target="#navbar" data-offset="30">
-
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#mangement").load("https://p870613.github.io/new_pine_website/management/management_document.html");
+        $("#mangement_demo").load("https://p870613.github.io/new_pine_website/management/management_demo.html");
+    })
+          
+          
+    </script>
     <!-- Nav Menu -->
     <header class="bg-gradient fixed-top" id="home">
     </header>
@@ -126,8 +134,16 @@ URI     : https://colorlib.com
                 </ul>
             </div>
         </div>
+
         <!-- content -->
+
         <div id="column2">
+            <!-- mangement -->
+            <div>
+                <div id="mangement"></div>
+                <div id="mangement_demo"></div>
+            </div>
+
             <div class="content">
                 <div id="up" class="anchor">
                     <p class="set_content_title_font_size"><b><u>Upload</u></b></p>
