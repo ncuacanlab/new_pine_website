@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="javascripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.dynatable.js"></script>
+    <script type="text/javascript" src="javascripts/fSelect.js"></script>
+    <script type="text/javascript" src="javascripts/management_demo.js"></script>
+
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/fSelect.css">
+    <link rel="stylesheet" href="stylesheets/jquery.dynatable.css">
+    <link rel="stylesheet" href="stylesheets/edit.css">
+</head>
+
+<body>
+    <div id="Management_page" class="container" style="display: '';">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <!-- Combobox -->
+                <h1>Management Demo</h1>
+                <div class="box m-form">
+                    <div class="combobox">
+                        <div>
+                            <table id="my-table" class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th data-dynatable-column="User" class="dynatable-head" width="35%">
+                                            <a class="dynatable-sort-header" href="#">User</a>
+                                        </th>
+                                        <th data-dynatable-column="Roles" class="dynatable-head" width="65%">
+                                            <a class="dynatable-sort-header" href="#">Roles</a>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align: left;">
+                                            <a href="#" onclick="Management_Edit(0)">
+                                                <span>User1@test.com</span>
+                                            </a>
+                                        </td>
+                                        <!-- <td id="User1_Roles" style="text-align: left;"> -->
+                                        <td>
+                                            group_1,group_3
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;">
+                                            <a href="#" onclick="Management_Edit(1)">
+                                                <span>User2@test.com</span>
+                                            </a>
+                                        </td>
+
+                                        <!-- <td id="User2_Roles" style="text-align: left;"> -->
+                                        <td>
+                                            group_2,group_3
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Combobox -->
+            </div>
+        </div>
+    </div>
+
+    <div id="Edit_page" class="container" style="display:none">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                <div class="account-wall" style="overflow: visible;">
+                    <h2 class="text-center h2">Edit User</h2>
+                    <div class="user-info">
+                        <h6>Username</h6>
+                        <input id="Edit_page_Username" type="text" class="targetUser" disabled value="" />
+                        <h6>Roles</h6>
+
+                        <select id="roles" multiple="multiple">
+                            <option value="group_1" selected>group_1</option>
+                            <option value="group_2" selected>group_2</option>
+                            <option value="group_3" selected>group_3</option>
+                        </select>
+                    </div>
+                    <form class="form-update">
+                        <a onclick="Management_Update()" class="btn btn-lg btn-primary btn-block" style="margin-bottom: 20px; color: aliceblue;">Update</a>
+                    </form>
+                    <a href='#' onclick="Management_Cancel()">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

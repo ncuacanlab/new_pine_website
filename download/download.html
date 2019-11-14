@@ -1,0 +1,171 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="javascripts/d3.min.js"></script>
+    <script type="text/javascript" src="javascripts/jszip.min.js"></script>
+    <script type="text/javascript" src="javascripts/FileSaver.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/bluebird/latest/bluebird.min.js"></script>
+    <script type="text/javascript" src="js/download/javascripts/download_demo.js"></script>
+
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/download.css">
+    <link rel="stylesheet" href="stylesheets/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container" id="Download_demo">
+        <h3 class="title is-3">Download Demo</h3>
+        <!-- Download頁面"Select attributes"區塊 -->
+        <div class="box m-form">
+            <!-- Select attributes下方第一個combobox功能:"選擇table" -->
+            <div class="combobox">
+                <label class="Download-label">Select attributes</label>
+                <select onchange="Download_selectTable()">
+                    <option style="display:none;"></option>
+                    <option>User Table</option>
+                </select>
+            </div>
+
+            <!-- 選擇日期時間區間功能 -->
+            <!-- <div style="display:inline-block">
+                <input type="datetime-local" name="start" v-model="datetime.start" @change="datetimeset" />
+            </div>
+            <div style="display:inline">
+                <input type="datetime-local" name="end" v-model="datetime.end" @change="datetimeset" />
+            </div> -->
+            <!-- 選擇日期時間區間功能 -->
+
+            <div style="clear:both;"></div>
+            <br>
+            <!-- Select attributes下方第二個combobox功能:"顯示所選table之欄位" -->
+            <div class="combobox1">
+                <select id="Download_selectItem" onchange="Download_selectItem()" disabled>
+                    <option style="display:none;"></option>
+                    <option>item1</option>
+                    <option>item2</option>
+                    <option>item3</option>
+                    <option>item4</option>
+                    <option>item5</option>
+                    <option>item6</option>
+                </select>
+            </div>
+            <!-- Select attributes下方第二個combobox功能:"顯示所選table之欄位" -->
+
+            <!-- 搜尋&下載檔案及圖片按鈕功能 -->
+            <div class="downloadbtn">
+                <button class="btn btn-primary" id="Download_searchBtn" onclick="Download_search()" disabled>Search</button>
+                <!-- <button class="btn btn-success" id="Download_downloadBtn" type="submit"
+                    onclick="window.location.href='test.csv'" disabled>
+                    <i class="fa fa-download"></i>Download CSV_file
+                </button> -->
+                <button class="btn btn-success" id="Download_downloadBtn" type="submit" onclick="Download_downloadFile()" disabled>
+                    <i class="fa fa-download"></i>Download CSV_file
+                </button>
+                <button class="btn btn-success" disabled><i class="fa fa-download"></i>Download PNG</button>
+            </div>
+            <!-- 搜尋&下載檔案及圖片按鈕功能 -->
+            </br>
+        </div>
+        <!-- Download頁面"Select attributes"區塊 -->
+
+
+        <!-- Download頁面"Attributes selected"區塊 -->
+        <div class="box m-tags">
+            <span><strong id="Download_attributeNumber">0</strong> Attribute selected</span>
+
+            <!-- 顯示所選屬性功能 -->
+            <div class="m-tags-items" id="Download_selectedAttributes">
+                <a onclick="Download_removeSelectedItem('item1')" class="tag is-dark is-small" style="display: none" value="item1">
+                    <font color="white">item1</font>
+                    <button class="delete is-small"></button>
+                </a>
+                <a onclick="Download_removeSelectedItem('item2')" class="tag is-dark is-small" style="display: none" value="item2">
+                    <font color="white">item2</font>
+                    <button class="delete is-small"></button>
+                </a>
+                <a onclick="Download_removeSelectedItem('item3')" class="tag is-dark is-small" style="display: none" value="item3">
+                    <font color="white">item3</font>
+                    <button class="delete is-small"></button>
+                </a>
+                <a onclick="Download_removeSelectedItem('item4')" class="tag is-dark is-small" style="display: none" value="item4">
+                    <font color="white">item4</font>
+                    <button class="delete is-small"></button>
+                </a>
+                <a onclick="Download_removeSelectedItem('item5')" class="tag is-dark is-small" style="display: none" value="item5">
+                    <font color="white">item5</font>
+                    <button class="delete is-small"></button>
+                </a>
+                <a onclick="Download_removeSelectedItem('item6')" class="tag is-dark is-small" style="display: none" value="item6">
+                    <font color="white">item6</font>
+                    <button class="delete is-small"></button>
+                </a>
+            </div>
+            <!-- 顯示所選屬性功能 -->
+
+        </div>
+        <!-- Download頁面"Attributes selected"區塊 -->
+
+        <!-- Download頁面"Search Data"區塊 -->
+        <div class="box m-form">
+            <label class="label">Search Data</label>
+
+            <!-- 表格搜尋資料功能 -->
+            <div class="control is-grouped">
+
+                <!-- 顯示表格資料筆數功能 -->
+                <p class="control is-expanded">
+                    <input class="input" id="Download_searchItem" type="text" placeholder="Find a data" disabled />
+                    <span class="help is-dark"></span><strong id="Download_searchNumber">0</strong> of <span id="Download_totalNumber">0</span> data found
+                    </span>
+                </p>
+                <!-- 顯示表格資料筆數功能 -->
+
+                <!-- search按鈕功能 -->
+                <p class="control">
+                    <button class="button is-info" id="Download_searchItemBtn" onclick="Download_searchInTheList(document.getElementById('Download_searchItem').value)" disabled>
+                        search
+                    </button>
+                </p>
+                <!-- search按鈕功能 -->
+
+            </div>
+            <!-- 表格搜尋資料功能 -->
+
+        </div>
+        <!-- Download頁面"Search Data"區塊 -->
+
+        <!-- 表格頁數功能 -->
+        <nav class="pagination m-pagination">
+            <a class="button is-disabled" id="Download_previous" onclick="Download_selectPage(Download.pagination.currentPage-1)">Previous</a>
+            <a class="button is-disabled" id="Download_nextPage" onclick="Download_selectPage(Download.pagination.currentPage+1)">Next page</a>
+            <ul id="Download_page">
+                <li value="1">
+                    <a class="button is-disabled" id="Download_first" onclick="Download_selectPage(Download.pagination.items[0])">
+                        First
+                    </a>
+                </li>
+                <li class="is-space" value="1"></li>
+                <!-- <li v-for="item in pagination.filteredItems">
+                    <a class="button" v-on:click="selectPage(item)"
+                        v-bind:class="{'is-info': item == pagination.currentPage}">{{item}}</a>
+                </li> -->
+                <li class="is-space" value="1"></li>
+                <li value="1">
+                    <a class="button is-disabled" id="Download_last" onclick="Download_selectPage(Download.pagination.items[Download.pagination.items.length-1])">
+                        Last
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- 表格頁數功能 -->
+
+        <!-- Download頁面下方表格顯示 -->
+        <div class="Download-table" id="Download_myTable"></div>
+        <!-- Download頁面下方表格顯示 -->
+
+    </div>
+</body>
+
+</html>
