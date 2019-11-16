@@ -201,7 +201,7 @@ function Download_search() {
     document.getElementById("Download_downloadBtn").disabled = false;
     document.getElementById("Download_searchItem").disabled = false;
     document.getElementById("Download_searchItemBtn").disabled = false;
-    d3.csv("js/download/demo.csv")
+    d3.csv("./download/demo.csv")
         .then(function(result) {
             if (result.length <= 0) {
                 return 0;
