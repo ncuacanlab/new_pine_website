@@ -1,4 +1,4 @@
-﻿<!doctype html>
+﻿
 <html lang="en">
 <!--
 
@@ -19,44 +19,47 @@ URI     : https://colorlib.com
     <!-- Font -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Themify Icons -->
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <!-- Owl carousel -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- public css-->
+    <link rel="stylesheet" href="css/public/bootstrap.min.css">
+    <link rel="stylesheet" href="css/public/themify-icons.css">
+    <link rel="stylesheet" href="css/public/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/public/fSelect.css">
+    <link rel="stylesheet" href="css/public/jquery.dynatable.css">
+    <link rel="stylesheet" href="css/public/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
     <!-- Main css -->
     <link href="css/demo_style.css" rel="stylesheet">
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/upload/upload.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/upload/upload.css" type="text/css">
-
-    <!-- jQuery and Bootstrap -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <!-- Plugins JS -->
-    <script src="js/owl.carousel.min.js"></script>
-    <!-- Custom JS -->
-    <script src="js/script.js"></script>
-    <!-- Management_demo javascripts + css -->
-    <script type="text/javascript" src="js/management/javascripts/jquery.dynatable.js"></script>
-    <script type="text/javascript" src="js/management/javascripts/fSelect.js"></script>
-    <script type="text/javascript" src="js/management/javascripts/management_demo.js"></script>
-    <link rel="stylesheet" href="css/management/stylesheets/fSelect.css">
-    <link rel="stylesheet" href="css/management/stylesheets/jquery.dynatable.css">
-    <link rel="stylesheet" href="css/management/stylesheets/edit.css">
-    <!-- Download_demo javascripts + css -->
-    <script type="text/javascript" src="js/download/javascripts/download_demo.js"></script>
-    <script type="text/javascript" src="js/download/javascripts/d3.min.js"></script>
-    <script type="text/javascript" src="js/download/javascripts/jszip.min.js"></script>
-    <script type="text/javascript" src="js/download/javascripts/FileSaver.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/bluebird/latest/bluebird.min.js"></script>
-    <link rel="stylesheet" href="css/download/stylesheets/download.css/">
-    <link rel="stylesheet" href="css/download/stylesheets/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <!-- Analysis_demo javascripts + css -->
-    <script type="text/javascript" src="js/analysis/javascripts/list.js"></script>
+    <!-- upload -->
+    <link href="css/upload/upload.css" rel="stylesheet">
+    <!-- download -->
+    <link href="css/download/download.css" rel="stylesheet">
+    <!-- analysis -->
     <link rel="stylesheet" href="css/analysis/a.css">
+    
+    <!-- public javascript -->
+    <script src="js/public/jquery-3.3.1.min.js"></script>
+    <script src="js/public/bootstrap.min.js"></script>
+    <script src="js/public/bootstrap.bundle.min.js"></script>
+    <script src="js/public/owl.carousel.min.js"></script>
+    <script src="js/public/jquery.dynatable.js"></script>
+    <script src="js/public/fSelect.js"></script>
+    <script src="js/public/d3.min.js"></script>
+    <script src="js/public/jszip.min.js"></script>
+    <script src="js/public/FileSaver.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bluebird/latest/bluebird.min.js"></script>
+    <!-- Main JS -->
+    <script src="js/script.js"></script>
+    <!-- upload_demo -->
+    <script src="js/upload/upload.js"></script>
+    <!-- Management_demo -->
+    <script type="text/javascript" src="js/management/management_demo.js"></script>
+    <!-- Download_demo javascripts-->
+    <script type="text/javascript" src="js/download/download_demo.js"></script>
+    <!-- Analysis_demo javascripts + css -->
+    <script type="text/javascript" src="js/analysis/list.js"></script>
+    
     
 </head>
 
@@ -64,9 +67,12 @@ URI     : https://colorlib.com
 <script type="text/javascript">
     $(document).ready(function(){
         $("#upload").load("upload/upload_document.html");
-        $("#upload").load("upload/upload_demo.html");
+        $("#upload_demo").load("upload/upload_demo.html");
+        $("#download").load("download/download_document.html");
+        $("#download_demo2").load("download/download.html");
         $("#mangement").load("management/management_document.html");
         $("#mangement_demo").load("management/management_demo.html");
+        $("#analysis").load("analysis/analysis.html");
     })
           
           
@@ -146,465 +152,24 @@ URI     : https://colorlib.com
                 <div id="upload_demo"></div>
                 
             </div>
+            <!-- download -->
+            <div>
+                <div id="download"></div>
+                <div id="download_demo2"></div>
+            </div>
+
+            
+
+            <div>
+                <div id="analysis"></div>
+                <div id="analysis_demo"></div>
+            </div>
             <!-- mangement -->
             <div>
                 <div id="mangement"></div>
                 <div id="mangement_demo"></div>
             </div>
-
             
-
-
-            <!-- Download -->
-            <div class="content">
-                <div id="dow">
-                    <p class="set_content_title_font_size">
-                        <b><u>Download</u></b>
-                    </p>
-                </div>
-                <div class="content set_content_title_font_size">
-                    <div>
-                        <p class="content">
-                            If you want to download data from the database, you can select download button in the menu on the left of the page after you login. Then you’ll see the download page.
-                        </p>
-                        <img class="content set_upload_page" src="img/download_page.JPG" />
-                    </div>
-                    <div>
-                        <p class="content">
-                            First, at ‘Select attributes’ area, you need to select data you want to download and set some its attributes of it. For example, we select three attribute, Tb2, Tm2 and Time. Of course, you can push ‘X’ to delete the attribute you don’t want.
-                        </p>
-                        <img class="content set_upload_page" src="img/download_select_attributes.JPG">
-                    </div>
-                    <div>
-                        <p class="content">
-                            Then you can push the ‘Search’ button. System will show you all selected data at the bottom.
-                        </p>
-                        <img class="content set_upload_page" src="img/download_search.JPG">
-                    </div>
-                    <div>
-                        <p class="content">
-                            At last, if there's no problem with these data, all you need to do is push the 'Download CSV_file' button and download it to your computer. If it's a picture, just push the 'DownloadPNG' button.
-                        </p>
-                        <img class="content set_upload_page" src="img/download_CSV_file.JPG">
-                    </div>
-                </div>
-                <br>
-                <!-- Download demo -->
-                <ul class="container">
-                    <div id="dow_demo" class="anchor set_content_title_font_size">
-                        Download demo
-                    </div>
-                    <br>
-                    <div class="container">
-                        <!-- <h3 class="title is-3">CPS Data Search</h3> -->
-                        <!-- Download頁面"Select attributes"區塊 -->
-                        <div class="box m-form">
-                            <!-- Select attributes下方第一個combobox功能:"選擇table" -->
-                            <div class="combobox">
-                                <label class="Download-label">Select attributes</label>
-                                <select onchange="Download_selectTable()">
-                                    <option style="display:none;"></option>
-                                    <option>User Table</option>
-                                </select>
-                            </div>
-                            <!-- 選擇日期時間區間功能 -->
-                            <!-- <div style="display:inline">
-                        <input type="datetime-local" name="start" v-model="datetime.start" @change="datetimeset" />
-                    </div>
-                    <div style="display:inline">
-                        <input type="datetime-local" name="end" v-model="datetime.end" @change="datetimeset" />
-                    </div> -->
-                            <!-- 選擇日期時間區間功能 -->
-                            <div style="clear:both;"></div>
-                            <br>
-                            <!-- Select attributes下方第二個combobox功能:"顯示所選table之欄位" -->
-                            <div class="combobox1">
-                                <select id="Download_selectItem" onchange="Download_selectItem()" disabled>
-                                    <option style="display:none;"></option>
-                                    <option>item1</option>
-                                    <option>item2</option>
-                                    <option>item3</option>
-                                    <option>item4</option>
-                                    <option>item5</option>
-                                    <option>item6</option>
-                                </select>
-                            </div>
-                            <!-- Select attributes下方第二個combobox功能:"顯示所選table之欄位" -->
-                            <!-- 搜尋&下載檔案及圖片按鈕功能 -->
-                            <br>
-                            <div class="downloadbtn">
-                                <button class="btn btn-primary" id="Download_searchBtn" onclick="Download_search()" disabled>Search</button>
-                                <button class="btn btn-success" id="Download_downloadBtn" onclick="Download_downloadFile()" disabled>
-                                    <i class="fa fa-download"></i>Download CSV_file
-                                </button>
-                                <button class="btn btn-success" disabled>
-                                    <i class="fa fa-download"></i>Download
-                                    PNG
-                                </button>
-                            </div>
-                            <!-- 搜尋&下載檔案及圖片按鈕功能 -->
-                        </div>
-                        <!-- Download頁面"Select attributes"區塊 -->
-                        <!-- Download頁面"Attributes selected"區塊 -->
-                        <div class="box m-tags">
-                            <span><strong id="Download_attributeNumber">0</strong> Attribute selected</span>
-                            <!-- 顯示所選屬性功能 -->
-                            <div class="m-tags-items" id="Download_selectedAttributes">
-                                <a onclick="Download_removeSelectedItem('item1')" class="tag is-dark is-small" style="display: none" value="item1">
-                                    <font color="white">item1</font>
-                                    <button class="delete is-small"></button>
-                                </a>
-                                <a onclick="Download_removeSelectedItem('item2')" class="tag is-dark is-small" style="display: none" value="item2">
-                                    <font color="white">item2</font>
-                                    <button class="delete is-small"></button>
-                                </a>
-                                <a onclick="Download_removeSelectedItem('item3')" class="tag is-dark is-small" style="display: none" value="item3">
-                                    <font color="white">item3</font>
-                                    <button class="delete is-small"></button>
-                                </a>
-                                <a onclick="Download_removeSelectedItem('item4')" class="tag is-dark is-small" style="display: none" value="item4">
-                                    <font color="white">item4</font>
-                                    <button class="delete is-small"></button>
-                                </a>
-                                <a onclick="Download_removeSelectedItem('item5')" class="tag is-dark is-small" style="display: none" value="item5">
-                                    <font color="white">item5</font>
-                                    <button class="delete is-small"></button>
-                                </a>
-                                <a onclick="Download_removeSelectedItem('item6')" class="tag is-dark is-small" style="display: none" value="item6">
-                                    <font color="white">item6</font>
-                                    <button class="delete is-small"></button>
-                                </a>
-                            </div>
-                            <!-- 顯示所選屬性功能 -->
-                        </div>
-                        <!-- Download頁面"Attributes selected"區塊 -->
-                        <!-- Download頁面"Search Data"區塊 -->
-                        <div class="box m-form">
-                            <label class="label">Search Data</label>
-                            <!-- 表格搜尋資料功能 -->
-                            <div class="control is-grouped">
-                                <!-- 顯示表格資料筆數功能 -->
-                                <p class="control is-expanded">
-                                    <input class="input" id="Download_searchItem" type="text" placeholder="Find a data" disabled />
-                                    <span class="help is-dark"></span><strong id="Download_searchNumber">0</strong> of
-                                    <span id="Download_totalNumber">0</span> data found
-                                    </span>
-                                </p>
-                                <!-- 顯示表格資料筆數功能 -->
-                                <!-- search按鈕功能 -->
-                                <p class="control">
-                                    <button class="button is-info" id="Download_searchItemBtn" onclick="Download_searchInTheList(document.getElementById('Download_searchItem').value)" disabled>
-                                        search
-                                    </button>
-                                </p>
-                                <!-- search按鈕功能 -->
-                            </div>
-                            <!-- 表格搜尋資料功能 -->
-                        </div>
-                        <!-- Download頁面"Search Data"區塊 -->
-                        <!-- 表格頁數功能 -->
-                        <nav class="pagination m-pagination">
-                            <a class="button is-disabled" id="Download_previous" onclick="Download_selectPage(Download.pagination.currentPage-1)">Previous</a>
-                            <a class="button is-disabled" id="Download_nextPage" onclick="Download_selectPage(Download.pagination.currentPage+1)">Next page</a>
-                            <ul id="Download_page">
-                                <li value="1">
-                                    <a class="button is-disabled" id="Download_first" onclick="Download_selectPage(Download.pagination.items[0])">
-                                        First
-                                    </a>
-                                </li>
-                                <li class="is-space" value="1"></li>
-                                <!-- <li v-for="item in pagination.filteredItems">
-                            <a class="button" v-on:click="selectPage(item)"
-                                v-bind:class="{'is-info': item == pagination.currentPage}">{{item}}</a>
-                        </li> -->
-                                <li class="is-space" value="1"></li>
-                                <li value="1">
-                                    <a class="button is-disabled" id="Download_last" onclick="Download_selectPage(Download.pagination.items[Download.pagination.items.length-1])">
-                                        Last
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <!-- 表格頁數功能 -->
-                        <!-- Download頁面下方表格顯示 -->
-                        <div class="Download-table" id="Download_myTable"></div>
-                        <!-- Download頁面下方表格顯示 -->
-                    </div>
-                </ul>
-            </div>
-            <br>
-            <!----------------  Analysis-------------------->
-            <div class="content">
-                <div id="ana">
-                    <p class="set_content_title_font_size">
-                        <b><u>Analysis</u></b>
-                    </p>
-                </div>
-
-                <div class="content set_content_title_font_size">
-
-                    <img class="content set_upload_page" src="img/F5.png">
-                    <p class="pic_content">
-                        Figure 5 Contents of the meter
-                    </p>
-                    <p class="content">
-                        The analyst enters the account with password in PINE and switches to the analysis page. The interface is shown in Figure 5.
-                    </p>
-                    <img class="content set_upload_page" src="img/F6.png">
-                    <p class="pic_content">
-                        Figure 6 analysis interface, is divided into four steps: “Data selecting”, “Preprocessing”, “Training”, and “Results presenting”. “Data selection” is responsible for selecting data, “Preprocessing” is responsible for data pre-processing, “Training” is
-                        responsible for data analysis, and “Resulting presenting” is responsible for displaying analysis results.
-                    </p>
-                    <p class="content">
-                        Suppose the analyst wants to use ”A相有功”,”A相視在”,”B相有功”,”B相視在”,”C相有功”,”C相視在”six parameters to predict" 總功率因數”, it is only required to select six parameters in the training data tab and press the search button. As shown in Figure 6 and Figure 7.
-                    </p>
-                    <img class="content set_upload_page" src="img/F7.png">
-                    <p class="pic_content">
-                        Figure 7 the training data tab. The parameters selected through the “Select attributes” field are displayed at the “Attribute selected” field below. Here we choose ”A相有功”,”A相視在”,”B相有功”,”B相視在”,”C相有功”,”C相視在”.
-                    </p>
-                    <img class="content set_upload_page" src="img/F8.png">
-                    <p class="pic_content">
-                        Figure 8 the results of the“training data Search”. In the “Field” field, you can set the parameters (fields) to be filtered. The “Type” field can be set how the way to be filtered(greater than, less than, equal to), and the “Value” is the value to be
-                        filtered.
-                    </p>
-                    <p class="content">
-                        Then select the "總功率因數" in the “label data” tab and press the “search” button to complete the data selection, as shown in Figure 8 and Figure 9.
-                    </p>
-                    <img class="content set_upload_page" src="img/F9.png">
-                    <p class="pic_content">
-                        Figure 9 the “label data” page. Select the total power factor here.
-                    </p>
-                    <img class="content set_upload_page" src="img/F10.png">
-                    <p class="pic_content">
-                        Figure 10 the results of the “label data search”
-                    </p>
-                    <p class="content">
-                        Then press “Next” to the Preprocessing step. The Pre-processing interface is shown in Figure 10.
-                    </p>
-                    <img class="content set_upload_page" src="img/F11.png">
-                    <p class="pic_content">
-                        Figure 11 the “Pre-processing” interface. Select the pre-processing method through the “Select pre-processing” field.
-                    </p>
-                    <p class="content">
-                        After selecting the “Normalization” method, pressing the process button. The results of the respective data after the pre-processing will be displayed. As shown in Figure 11.
-                    </p>
-                    <img class="content set_upload_page" src="img/F12.png">
-                    <p class="pic_content">
-                        Figure 12 the result of the pre-processing
-                    </p>
-                    <p class="content">
-                        Then press “Next” to the “Training” step. First, you must first set the data ratio of “train” and “validation” and what method to use for segmenting After the selection, select category, layer, “batch_size" and “epoch”. After the selection, four fields
-                        (layer + output layer) will be displayed, the first three layers can be set to “neuron_num”, “activation” and “dropout”, and the fourth layer can be set to “output_num” and “activation”. Finally, press the “train” button. Pressing
-                        the “download” button, the trained model can be downloaded.
-
-                    </p>
-
-                    <img class="content set_upload_page" src="img/13.png">
-                    <p class="pic_content">
-                        Figure 13 Data analyzing step to select a specific model, and set all hyper-parameters for training the model
-                    </p>
-                    <p class="content">
-                        As shown in Figure14, the results of the model training process, such as validation loss and validation accuracy, are displayed in this step.
-                    </p>
-                    <img class="content set_upload_page" src="img/13.png">
-                    <p class="pic_content">
-                        Figure 14 Results presenting step to display the results of the model training process
-                    </p>
-                </div>
-                <a id="ana_demo" name="#Analysis_demo"></a>
-                <div class="anchor set_content_title_font_size">
-
-                    Analysis demo
-                </div>
-                <br>
-                <div>
-                    <h5 class="label">Select analysis type</h5>
-                    <form>
-                        <select onchange="appear(1);">
-                            <option value="1">test1</option>
-                            <option value="2">test2</option>
-                            <option value="3">test3</option>
-                            <option value="4">test4</option>
-                        </select>
-                    </form>
-                </div>
-                <div class="dis" id="stage1">
-                    <h5 class="label">Select model</h5>
-                    <form>
-                        <select name="YourLocation" onchange="appear(2)">
-                            <option >test1</option>
-                            <option >test2</option>
-                        </select>
-                    </form>
-                </div>
-                <div class="dis" id="stage2">
-                    <h5 class="label">validation</h5>
-                    <form>
-                        <select name="YourLocation">
-                            <option >test1</option>
-                            <option >test2</option>
-                        </select>
-                    </form>
-                </div>
-                <div class="dis" id="stage3">
-                    <h5 class="label">C</h5>
-                    <form>
-                        <input type="number" step="0.001" required="required">
-                    </form>
-                </div>
-                <div class="dis" id="stage4">
-                    <h5 class="label">kernel</h5>
-                    <form>
-                        <select name="YourLocation">
-                            <option >test1</option>
-                            <option >test2</option>
-                        </select>
-                    </form>
-                </div>
-                <div class="dis" id="stage5">
-                    <h5 class="label">degree</h5>
-                    <form>
-                        <input type="number" step="1" required="required">
-                    </form>
-                </div>
-                <div class="dis" id="stage6">
-                    <h5 class="label">gamma</h5>
-                    <form>
-                        <input type="number" step="0.001" required="required">
-                    </form>
-                </div>
-                <div class="dis" id="stage7">
-                    <h5 class="label">shrinking</h5>
-                    <form>
-                        <input type="checkbox" name="vehicle1" value="Bike">true
-                    </form>
-                </div>
-                <div class="dis" id="stage8">
-                    <h5 class="label">decision_function_shape</h5>
-                    <form>
-                        <select name="YourLocation">
-                            <option >test1</option>
-                            <option >test2</option>
-                        </select>
-                    </form>
-                </div>
-
-            </div>
-            <!-- Management -->
-            <div class="content">
-                <div id="man">
-                    <p class="set_content_title_font_size">
-                        <b><u>Managment</u></b>
-                    </p>
-                </div>
-                <div class="content set_content_title_font_size">
-                    <div>
-                        <p class="content">
-                            This function is for manager to manage users’ permission. You can access through the ‘Management’ button in the menu.
-                        </p>
-                        <img class="content set_upload_page" src="img/Management_SearchSub3_1.JPG" />
-                        <p class="content">
-                            First, you can see search page. It’ll show the users’ names and their roles. You can find any user by searching him. For example, if you want to find some users in group sub3_1, you can just type sub3_1 in the ‘Search’ blank.
-                        </p>
-                        <img class="content set_upload_page" src="img/Management_SearchUser.JPG">
-                        <p class="content">
-                            To add the roles of sub3_2@test.com into sub3_1, you can click it and choose sub3_1 in Roles in the page below.
-                        </p>
-                        <img class="content set_picture_hight" src="img/Management_Update.JPG">
-                        <p class="content">
-                            Finally, chick ‘Update’ button to confirm and the user, sub3_2@test.com, can access resources in group sub3_1.
-                        </p>
-                        <img class="content set_picture_hight" src="img/Management_changeRoles.JPG">
-                    </div>
-                </div>
-                <br>
-                <!-- Management demo -->
-                <div class="container">
-                    <div id="man_demo" class="set_content_title_font_size">
-                        Management demo
-                    </div>
-                    <br>
-                    <div id="Management_page" class="container" style="display: '';">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <!-- Combobox -->
-                                <!-- <h1>Management</h1> -->
-                                <div class="box m-form">
-                                    <div class="combobox">
-                                        <div>
-                                            <table id="my-table" class="table table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                        <th data-dynatable-column="User" width="35%">
-                                                            <a>User</a>
-                                                        </th>
-                                                        <th data-dynatable-column="Roles" width="65%">
-                                                            <a>Roles</a>
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td style="text-align: left;">
-                                                            <a href="#Management_demo" onclick="Management_Edit(0)">
-                                                                <span>User1@test.com</span>
-                                                            </a>
-                                                        </td>
-                                                        <td id="User1_Roles" style="text-align: left;">
-                                                            group_1,group_3
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: left;">
-                                                            <a href="#Management_demo" onclick="Management_Edit(1)">
-                                                                <span>User2@test.com</span>
-                                                            </a>
-                                                        </td>
-                                                        <td id="User2_Roles" style="text-align: left;">
-                                                            group_2,group_3
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Combobox -->
-                            </div>
-                        </div>
-                    </div>
-                    <div id="Edit_page" class="container" style="display:none">
-                        <div class="d-flex flex-column justify-content-center align-items-center">
-                            <div class="col-sm-6 col-md-4 col-md-offset-4">
-                                <div class="account-wall">
-                                    <h2 class="text-center h2">Edit User</h2>
-                                    <div class="user-info">
-                                        <h6>Username</h6>
-                                        <input id="Edit_page_Username" type="text" class="targetUser" disabled value="" />
-                                        <h6>Roles</h6>
-                                        <select id="roles" multiple="multiple">
-                                            <option value="group_1" selected>group_1</option>
-                                            <option value="group_2" selected>group_2</option>
-                                            <option value="group_3" selected>group_3</option>
-                                        </select>
-                                    </div>
-                                    <form class="form-update">
-                                        <a onclick="Management_Update()" class="btn btn-lg btn-primary btn-block" href="#Management_demo" style="margin-bottom: 20px; color: aliceblue;;">Update</a>
-                                    </form>
-                                    <a href="#Management_demo" onclick="Management_Cancel()">Cancel</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
-
-
 
     <footer class=" text-center" id="footer_set">
         <!-- Copyright removal is not prohibited! -->

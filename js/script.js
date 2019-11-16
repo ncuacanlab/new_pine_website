@@ -55,14 +55,14 @@ $(function() {
     /**--------------------------------------------------*/
       $('a[href="#Upload"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#up").offset().top-125)
+                    scrollTop:($("#upload").offset().top-125)
                 }, "show");
                 
         });
 
       $('a[href="#Upload_demo"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#up_demo").offset().top-125)
+                    scrollTop:($("#upload_demo").offset().top-125)
                 }, "show");
                 
         });
@@ -75,13 +75,13 @@ $(function() {
 
       $('a[href="#Download"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#dow").offset().top-125)
+                    scrollTop:($("#download").offset().top-150)
                 }, "show");
         });
 
       $('a[href="#Download_demo"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#dow_demo").offset().top-125)
+                    scrollTop:($("#download_demo2").offset().top-125)
                 }, "show");
         });
 
@@ -92,12 +92,12 @@ $(function() {
         });
     $('a[href="#Managment"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#man").offset().top-125)
+                    scrollTop:($("#mangement").offset().top-125)
                 }, "show");
         });
     $('a[href="#Management_demo"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#man_demo").offset().top-125)
+                    scrollTop:($("#mangement_demo").offset().top-125)
                 }, "show");
         });
     $('a[href="#Analysis_demo"]').click(function() {
