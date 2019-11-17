@@ -237,7 +237,7 @@ p.lead {
 ----------------------*/
 
 header {
-    padding: 100px 0 100px 0;
+    padding: 125px 0 0 0;
     text-align: center;
     color: #FFF;
 }
@@ -281,7 +281,9 @@ header {
     }
 }
 
-
+#position_pine{
+    margin-top: -30%;
+}
 /* FEATURES
 ----------------------*/
 
@@ -652,8 +654,8 @@ header {
 /*-----------------demo----------------------------*/
 #set_pine{
     width: 10%;
-    height: 100px;
-
+    height: 64px;
+    padding-top:10px;
 }
 .drop-shadow {
     -webkit-filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
