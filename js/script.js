@@ -92,7 +92,7 @@ $(function() {
         });
     $('a[href="#Managment"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#mangement").offset().top-125)
+                    scrollTop:($("#management").offset().top-125)
                 }, "show");
         });
     $('a[href="#Management_demo"]').click(function() {
