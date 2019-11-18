@@ -81,7 +81,7 @@ $(function() {
 
       $('a[href="#Download_demo"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#download_demo2").offset().top-125)
+                    scrollTop:($("#download_demo").offset().top-125)
                 }, "show");
         });
 
@@ -97,7 +97,7 @@ $(function() {
         });
     $('a[href="#Management_demo"]').click(function() {
                 $("html, body").animate({
-                    scrollTop:($("#mangement_demo").offset().top-125)
+                    scrollTop:($("#management_demo").offset().top-125)
                 }, "show");
         });
     $('a[href="#Analysis_demo"]').click(function() {
