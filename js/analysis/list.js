@@ -10,4 +10,16 @@ function appear(a) {
                     obj.style.display = "inline";
                 }
             }
-        }
+}
+
+nowStage = 1;
+
+function changeState(next) {
+    
+    for (let i = 1; i <= 4; i++) {
+        obj = document.getElementById("state" + i);
+        obj.style.display = "none";
+    }
+    obj = document.getElementById("state" + next);
+    obj.style.display = "inline";
+}
