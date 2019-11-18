@@ -258,12 +258,13 @@ header {
 }
 
 .img-holder {
-    height: 0;
+    /* height: 100%; */
     width: 60%;
     margin-left: 20%;
     
-    padding-bottom: 33%;
-    /*overflow: hidden;*/
+    
+    /* margin-top: -13%; */
+    overflow: hidden;
 }
 
 @media (max-width:1200px) {
@@ -282,7 +283,7 @@ header {
 }
 
 #position_pine{
-    margin-top: -30%;
+    /* margin-top: -100% !important; */
 }
 /* FEATURES
 ----------------------*/
@@ -749,6 +750,5 @@ li.listitem a:hover{
 
 }
 
-#home{
-    height: 100%;
-}
+
+

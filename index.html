@@ -29,6 +29,13 @@ URI     : https://colorlib.com
     <link rel="stylesheet" href="css/public/owl.carousel.min.css">
     <!-- Main css -->
     <link href="css/style.css" rel="stylesheet">
+    <script src="js/public/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#demo_content123").load("demo2.html");
+        })
+    </script>
+    
     
 </head>
 
@@ -36,7 +43,7 @@ URI     : https://colorlib.com
 
     <!-- Nav Menu -->
 
-    <div class="nav-menu fixed-top">
+    <div class="nav-menu fixed-top" id="check_height">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -62,15 +69,16 @@ URI     : https://colorlib.com
 
 
     <header class="bg-gradient" id="home">
-        <div class="container mt-5" >
+        <div class="container mt-5" id = "check_height2" >
             <h2>Web-based Machine Learning Modeling
 in a Cyber-Physical System Construction Assistant</h2>
             <!-- <p class="tagline">The one and only solution for any kind of mobila app landing needs. Just change the screenshots and texts and you are good to go. </p> -->
         </div>
         
-        <div class="img-holder mt-3"><embed id="position_pine" src="img/PINE.svg"  class="img-fluid" alt="logo"/></div>
+        <div class="img-holder" id="check_height3"><img id="position_pine set_ath_img" src="img/PINE.png"   alt="logo"/></div>
     </header>
-    
+
+    <div id="demo_content123"></div>
     <footer class="my-5 text-center">
         <!-- Copyright removal is not prohibited! -->
         <p class="mb-2"><small>COPYRIGHT © 2017. ALL RIGHTS RESERVED. MOBAPP TEMPLATE BY <a href="https://colorlib.com">COLORLIB</a></small></p>

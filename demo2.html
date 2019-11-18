@@ -1,0 +1,154 @@
+﻿
+<html lang="en">
+<!--
+
+Page    : index / MobApp
+Version : 1.0
+Author  : Colorlib
+URI     : https://colorlib.com
+
+ -->
+
+<head>
+    <title>PINE</title>
+    <link rel="icon" href="img/pine_title.ico" type="image/x-icon" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Mobland - Mobile App Landing Page Template">
+    <!-- Font -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+
+    <!-- public css-->
+    <link rel="stylesheet" href="css/public/bootstrap.min.css">
+    <link rel="stylesheet" href="css/public/themify-icons.css">
+    <link rel="stylesheet" href="css/public/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/public/fSelect.css">
+    <link rel="stylesheet" href="css/public/jquery.dynatable.css">
+    <!-- <link rel="stylesheet" href="css/public/bulma.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"> -->
+
+    <!-- Main css -->
+    <!-- <link href="css/demo_style.css" rel="stylesheet"> -->
+    <!-- upload -->
+    <link href="css/upload/upload.css" rel="stylesheet">
+    <!-- download -->
+    <link href="css/download/download.css" rel="stylesheet">
+    <!-- analysis -->
+    <link rel="stylesheet" href="css/analysis/a.css">
+    
+    <!-- public javascript -->
+    <script src="js/public/jquery-3.3.1.min.js"></script>
+    <script src="js/public/bootstrap.min.js"></script>
+    <script src="js/public/bootstrap.bundle.min.js"></script>
+    <script src="js/public/owl.carousel.min.js"></script>
+    <script src="js/public/jquery.dynatable.js"></script>
+    <script src="js/public/fSelect.js"></script>
+    <script src="js/public/d3.min.js"></script>
+    <script src="js/public/jszip.min.js"></script>
+    <script src="js/public/FileSaver.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bluebird/latest/bluebird.min.js"></script>
+    <!-- Main JS -->
+    <script src="js/script.js"></script>
+    <!-- upload_demo -->
+    <script src="js/upload/upload.js"></script>
+    <!-- Management_demo -->
+    <!-- <script type="text/javascript" src="js/management/management_demo.js"></script> -->
+    <!-- Download_demo javascripts-->
+    <!-- <script type="text/javascript" src="js/download/download_demo.js"></script> -->
+    <!-- Analysis_demo javascripts + css -->
+    <script type="text/javascript" src="js/analysis/list.js"></script>
+    <script type="text/javascript" src="js/add_list.js"></script>
+    
+    
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="30">
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#upload").load("upload/upload_document.html");
+        $("#upload_demo").load("upload/upload_demo.html");
+        $("#download").load("download/download_document.html");
+        $("#download_demo2").load("download/download_demo.html");
+        $("#analysis").load("analysis/analysis.html");
+        $("#management").load("management/management_document.html");
+        $("#management_demo").load("management/management_demo.html");
+    })      
+    </script>
+    <!-- Nav Menu -->
+    
+    <!---------------------------------------------------------------------------------------------->
+    <div class="clearfix" id="web_content">
+        <!-- list-->
+        <div id="column1" style="display: none;">
+            <div>
+                <ul class="listbar clearfix">
+                    <li class="listitem clearfix"><a href="#Upload"> Upload</a>
+                        <ul class="listitem">
+                            <li class="listitem "><a href="#Raw"> Raw</a>
+                                <li class="listitem "><a href="#Upload_demo"> Upload demo</a>
+                        </ul>
+                        </li>
+                        <li class="listitem clearfix"><a href='#Download'> Download</a>
+                            <ul class="listitem">
+                                <li class="listitem "><a href="#Download_demo"> Download demo</a>
+                            </ul>
+                            </li>
+                            <li class="listitem clearfix"><a href='#Analysis'> Analysis</a></li>
+                            <ul class="listitem">
+                                <li class="listitem "><a href="#Analysis_demo"> Analysis demo</a>
+                            </ul>
+                            </li>
+                            <li class="listitem clearfix"><a href='#Managment'> Managment</a>
+                                <ul class="listitem">
+                                    <li class="listitem "><a href="#Management_demo"> Management demo</a>
+                                </ul>
+                                </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- content -->
+
+        <div id="column2">
+            <!-- upload -->
+            <div>
+                <div id="upload"></div>
+                <div id="upload_demo"></div>
+                
+            </div>
+            <!-- download -->
+            <div>
+                <div id="download"></div>
+                <div id="download_demo2"></div>
+            </div>
+
+            
+
+            <div>
+                <div id="analysis"></div>
+                <div id="analysis_demo"></div>
+            </div>
+            <!-- mangement -->
+            <div>
+                <div id="management"></div>
+                <div id="management_demo"></div>
+            </div>
+            
+
+    <footer class=" text-center" id="footer_set">
+        <!-- Copyright removal is not prohibited! -->
+        <p class="mb-2"><small>COPYRIGHT © 2017. ALL RIGHTS RESERVED. MOBAPP TEMPLATE BY <a
+                    href="https://colorlib.com">COLORLIB</a></small></p>
+
+        <small>
+            <a href="#" class="m-2">PRESS</a>
+            <a href="#" class="m-2">TERMS</a>
+            <a href="#" class="m-2">PRIVACY</a>
+        </small>
+    </footer>
+
+</body>
+
+</html>
