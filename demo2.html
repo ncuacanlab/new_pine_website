@@ -1,21 +1,6 @@
 ﻿
 <html lang="en">
-<!--
-
-Page    : index / MobApp
-Version : 1.0
-Author  : Colorlib
-URI     : https://colorlib.com
-
- -->
-
 <head>
-    <title>PINE</title>
-    <link rel="icon" href="img/pine_title.ico" type="image/x-icon" />
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Mobland - Mobile App Landing Page Template">
     <!-- Font -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
@@ -26,11 +11,9 @@ URI     : https://colorlib.com
     <link rel="stylesheet" href="css/public/owl.carousel.min.css">
     <link rel="stylesheet" href="css/public/fSelect.css">
     <link rel="stylesheet" href="css/public/jquery.dynatable.css">
-    <!-- <link rel="stylesheet" href="css/public/bulma.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"> -->
-
+    
     <!-- Main css -->
-    <!-- <link href="css/demo_style.css" rel="stylesheet"> -->
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
     <!-- upload -->
     <link href="css/upload/upload.css" rel="stylesheet">
     <!-- download -->
@@ -54,13 +37,22 @@ URI     : https://colorlib.com
     <!-- upload_demo -->
     <script src="js/upload/upload.js"></script>
     <!-- Management_demo -->
-    <!-- <script type="text/javascript" src="js/management/management_demo.js"></script> -->
+    <script type="text/javascript" src="js/management/management_demo.js"></script>
     <!-- Download_demo javascripts-->
-    <!-- <script type="text/javascript" src="js/download/download_demo.js"></script> -->
+    <script type="text/javascript" src="js/download/download_demo.js"></script>
     <!-- Analysis_demo javascripts + css -->
     <script type="text/javascript" src="js/analysis/list.js"></script>
-    <script type="text/javascript" src="js/add_list.js"></script>
-    
+    <!-- <script type="text/javascript" src="js/add_list.js"></script> -->
+    <!-- <script>
+        $(document).ready(function(){
+    // $("#column1").style
+            console.log($("#column1").css("display"));
+            $("#test").click(function(){
+                $("#column1").css("display", "");
+            });
+        });
+    </script>
+     -->
     
 </head>
 
@@ -80,8 +72,7 @@ URI     : https://colorlib.com
     
     <!---------------------------------------------------------------------------------------------->
     <div class="clearfix" id="web_content">
-        <!-- list-->
-        <div id="column1" style="display: none;">
+        <div id="column1">
             <div>
                 <ul class="listbar clearfix">
                     <li class="listitem clearfix"><a href="#Upload"> Upload</a>
@@ -135,6 +126,7 @@ URI     : https://colorlib.com
                 <div id="management"></div>
                 <div id="management_demo"></div>
             </div>
+        </div>
             
 
     <footer class=" text-center" id="footer_set">

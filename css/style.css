@@ -240,6 +240,7 @@ header {
     padding: 125px 0 0 0;
     text-align: center;
     color: #FFF;
+    height:100%;
 }
 /*********************************/
 .bg-gradient {
@@ -654,8 +655,8 @@ header {
 
 /*-----------------demo----------------------------*/
 #set_pine{
-    width: 10%;
-    height: 64px;
+    width: 13%;
+    /* height: 64px; */
     padding-top:10px;
 }
 .drop-shadow {
@@ -666,13 +667,15 @@ header {
 /*list*/
 /*list*/
 #column1{
-    width:15%;
+    /* display:inline; */
+    width:100%;
     height: 100%;
-    position: fixed;
+    /* position: fixed; */
     padding-top:3%;
     padding-left:2%;
     float: left;
     border-style: solid;
+    /* z-index:1; */
     border-width: 0 3px 0 0;
     border-color: rgb(248, 195, 205);
 }
@@ -712,9 +715,9 @@ li.listitem a:hover{
 
 #column2{
     margin-top:40px;
-    margin-left: 17%;
+    /* margin-left: 17%; */
     float:left;
-    width: 83%;
+    width: 60%;
 }
 
 #set_ath_img{
@@ -742,13 +745,25 @@ li.listitem a:hover{
 /*網頁縮小至768*/
 @media screen and (max-width: 920px) {
 
-    #set_pine{
+    /* #set_pine{
         width: 20%;
         height: 100px;
-    }
-    
+    } */
+}   
 
+#test123456{
+    margin-top:0px;
+    /* margin-left:200px; */
+    position: relative;
+    width: 15% !important;
+    height: 100%;
 }
 
+#demo_content123{
+    margin-left: 20%;
+}
+/* 
+.fixed-top{
 
+} */
 

@@ -1,13 +1,6 @@
 <!doctype html>
 <html lang="en">
-<!--
 
-Page    : index / MobApp
-Version : 1.0
-Author  : Colorlib
-URI     : https://colorlib.com
-
- -->
 
 <head>
     <title>PINE intro</title>
@@ -21,18 +14,38 @@ URI     : https://colorlib.com
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
+    <!-- public css-->
     <link rel="stylesheet" href="css/public/bootstrap.min.css">
-    <!-- Themify Icons -->
     <link rel="stylesheet" href="css/public/themify-icons.css">
-    <!-- Owl carousel -->
     <link rel="stylesheet" href="css/public/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/public/fSelect.css">
+    <link rel="stylesheet" href="css/public/jquery.dynatable.css">
+
     <!-- Main css -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- js -->
+    <!-- public javascript -->
     <script src="js/public/jquery-3.3.1.min.js"></script>
+    <script src="js/public/bootstrap.min.js"></script>
+    <script src="js/public/bootstrap.bundle.min.js"></script>
+    <script src="js/public/owl.carousel.min.js"></script>
+    <script src="js/public/jquery.dynatable.js"></script>
+    <script src="js/public/fSelect.js"></script>
+    <script src="js/public/d3.min.js"></script>
+    <script src="js/public/jszip.min.js"></script>
+    <script src="js/public/FileSaver.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bluebird/latest/bluebird.min.js"></script>
+
+    <!-- Main -->
+    <script src="js/script.js"></script>
+    <script src="js/add_list.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#demo_content123").load("demo2.html");
+            $("#test123456").load("list.html");
+            $("#demo_content123").load("wed_content.html");
+            
         })
     </script>
     
@@ -43,11 +56,12 @@ URI     : https://colorlib.com
 
     <!-- Nav Menu -->
 
-    <div class="nav-menu fixed-top" id="check_height">
+    <div class="nav-menu fixed-top">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <nav class="navbar navbar-dark navbar-expand-lg">
+                        
                             <img src="img/123.png" id="set_pine"  alt="logo"/>
                             <!--   -->
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
@@ -58,7 +72,6 @@ URI     : https://colorlib.com
                                 <li class="nav-item"> <a class="nav-link " href="https://140.115.54.213:9000">PINE Server</a> </li>
                                 
                                 <li class="nav-item"> <a class="nav-link" href="">Source on Github</a> </li>
-                                <!-- <li class="nav-item"><a href="#" class="btn btn-outline-light my-3 my-sm-0 ml-lg-3">Download</a></li> -->
                             </ul>
                         </div>
                     </nav>
@@ -69,18 +82,30 @@ URI     : https://colorlib.com
 
 
     <header class="bg-gradient" id="home">
-        <div class="container mt-5" id = "check_height2" >
+        <div class="container mt-5">
             <h2>Web-based Machine Learning Modeling
 in a Cyber-Physical System Construction Assistant</h2>
             <!-- <p class="tagline">The one and only solution for any kind of mobila app landing needs. Just change the screenshots and texts and you are good to go. </p> -->
         </div>
-        
-        <div class="img-holder" id="check_height3"><img id="position_pine set_ath_img" src="img/PINE.png"   alt="logo"/></div>
+        <!-- position_pine  -->
+        <div><img id="set_ath_img" src="img/PINE.png"   alt="logo"/></div>
     </header>
+    <!-- <div id = "list"></div> -->
+    
+    
+            <div id = "test123456"></div>
+            <div id = "demo_content123"></div>
+            
+    <!-- </div> -->
+    
 
-    <div id="demo_content123"></div>
-    <footer class="my-5 text-center">
-        <!-- Copyright removal is not prohibited! -->
+
+
+
+
+
+    <!-- <footer class="my-5 text-center">
+       
         <p class="mb-2"><small>COPYRIGHT © 2017. ALL RIGHTS RESERVED. MOBAPP TEMPLATE BY <a href="https://colorlib.com">COLORLIB</a></small></p>
 
         <small>
@@ -88,16 +113,7 @@ in a Cyber-Physical System Construction Assistant</h2>
             <a href="#" class="m-2">TERMS</a>
             <a href="#" class="m-2">PRIVACY</a>
         </small>
-    </footer>
-
-    <!-- jQuery and Bootstrap -->
-    <script src="js/public/jquery-3.2.1.min.js"></script>
-    <script src="js/public/bootstrap.bundle.min.js"></script>
-    <!-- Plugins JS -->
-    <script src="js/public/owl.carousel.min.js"></script>
-    <!-- Custom JS -->
-    <script src="js/script.js"></script>
-
+    </footer> -->
 
 </body>
 
