@@ -5,36 +5,37 @@ $(document).ready(function(){
     /*get windows size*/
     var w = $(window).width();
     var h = $(window).height();
-    
+    $("#test123456").css("height", h + "px");
+    $("#demo_content123").css("margin-top", -h + "px");
     /*windows reszie*/ 
     $(window).resize(function() {
         var w = $(window).width();
         var h = $(window).height();
     });
-
+    console.log($("header").height());
+    console.log($("#get_hight").height());
      
     $(window).scroll(function(){
         current_window = $(this).scrollTop();
-        // console.log("a", current_window);
+         console.log("a", current_window);
         
-        if(check == false && current_window >= add_list_var)
+        if(check == false && current_window >= $("header").height() + $("#get_hight").height())
         {
-            console.log("123");
+            console.log($("header").height());
+            console.log($("#get_hight").height());
             check = true;
-            var margin_top = 100 - h;
+            var margin_top = $("#get_hight").height() - h;
             $("#test123456").css("position", "fixed");
             $("#test123456").css("margin-top", margin_top + "px");
-
-            // $("#test123456").css("margin-left", "200px");
-            
-            // $("#demo_content123").css("margin-top", "0px");
-            // console.log($("#column1").css("display"));
+            $("#test123456").css("height", "100%");
+            $("#demo_content123").css("margin-top", "0px");
         }
-        else if(check == true && current_window < add_list_var)
+        else if(check == true && current_window < $("header").height() + $("#get_hight").height())
         {
-            console.log("456");
             $("#test123456").css("position", "relative");
-            $("#test123456").css("margin-top", "0px");
+            $("#test123456").css("margin-top", "0");
+            $("#test123456").css("height", h + "px");
+            $("#demo_content123").css("margin-top", -h + "px");
             check = false;
         }
     });

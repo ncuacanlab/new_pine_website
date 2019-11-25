@@ -722,7 +722,8 @@ li.listitem a:hover{
 
 #set_ath_img{
     width: 75%;
-    margin-left: 5%; 
+    margin-left: 5%;
+    margin-top: -25%; 
 }
 .content{
     padding-left: 5%; 
@@ -752,15 +753,22 @@ li.listitem a:hover{
 }   
 
 #test123456{
+    /* display:inline; */
     margin-top:0px;
+    margin-right:0px;
     /* margin-left:200px; */
     position: relative;
     width: 15% !important;
-    height: 100%;
+    
+    /* display:inline; */
+    
 }
 
 #demo_content123{
     margin-left: 20%;
+    width:100%;
+
+    /* height:1077px; */
 }
 /* 
 .fixed-top{
