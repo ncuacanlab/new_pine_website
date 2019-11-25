@@ -7,7 +7,6 @@ img {
     max-width: 100%
 }
 
-.button,
 a:hover,
 strong,
 table th {
@@ -3783,7 +3782,7 @@ a.box:active {
     padding: 10px
 }
 
-.nav-item a {
+.nav-item a{
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
@@ -4020,7 +4019,8 @@ a.nav-item.is-tab.is-active {
     flex-shrink: 0;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center
+    justify-content: center;
+    margin: 0 0
 }
 
 @media screen and (max-width:768px) {
@@ -4042,7 +4042,7 @@ a.nav-item.is-tab.is-active {
         flex-shrink: 0
     }
     .pagination ul {
-        margin-top: 10px
+        margin-top: 10px;
     }
 }
 

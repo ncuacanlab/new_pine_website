@@ -4,97 +4,289 @@
     <!-- <script type="text/javascript" src="../js/public/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../js/public/jquery.dynatable.js"></script>
     <script type="text/javascript" src="../js/public/fSelect.js"></script> -->
-    <script type="text/javascript" src="../js/management/management_demo.js"></script>
+    <script type="text/javascript" src="../management/js/management_demo.js"></script>
 
     <!-- <link rel="stylesheet" href="../css/public/bootstrap.min.css">
     <link rel="stylesheet" href="../css/public/fSelect.css">
     <link rel="stylesheet" href="../css/public/jquery.dynatable.css"> -->
-    <link rel="stylesheet" href="../css/public/edit.css">
+    <link rel="stylesheet" href="../management/css/management.css">
+    <link rel="stylesheet" href="../management/css/edit.css">
 </head>
 
 <body>
-    <div class="container">
-        <div id="man_demo" class="set_content_title_font_size">
-            Management demo
-        </div>
-        <br>
-        <div id="Management_page" class="container" style="display: '';">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <!-- Combobox -->
-                    <!-- <h1>Management</h1> -->
-                    <div class="box m-form">
-                        <div class="combobox">
-                            <div>
-                                <table id="my-table" class="table
+    <ul class="container">
+        <li>
+            <div>
+                <p class="set_content_title_font_size">
+                    <b><u>Management demo</u></b>
+                </p>
+            </div>
+            <br>
+            <div>
+                <div id="Management_page" class="container" style="display: '';">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <!-- Combobox -->
+                            <!-- <h1>Management</h1> -->
+                            <div class="box m-form">
+                                <div class="combobox">
+                                    <div id="dynatable_page">
+                                        <table id="my-table" class="table
                                         table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th data-dynatable-column="User" width="35%">
-                                                <a>User</a>
-                                            </th>
-                                            <th data-dynatable-column="Roles" width="65%">
-                                                <a>Roles</a>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td style="text-align: left;">
-                                                <a href="#Management_demo" onclick="Management_Edit(0)">
-                                                    <span>User1@test.com</span>
-                                                </a>
-                                            </td>
-                                            <td id="User1_Roles" style="text-align: left;">
-                                                group_1,group_3
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;">
-                                                <a href="#Management_demo" onclick="Management_Edit(1)">
-                                                    <span>User2@test.com</span>
-                                                </a>
-                                            </td>
-                                            <td id="User2_Roles" style="text-align: left;">
-                                                group_2,group_3
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                            <thead>
+                                                <tr>
+                                                    <th data-dynatable-column="User" width="35%">
+                                                        <a>User</a>
+                                                    </th>
+                                                    <th data-dynatable-column="Roles" width="65%">
+                                                        <a>Roles</a>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="text-align: left;">
+                                                        <a href="#Management_demo" onclick="Management_Edit(0)">
+                                                            <span>User1_1@test.com</span>
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: left;">
+                                                        <div style="display: inline;" value="group_1">group_1</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_2">group_2</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_3">group_3</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_4">group_4</div>
+                                                        <div style="display: none;">,</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left;">
+                                                        <a href="#Management_demo" onclick="Management_Edit(1)">
+                                                            <span>User1_2@test.com</span>
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: left;">
+                                                        <div style="display: inline;" value="group_1">group_1</div>
+                                                        <div style="display: inline;">,</div>
+                                                        <div style="display: inline;" value="group_2">group_2</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_3">group_3</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_4">group_4</div>
+                                                        <div style="display: none;">,</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left;">
+                                                        <a href="#Management_demo" onclick="Management_Edit(2)">
+                                                            <span>User1_3@test.com</span>
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: left;">
+                                                        <div style="display: inline;" value="group_1">group_1</div>
+                                                        <div style="display: inline;">,</div>
+                                                        <div style="display: inline;" value="group_2">group_2</div>
+                                                        <div style="display: inline;">,</div>
+                                                        <div style="display: inline;" value="group_3">group_3</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_4">group_4</div>
+                                                        <div style="display: none;">,</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left;">
+                                                        <a href="#Management_demo" onclick="Management_Edit(3)">
+                                                            <span>User2_1@test.com</span>
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: left;">
+                                                        <div style="display: none;" value="group_1">group_1</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: inline;" value="group_2">group_2</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_3">group_3</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_4">group_4</div>
+                                                        <div style="display: none;">,</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left;">
+                                                        <a href="#Management_demo" onclick="Management_Edit(4)">
+                                                            <span>User2_2@test.com</span>
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: left;">
+                                                        <div style="display: inline;" value="group_1">group_1</div>
+                                                        <div style="display: inline;">,</div>
+                                                        <div style="display: inline;" value="group_2">group_2</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_3">group_3</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_4">group_4</div>
+                                                        <div style="display: none;">,</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left;">
+                                                        <a href="#Management_demo" onclick="Management_Edit(5)">
+                                                            <span>User2_3@test.com</span>
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: left;">
+                                                        <div style="display: inline;" value="group_1">group_1</div>
+                                                        <div style="display: inline;">,</div>
+                                                        <div style="display: inline;" value="group_2">group_2</div>
+                                                        <div style="display: inline;">,</div>
+                                                        <div style="display: inline;" value="group_3">group_3</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_4">group_4</div>
+                                                        <div style="display: none;">,</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left;">
+                                                        <a href="#Management_demo" onclick="Management_Edit(6)">
+                                                            <span>User3_1@test.com</span>
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: left;">
+                                                        <div style="display: none;" value="group_1">group_1</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_2">group_2</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: inline;" value="group_3">group_3</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_4">group_4</div>
+                                                        <div style="display: none;">,</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left;">
+                                                        <a href="#Management_demo" onclick="Management_Edit(7)">
+                                                            <span>User3_2@test.com</span>
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: left;">
+                                                        <div style="display: inline;" value="group_1">group_1</div>
+                                                        <div style="display: inline;">,</div>
+                                                        <div style="display: none;" value="group_2">group_2</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: inline;" value="group_3">group_3</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_4">group_4</div>
+                                                        <div style="display: none;">,</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left;">
+                                                        <a href="#Management_demo" onclick="Management_Edit(8)">
+                                                            <span>User3_3@test.com</span>
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: left;">
+                                                        <div style="display: inline;" value="group_1">group_1</div>
+                                                        <div style="display: inline;">,</div>
+                                                        <div style="display: inline;" value="group_2">group_2</div>
+                                                        <div style="display: inline;">,</div>
+                                                        <div style="display: inline;" value="group_3">group_3</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_4">group_4</div>
+                                                        <div style="display: none;">,</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left;">
+                                                        <a href="#Management_demo" onclick="Management_Edit(9)">
+                                                            <span>User4_1@test.com</span>
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: left;">
+                                                        <div style="display: none;" value="group_1">group_1</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_2">group_2</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_3">group_3</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: inline;" value="group_4">group_4</div>
+                                                        <div style="display: none;">,</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left;">
+                                                        <a href="#Management_demo" onclick="Management_Edit(10)">
+                                                            <span>User4_2@test.com</span>
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: left;">
+                                                        <div style="display: inline;" value="group_1">group_1</div>
+                                                        <div style="display: inline;">,</div>
+                                                        <div style="display: none;" value="group_2">group_2</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: none;" value="group_3">group_3</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: inline;" value="group_4">group_4</div>
+                                                        <div style="display: none;">,</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left;">
+                                                        <a href="#Management_demo" onclick="Management_Edit(11)">
+                                                            <span>User4_3@test.com</span>
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: left;">
+                                                        <div style="display: inline;" value="group_1">group_1</div>
+                                                        <div style="display: inline;">,</div>
+                                                        <div style="display: inline;" value="group_2">group_2</div>
+                                                        <div style="display: inline;">,</div>
+                                                        <div style="display: none;" value="group_3">group_3</div>
+                                                        <div style="display: none;">,</div>
+                                                        <div style="display: inline;" value="group_4">group_4</div>
+                                                        <div style="display: none;">,</div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Combobox -->
+                        </div>
+                    </div>
+                </div>
+                <div id="Edit_page" class="container" style="display:none">
+                    <div class="d-flex flex-column justify-content-center
+                    align-items-center">
+                        <div class="col-sm-6 col-md-4 col-md-offset-4">
+                            <div class="account-wall">
+                                <h2 class="text-center h2">Edit User</h2>
+                                <div class="user-info">
+                                    <h6>Username</h6>
+                                    <input id="Edit_page_Username" type="text" class="targetUser" disabled value="" />
+                                    <h6>Roles</h6>
+                                    <select id="roles" multiple="multiple">
+                                        <option value="group_1" selected>group_1</option>
+                                        <option value="group_2" selected>group_2</option>
+                                        <option value="group_3" selected>group_3</option>
+                                        <option value="group_4" selected>group_4</option>
+                                    </select>
+                                </div>
+                                <form class="form-update">
+                                    <a onclick="Management_Update()" class="btn
+                                    btn-lg btn-primary btn-block" href="#Management_demo" style="margin-bottom: 20px; color:
+                                    aliceblue;;">Update</a>
+                                </form>
+                                <a href="#Management_demo" onclick="Management_Cancel()">Cancel</a>
                             </div>
                         </div>
                     </div>
-                    <!-- Combobox -->
                 </div>
             </div>
-        </div>
-        <div id="Edit_page" class="container" style="display:none">
-            <div class="d-flex flex-column justify-content-center
-                    align-items-center">
-                <div class="col-sm-6 col-md-4 col-md-offset-4">
-                    <div class="account-wall">
-                        <h2 class="text-center h2">Edit User</h2>
-                        <div class="user-info">
-                            <h6>Username</h6>
-                            <input id="Edit_page_Username" type="text" class="targetUser" disabled value="" />
-                            <h6>Roles</h6>
-                            <select id="roles" multiple="multiple">
-                                <option value="group_1" selected>group_1</option>
-                                <option value="group_2" selected>group_2</option>
-                                <option value="group_3" selected>group_3</option>
-                            </select>
-                        </div>
-                        <form class="form-update">
-                            <a onclick="Management_Update()" class="btn
-                                    btn-lg btn-primary btn-block" href="#Management_demo" style="margin-bottom: 20px; color:
-                                    aliceblue;;">Update</a>
-                        </form>
-                        <a href="#Management_demo" onclick="Management_Cancel()">Cancel</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        </li>
+    </ul>
 </body>
 
 </html>
