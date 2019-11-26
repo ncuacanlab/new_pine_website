@@ -23,3 +23,14 @@ function changeState(next) {
     obj = document.getElementById("state" + next);
     obj.style.display = "inline";
 }
+function wait5(newState) {
+    setTimeout(function () {
+        if (newState == -1) {
+            alert('VIDEO HAS STOPPED');
+        }
+    }, 5000);
+    let obj = document.getElementById("analWord");
+    obj.style.display = "none";
+    let obj = document.getElementById("analData");
+    obj.style.display = "in-line";
+}
