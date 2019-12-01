@@ -11,18 +11,22 @@ URI     : https://colorlib.com
 
 <head>
 
-    <script type="text/javascript" src="js/list.js"></script>
+    <script type="text/javascript" src="analysis/js/list.js"></script>
     <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="js/tabulator.min.js"></script>
-    <script type="text/javascript" src="js/all.min.js"></script>
-    <script type="text/javascript" src="js/plotly-latest.min.js"></script>
-    <script type="text/javascript" src="js/jszip.min.js"></script>
-    <script type="text/javascript" src="js/FileSaver.min.js"></script>
-    <link rel="stylesheet" href="css/analysis.css">
-    <link rel="stylesheet" href="css/tabulator.min.css">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/bs-stepper.css">
-    <link rel="stylesheet" href="css/a.css">
+    <script type="text/javascript" src="analysis/js/tabulator.min.js"></script>
+    <script type="text/javascript" src="analysis/js/all.min.js"></script>
+    <script type="text/javascript" src="analysis/js/plotly-latest.min.js"></script>
+    <script type="text/javascript" src="analysis/js/jszip.min.js"></script>
+    <script type="text/javascript" src="analysis/js/FileSaver.min.js"></script>
+    <script type="text/javascript" src="analysis/js/analDownload_demo.js"></script>
+    <link rel="stylesheet" href="analysis/css/analysis.css">
+    <link rel="stylesheet" href="analysis/css/tabulator.min.css">
+    <link rel="stylesheet" href="analysis/css/all.min.css">
+    <link rel="stylesheet" href="analysis/css/bs-stepper.css">
+    <link rel="stylesheet" href="analysis/css/a.css">
+
+
+    
 </head>
 
 <body data-spy="scroll" data-target="#navbar" data-offset="30">
@@ -51,12 +55,12 @@ URI     : https://colorlib.com
                 Figure 6 analysis interface, is divided into four steps: “Data selecting”, “Preprocessing”, “Training”, and “Results presenting”. “Data selection” is responsible for selecting data, “Preprocessing” is responsible for data pre-processing, “Training” is responsible for data analysis, and “Resulting presenting” is responsible for displaying analysis results.
             </p>
             <p class="content">
-                Suppose the analyst wants to use ”A相有功”,”A相視在”,”B相有功”,”B相視在”,”C相有功”,”C相視在”six parameters to predict" 總功率因數”, it is only required to select six parameters in the training data tab and press the search button. As shown in Figure 6 and Figure 7.
+                Suppose the analyst wants to use ”A phase active power”,”A phase apparent”,”B phase active power”,”B phase apparent”,”C phase active power”,”C phase apparent”six parameters to predict"total power factor”, it is only required to select six parameters in the training data tab and press the search button. As shown in Figure 6 and Figure 7.
             </p>
             <img class="content set_upload_page"
                  src="img/F7.png">
             <p class="pic_content">
-                Figure 7 the training data tab. The parameters selected through the “Select attributes” field are displayed at the “Attribute selected” field below. Here we choose ”A相有功”,”A相視在”,”B相有功”,”B相視在”,”C相有功”,”C相視在”.
+                Figure 7 the training data tab. The parameters selected through the “Select attributes” field are displayed at the “Attribute selected” field below. Here we choose ”A phase active power”,”A phase apparent”,”B phase active power”,”B phase apparent”,”C phase active power”,”C phase apparent”.
             </p>
             <img class="content set_upload_page"
                  src="img/F8.png">
@@ -64,7 +68,7 @@ URI     : https://colorlib.com
                 Figure 8 the results of the“training data Search”. In the “Field” field, you can set the parameters (fields) to be filtered. The “Type” field can be set how the way to be filtered(greater than, less than, equal to), and the “Value” is the value to be filtered.
             </p>
             <p class="content">
-                Then select the "總功率因數" in the “label data” tab and press the “search” button to complete the data selection, as shown in Figure 8 and Figure 9.
+                Then select the "total power factor" in the “label data” tab and press the “search” button to complete the data selection, as shown in Figure 8 and Figure 9.
             </p>
             <img class="content set_upload_page"
                  src="img/F9.png">
@@ -96,7 +100,7 @@ URI     : https://colorlib.com
                 Then press “Next” to the “Training” step. First, you must first set the data ratio of “train” and “validation” and what method to use for segmenting
                 After the selection, select category, layer, “batch_size" and “epoch”.
                 After the selection, four fields (layer + output layer) will be displayed, the first three layers can be set to “neuron_num”, “activation” and “dropout”, and the fourth layer can be set to “output_num” and “activation”.
-                Finally, press the “train” button. Pressing the “download” button, the trained model can be downloaded.
+                Finally, press the “train” button. Pressing the “analDownload” button, the trained model can be analDownloaded.
 
             </p>
 
@@ -127,7 +131,7 @@ URI     : https://colorlib.com
                 <div class="step" v-bind:class="{active: step==1}">
                     <button class="btn btn-link">
                         <div class="row">
-                            <span class="bs-stepper-circle" style="margin: auto;">1</span>
+                            <span class="bs-stepper-circle" style="margin: auto;" id="step1">1</span>
                             <span class="bs-stepper-label" style="margin: auto;">Data selecting</span>
                         </div>
                     </button>
@@ -136,7 +140,7 @@ URI     : https://colorlib.com
                 <div class="step" v-bind:class="{active: step==2}">
                     <button class="btn btn-link">
                         <div class="row">
-                            <span class="bs-stepper-circle" style="margin: auto;">2</span>
+                            <span class="bs-stepper-circle" style="margin: auto;" id="step2">2</span>
                             <span class="bs-stepper-label" style="margin: auto;">Preprocessing</span>
                         </div>
                     </button>
@@ -145,7 +149,7 @@ URI     : https://colorlib.com
                 <div class="step" v-bind:class="{active: step==3}">
                     <button class="btn btn-link">
                         <div class="row">
-                            <span class="bs-stepper-circle" style="margin: auto;">3</span>
+                            <span class="bs-stepper-circle" style="margin: auto;" id="step3">3</span>
                             <span class="bs-stepper-label" style="margin: auto;">Analysing</span>
                         </div>
                     </button>
@@ -154,7 +158,7 @@ URI     : https://colorlib.com
                 <div class="step" v-bind:class="{active: step==4}">
                     <button class="btn btn-link">
                         <div class="row">
-                            <span class="bs-stepper-circle" style="margin: auto;">4</span>
+                            <span class="bs-stepper-circle" style="margin: auto;" id="step4">4</span>
                             <span class="bs-stepper-label" style="margin: auto;">Results presenting</span>
                         </div>
                     </button>
@@ -166,50 +170,122 @@ URI     : https://colorlib.com
             <!-- 33-->
             
             <!--  33-->
+            <div class="hhh">
+                <button id ="b11"  onclick="modeC(1,1)"><strong>training data</strong></button>
+                <button id ="b12"  onclick="modeC(1,2)"><strong>label data</strong></button>
+            </div>
+            <br><br>
+            
+
             <div class="box m-form">
-            <div style="display:inline-block">
+            <div style="display:inline-block" >
                 <h5 class="label">
                     Select table
                 </h5>
                 <form>
-                    <select>
-                        <option value="1">test1</option>
-                        <option value="2">test2</option>
-                        <option value="3">test3</option>
-                        <option value="4">test4</option>
+                    <select onchange="">
+                        <option style="display:none;"></option>
+                        <option>User Table</option>
                     </select>
                 </form>
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div style="display:inline-block">
+            <div style="display:inline-block" >
                 <h5 class="label">
                     Select attributes
                 </h5>
                 <form>
-                    <select>
-                        <option value="1">test1</option>
-                        <option value="2">test2</option>
-                        <option value="3">test3</option>
-                        <option value="4">test4</option>
+                    <select id="attr" onchange="selectItemm()" >
+                        <option style="display:none;"></option>
+                        <option>item1</option>
+                        <option>item2</option>
+                        <option>item3</option>
+
                     </select>
                 </form>
             </div >
             </div>
             <div class="box m-form">
-            <h5 class="label"> 
-                Attribute selected
+            <h5 class="label" id="attriu"> 
+                0 attribute selected
             </h5>
-            <button class="btn btn-success" style="display:inline-block">clear</button>
-            
-            <button class="btn btn-success" style="float:right" >search</button>
+            <div>
+            <button class="blackB" id="item1" onclick="dis(1)">item1 x</button>
+            <button class="blackB" id="item2" onclick="dis(2)">item2 x</button>
+            <button class="blackB" id="item3" onclick="dis(3)">item3 x</button>
             </div>
+            <br>
+            <button class="btn btn-success" style="display:inline-block" onclick="clearr()">clear</button>
             
-            <button class="btn btn-success" style="float:right" onclick="changeState(2)">next</button>
-            
+            <button class="btn btn-success"  style="float:right" onclick="showt('lissss')">search</button>
+            </div>
+            <div class="dis" id ="lissss">
+            <div class="box m-form">
+                <table class="ser">
+                    <col width="100">
+                    <col width="10">
+                    <col width="1000">
+                    <tr>
+                      <th>voltage</th>
+                      <th>time</th>
+                      <th> </th>
+                    </tr>
+                    <tr>
+                      <td>0.3</td>
+                      <td>20180503143041</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>0.7</td>
+                      <td>20180503143042</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>0.8</td>
+                      <td>20180503143043</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>0.9</td>
+                      <td>20180503143044</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>0.4</td>
+                      <td>20180503143045</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>0.96</td>
+                      <td>20180503143046</td>
+                      <td></td>
+                    </tr>
+                  </table>
+                  <div class="page" style="float:right">
+                        <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>&nbsp;&nbsp;next&nbsp;&nbsp;</button><button>&nbsp;&nbsp;last&nbsp;&nbsp;</button>
+                        
+                  </div>
+                  <br>
+                  
+            </div>
+            </div>
+            <br>
+        <!--end-->
+        <button class="btn btn-success" style="float:right" onclick="changeState(2)">next</button>
         </div>
-        <br>
+        
+            
+        
+        
         <!--stage 2-->
-        <div class="dis" id="state2" >
+        
+        <div class="dis pp" id="state2" >
+            <div class="hhh">
+                <button id ="b21"  onclick="modeC(2,1)"><strong>training data</strong></button>
+                <button id ="b22"  onclick="modeC(2,2)"><strong>label data</strong></button>
+            </div>
+            <br><br>
+            
             <div  class="box m-form">
             <h5 class="label">
                 Select preprocessing
@@ -225,15 +301,60 @@ URI     : https://colorlib.com
                 </form>
             </div>
             <div  style="float:right">
-                <button class="btn btn-success" >process</button>
+                <button class="btn btn-success" onclick="showt('liss')">process</button>
             </div>
             </div>
+            <div class = "dis" id ="liss">
+                <div class="box m-form">
+                    <table class="ser">
+                        <col width="100">
+                        <col width="10">
+                        <col width="1000">
+                        <tr>
+                          <th>voltage</th>
+                          <th>time</th>
+                          <th> </th>
+                        </tr>
+                        <tr>
+                          <td>0.3</td>
+                          <td>20180503143041</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>0.7</td>
+                          <td>20180503143042</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>0.8</td>
+                          <td>20180503143043</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>0.9</td>
+                          <td>20180503143044</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>0.4</td>
+                          <td>20180503143045</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>0.96</td>
+                          <td>20180503143046</td>
+                          <td></td>
+                        </tr>
+                      </table>
+                </div>
+                </div>
             
+            <br>
             <button class="btn btn-success" onclick="changeState(1)">previous</button>
             <button class="btn btn-success" onclick="changeState(3)" style="float:right">next</button>
         </div>
         <!--stage 3-->
-        <div class="dis" id="state3">
+        <div class="dis pp" id="state3">
             <div  class="box m-form">
             <div>
                 <h5 class="label">Select analysis type</h5>
@@ -261,7 +382,7 @@ URI     : https://colorlib.com
             </div>
 
             <div class="dis" id="stage2">
-            <div  class="">
+            <div  class="box m-form">
                 <h5 class="label">validation</h5>
                 <form>
                     <select name="YourLocation">
@@ -270,68 +391,77 @@ URI     : https://colorlib.com
                     </select>
                 </form>
             </div>
+            </div>
+            
             <div class="dis" id="stage3">
+            <div  class="box m-form">
                 <h5 class="label">C</h5>
                 <form>
                     <input type="number" step="0.001" required="required">
                 </form>
             </div>
+            </div>
             <div class="dis" id="stage4">
+                    <div  class="box m-form">
                 <h5 class="label">kernel</h5>
                 <form>
-                    <select name="YourLocation">
+                    <select name="">
                         <option>test1</option>
                         <option>test2</option>
                     </select>
                 </form>
-            </div>
+            </div></div>
             <div class="dis" id="stage5">
+                    <div  class="box m-form">
                 <h5 class="label">degree</h5>
                 <form>
                     <input type="number" step="1" required="required">
                 </form>
-            </div>
+            </div></div>
             <div class="dis" id="stage6">
+                    <div  class="box m-form">
                 <h5 class="label">gamma</h5>
                 <form>
                     <input type="number" step="0.001" required="required">
                 </form>
-            </div>
+            </div></div>
             <div class="dis" id="stage7">
+                    <div  class="box m-form">
                 <h5 class="label">shrinking</h5>
                 <form>
                     <input type="checkbox" >true
                 </form>
-            </div>
+            </div></div>
             <div class="dis" id="stage8">
+                    <div  class="box m-form">
                 <h5 class="label">decision_function_shape</h5>
                 <form>
-                    <select name="YourLocation">
+                    <select >
                         <option>test1</option>
                         <option>test2</option>
                     </select>
                 </form>
-            </div>
-            </div>
-
+            </div></div>
+            
+        <br>
             <button class="btn btn-success" onclick="changeState(2)">previous</button>
             <button class="btn btn-success" onclick="changeState(4)" style="float:right">next</button>
         </div>
  
         <!--stage 4-->
-        <div class="dis" id="state4">
+        <div class="dis pp" id="state4">
             <h5 class="label" id="analWord">
                 Analysing...
             </h5>
             <h5 class="dis" id="analData">
-                    {"train_loss": 0000000000000
-                     "train_accuracy": 000000000000000
-                     "validation_loss": 000000000000000
-                     "validation_accuracy: 00000000000000000"}
-                </h5>
-            <script>
-                wait5(1);
-            </script>
+                <pre>
+    {       "train_loss": 0000000000000
+            "train_accuracy": 000000000000000
+            "validation_loss": 000000000000000
+            "validation_accuracy": 00000000000000000
+    }
+                </pre>
+            </h5>
 
             <button class="btn btn-success" onclick="changeState(3)">previous</button>
         </div>
