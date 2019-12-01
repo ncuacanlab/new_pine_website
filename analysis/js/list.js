@@ -73,8 +73,10 @@ function clearr() {
 }
 function showt(idd) {
     
-    aa = document.getElementById(idd);
-    aa.style.display = "inline";
+    if(selected !== 0){
+        aa = document.getElementById(idd);
+        aa.style.display = "inline";
+    }
     
 }
 
