@@ -1,0 +1,35 @@
+/*-------------------------------*/
+
+/*           Wrappers            */
+
+/*-------------------------------*/
+
+.combobox {
+  float: center;
+}
+
+.combobox select {
+  top: 100px;
+  width: 150px;
+  height: 26px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.dropbox h2 {
+  position: relative;
+  top: 140px;
+}
+
+.m-form {
+  margin-top: 10px;
+}
+
+.p-4 {
+  text-align: center;
+}
+
+.btn-danger {
+  position: relative;
+  left: 4px;
+}

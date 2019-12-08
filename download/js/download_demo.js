@@ -120,6 +120,7 @@ function Download_refreshPage() {
         }
 
         var page_block = document.getElementById("Download_page");
+        console.log(page_block.children);
         for (var i = 0; i < page_block.children.length;) {
             if (page_block.children[i].value == 0) {
                 page_block.removeChild(page_block.children[i]);

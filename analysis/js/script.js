@@ -53,14 +53,58 @@ $(function() {
     // Select all links with hashes
 
     /**--------------------------------------------------*/
+      $('a[href="#Upload"]').click(function() {
+                $("html, body").animate({
+                    scrollTop:($("#upload").offset().top-125)
+                }, "show");
+                
+        });
 
-    $('a[href="#document"]').click(function() {
-        $("html, body").animate({
-            scrollTop:($("#demo").offset().top-$("#get_hight").height())
-        }, "show");
-    });
+      $('a[href="#Upload_demo"]').click(function() {
+                $("html, body").animate({
+                    scrollTop:($("#upload_demo").offset().top-125)
+                }, "show");
+                
+        });
 
+      $('a[href="#Raw"]').click(function() {
+                $("html, body").animate({
+                    scrollTop:($("#raw").offset().top-125)
+                }, "show");
+        });
 
+      $('a[href="#Download"]').click(function() {
+                $("html, body").animate({
+                    scrollTop:($("#download").offset().top-150)
+                }, "show");
+        });
+
+      $('a[href="#Download_demo"]').click(function() {
+                $("html, body").animate({
+                    scrollTop:($("#download_demo").offset().top-125)
+                }, "show");
+        });
+
+      $('a[href="#Analysis"]').click(function() {
+                $("html, body").animate({
+                    scrollTop:($("#ana").offset().top-125)
+                }, "show");
+        });
+    $('a[href="#Managment"]').click(function() {
+                $("html, body").animate({
+                    scrollTop:($("#management").offset().top-125)
+                }, "show");
+        });
+    $('a[href="#Management_demo"]').click(function() {
+                $("html, body").animate({
+                    scrollTop:($("#management_demo").offset().top-125)
+                }, "show");
+        });
+    $('a[href="#Analysis_demo"]').click(function() {
+                $("html, body").animate({
+                    scrollTop:($("#ana_demo").offset().top-125)
+                }, "show");
+        });
            
     $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').not('[data-toggle="tab"]').on('click', function(event) {
         // On-page links
