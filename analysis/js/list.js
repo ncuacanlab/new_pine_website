@@ -1,3 +1,5 @@
+
+
 function appear(a) {
             if (a === 1) {
                 let obj = document.getElementById("stage1");
@@ -51,6 +53,22 @@ function wait5(newState) {
 function selectItemm() {
     var table = document.getElementById("attr");
     var item = table.options[table.selectedIndex].value;
+    if(item === 'item1'){
+        if(items[0] === 1){
+            return;
+        }
+        items[0] = 1;
+    }else if(item === 'item2'){
+        if(items[1] === 1){
+            return;
+        }
+        items[1] = 1;
+    }else{
+        if(items[2] === 1){
+            return;
+        }
+        items[2] = 1;
+    }
     table.options[0].selected = true;
     aa = document.getElementById(item);
     aa.style.display = "inline";
@@ -61,6 +79,13 @@ function dis(b) {
     aa = document.getElementById("item" + b);
     aa.style.display = "none";
     selected-=1;
+    if("item" + b === 'item1'){
+        items[0] = 0;
+    }else if("item" + b === 'item2'){
+        items[1] = 0;
+    }else{
+        items[2] = 0;
+    }
     document.getElementById("attriu").textContent = selected +" attribute selected";
 }
 function clearr() {
@@ -72,12 +97,33 @@ function clearr() {
     document.getElementById("attriu").textContent = "0 attribute selected";
 }
 function showt(idd) {
-    
+    colnow = 0;
     if(selected !== 0){
         aa = document.getElementById(idd);
         aa.style.display = "inline";
+        var tb = document.getElementById('tabb');
+        
+        for(let i = 0; i<=2; i++){
+            
+                for (var k = 0; k <=6; k++) {
+                    tb.rows[k].cells[i].innerHTML='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+                }
+        }
+
+
+        for(let i = 0; i<=2; i++){
+            
+            if(items[i] > 0){
+                tb.rows[0].cells[colnow].innerHTML='item'+(i+1);
+                for (var k = 1; k <=6; k++) {
+                    tb.rows[k].cells[colnow].innerHTML=Math.random().toFixed(9)+'';
+                }
+                colnow = colnow +1;
+            }
+            
+        }
     }
-    
+    colnow = 0;
 }
 
 function modeC(now,tab) {
