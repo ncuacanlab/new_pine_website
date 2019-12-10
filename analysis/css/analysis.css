@@ -12,7 +12,7 @@ margin-top: 10px;
   padding: 20px;
 background-color: white
 }
-.box::after{
+.albox::after{
 display: block;
 clear: both;
 }
