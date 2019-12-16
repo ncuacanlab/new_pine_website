@@ -5,22 +5,19 @@ $(document).ready(function(){
     /*get windows size*/
     var w = $(window).width();
     var h = $(window).height();
-    console.log(h);
+    
     $("#test123456").css("height", h + "px");
     $("#demo_content123").css("margin-top", -h + "px");
     /*windows reszie*/ 
     $(window).resize(function() {
-        var w = $(window).width();
-        var h = $(window).height();
-        console.log(h)
+        w = $(window).width();
+        h = $(window).height();
+        
     });
-    console.log($("header").height());
-
-    console.log($("#home").height());
-    console.log($("#get_hight").height());
+    
      
     $(window).scroll(function(){
-        console.log("a", current_window);
+        
         current_window = $(this).scrollTop();
         
         
