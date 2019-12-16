@@ -13,6 +13,7 @@ URI     : https://colorlib.com
 
     <script type="text/javascript" src="analysis/js/list.js"></script>
     <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <script type="text/javascript" src="analysis/js/tabulator.min.js"></script>
     <script type="text/javascript" src="analysis/js/all.min.js"></script>
     <script type="text/javascript" src="analysis/js/plotly-latest.min.js"></script>
@@ -177,7 +178,7 @@ URI     : https://colorlib.com
             <br><br>
             
 
-            <div class="box m-form">
+            <div class="albox alm-form">
             <div style="display:inline-block" >
                 <h5 class="label">
                     Select table
@@ -205,7 +206,7 @@ URI     : https://colorlib.com
                 </form>
             </div >
             </div>
-            <div class="box m-form">
+            <div class="albox alm-form">
             <h5 class="label" id="attriu"> 
                 0 attribute selected
             </h5>
@@ -220,44 +221,44 @@ URI     : https://colorlib.com
             <button class="btn btn-success"  style="float:right" onclick="showt('lissss')">search</button>
             </div>
             <div class="dis" id ="lissss">
-            <div class="box m-form">
-                <table class="ser">
-                    <col width="100">
-                    <col width="10">
-                    <col width="1000">
+            <div class="albox alm-form">
+                <table class="ser" id ="tabb">
+                    <col id ="ritem1" width="100">
+                    <col id ="ritem2" width="10">
+                    <col id ="ritem3" width="1000">
                     <tr>
-                      <th>voltage</th>
-                      <th>time</th>
+                      <th> </th>
+                      <th> </th>
                       <th> </th>
                     </tr>
                     <tr>
-                      <td>0.3</td>
-                      <td>20180503143041</td>
+                      <td> </td>
+                      <td> </td>
                       <td></td>
                     </tr>
                     <tr>
-                      <td>0.7</td>
-                      <td>20180503143042</td>
+                      <td> </td>
+                      <td> </td>
                       <td></td>
                     </tr>
                     <tr>
-                      <td>0.8</td>
-                      <td>20180503143043</td>
+                      <td> </td>
+                      <td> </td>
                       <td></td>
                     </tr>
                     <tr>
-                      <td>0.9</td>
-                      <td>20180503143044</td>
+                      <td> </td>
+                      <td> </td>
                       <td></td>
                     </tr>
                     <tr>
-                      <td>0.4</td>
-                      <td>20180503143045</td>
+                      <td> </td>
+                      <td> </td>
                       <td></td>
                     </tr>
                     <tr>
-                      <td>0.96</td>
-                      <td>20180503143046</td>
+                      <td> </td>
+                      <td></td>
                       <td></td>
                     </tr>
                   </table>
@@ -286,7 +287,7 @@ URI     : https://colorlib.com
             </div>
             <br><br>
             
-            <div  class="box m-form">
+            <div  class="albox alm-form">
             <h5 class="label">
                 Select preprocessing
             </h5>
@@ -305,7 +306,7 @@ URI     : https://colorlib.com
             </div>
             </div>
             <div class = "dis" id ="liss">
-                <div class="box m-form">
+                <div class="albox alm-form">
                     <table class="ser">
                         <col width="100">
                         <col width="10">
@@ -355,7 +356,7 @@ URI     : https://colorlib.com
         </div>
         <!--stage 3-->
         <div class="dis pp" id="state3">
-            <div  class="box m-form">
+            <div  class="albox alm-form">
             <div>
                 <h5 class="label">Select analysis type</h5>
                 <form>
@@ -370,7 +371,7 @@ URI     : https://colorlib.com
             </div>
             
             <div class="dis" id="stage1">
-            <div  class="box m-form">
+            <div  class="albox alm-form">
                 <h5 class="label">Select model</h5>
                 <form>
                     <select name="YourLocation" onchange="appear(2)">
@@ -382,7 +383,7 @@ URI     : https://colorlib.com
             </div>
 
             <div class="dis" id="stage2">
-            <div  class="box m-form">
+            <div  class="albox alm-form">
                 <h5 class="label">validation</h5>
                 <form>
                     <select name="YourLocation">
@@ -394,7 +395,7 @@ URI     : https://colorlib.com
             </div>
             
             <div class="dis" id="stage3">
-            <div  class="box m-form">
+            <div  class="albox alm-form">
                 <h5 class="label">C</h5>
                 <form>
                     <input type="number" step="0.001" required="required">
@@ -402,7 +403,7 @@ URI     : https://colorlib.com
             </div>
             </div>
             <div class="dis" id="stage4">
-                    <div  class="box m-form">
+                    <div  class="albox alm-form">
                 <h5 class="label">kernel</h5>
                 <form>
                     <select name="">
@@ -412,28 +413,28 @@ URI     : https://colorlib.com
                 </form>
             </div></div>
             <div class="dis" id="stage5">
-                    <div  class="box m-form">
+                    <div  class="albox alm-form">
                 <h5 class="label">degree</h5>
                 <form>
                     <input type="number" step="1" required="required">
                 </form>
             </div></div>
             <div class="dis" id="stage6">
-                    <div  class="box m-form">
+                    <div  class="albox alm-form">
                 <h5 class="label">gamma</h5>
                 <form>
                     <input type="number" step="0.001" required="required">
                 </form>
             </div></div>
             <div class="dis" id="stage7">
-                    <div  class="box m-form">
+                    <div  class="albox alm-form">
                 <h5 class="label">shrinking</h5>
                 <form>
                     <input type="checkbox" >true
                 </form>
             </div></div>
             <div class="dis" id="stage8">
-                    <div  class="box m-form">
+                    <div  class="albox alm-form">
                 <h5 class="label">decision_function_shape</h5>
                 <form>
                     <select >
