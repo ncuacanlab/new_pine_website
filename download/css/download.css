@@ -17,11 +17,18 @@
 .combobox1{
 	margin-bottom: 10px;
 	margin-right: 10px;
-	height:0;
+  height:0;
 }
 
 .downloadbtn{
-	float: right;
+  margin-top: 5px;
+  float: right;
+}
+
+@media screen and (max-width: 1200px){
+  .btn{
+    margin-top: 5px
+  }
 }
 
 .combobox1 select{
