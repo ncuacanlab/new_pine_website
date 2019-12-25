@@ -38,6 +38,7 @@ function changeState(next) {
     if(next === 4){
         wait5(1);
     }
+
 }
 
 function wait5(newState) {
@@ -92,6 +93,9 @@ function clearr() {
     for (let i = 1; i <= 3; i++) {
         aa = document.getElementById("item" + i);
         aa.style.display = "none";
+    }
+    for (let i = 0; i <= 2; i++) {
+        items[i] = 0;
     }
     selected = 0;
     document.getElementById("attriu").textContent = "0 attribute selected";
