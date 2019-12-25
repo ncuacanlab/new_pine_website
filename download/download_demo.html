@@ -30,8 +30,8 @@
                     <!-- Select attributes下方第一個combobox功能:"選擇table" -->
                     <div class="combobox1">
                         <label class="Download-label">Select attributes</label>
-                        <select onchange="Download_selectTable()">
-                            <option style="display:none;"></option>
+                        <select onchange="Download_selectTable()" style="width:115px;">
+                            <option style="display:none;">--table--</option>
                             <option>User Table</option>
                         </select>
                     </div>
@@ -49,8 +49,8 @@
                     <br>
                     <!-- Select attributes下方第二個combobox功能:"顯示所選table之欄位" -->
                     <div class="combobox1">
-                        <select id="Download_selectItem" onchange="Download_selectItem()" disabled>
-                            <option style="display:none;"></option>
+                        <select id="Download_selectItem" onchange="Download_selectItem()" disabled style="width:115px;">
+                            <option style="display:none;">--attributes--</option>
                             <option>item1</option>
                             <option>item2</option>
                             <option>item3</option>
