@@ -24,7 +24,7 @@
 
 
     <!-- Main css -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/demo_style.css" rel="stylesheet">
 
     <!-- js -->
     <!-- public javascript -->
@@ -40,13 +40,13 @@
     <script src="https://cdn.jsdelivr.net/bluebird/latest/bluebird.min.js"></script>
 
     <!-- Main -->
-    <script src="js/script.js"></script>
+    <!-- <script src="js/script.js"></script> -->
     <script src="js/add_list.js"></script>
     
 
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#demo_list").load("list.html");
+            //$("#demo_list").load("list.html");
             $("#demo_content").load("wed_content.html");
             
         })
@@ -59,7 +59,7 @@
 
     <!-- Nav Menu -->
 
-    <div class="nav-menu fixed-top" id="get_hight">
+    <div class="nav-menu fixed-top">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -70,9 +70,9 @@
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
                         <div class="collapse navbar-collapse" id="navbar">
                             <ul class="navbar-nav ml-auto">
-                                <li class="nav-item"> <a class="nav-link active" href="#home">HOME <span class="sr-only">(current)</span></a> </li>
-                                <li class="nav-item"> <a class="nav-link " href="#document">Tutorial</a> </li>
-                                <li class="nav-item"> <a class="nav-link " href="document.html">Document</a> </li>
+                                <li class="nav-item"> <a class="nav-link active" href="index.html">HOME </a> </li>
+                                <li class="nav-item"> <a class="nav-link " href="index.html">Tutorial</a> </li>
+                                <li class="nav-item"> <a class="nav-link " href="document.html">Document<span class="sr-only">(current)</span></a> </li>
                                 <li class="nav-item"> <a class="nav-link " href="https://140.115.54.213:9000">PINE Server</a> </li>
                                 
                                 <li class="nav-item"> <a class="nav-link" href="">Source on Github</a> </li>
@@ -85,34 +85,32 @@
     </div>
 
 
-    <header class="bg-gradient" id="home">
-        <div class="container mt-5">
-            <h2>Web-based Machine Learning Modeling
-in a Cyber-Physical System Construction Assistant</h2>
-            <!-- <p class="tagline">The one and only solution for any kind of mobila app landing needs. Just change the screenshots and texts and you are good to go. </p> -->
-        </div>
-        <!-- position_pine  -->
-         
-        <div><embed src="img/PINE.svg" id="set_ath_img"  alt="logo"/></div>
-    </header>
-    <!-- <div id = "list"></div> -->
     
+   
     <div id="demo" >
-            <div id = "demo_list"></div>
-            <div id = "demo_content"></div>
+        <div id = "demo_list">
+            <div id="column1">
+                <div>
+                    <ul class="listbar clearfix">
+                        <li class="listitem clearfix"><a href="#Upload"> Upload</a>
+                        </li>
+                        <li class="listitem clearfix"><a href='#Download'> Download</a>
+                        </li>
+                        <li class="listitem clearfix"><a href='#Analysis'> Analysis</a></li>
+                        </li>
+                        <li class="listitem clearfix"><a href='#Managment'> Managment</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-            
-    </div>    
-    
-    
+        <div id = "demo_content"></div>
 
-    
-
-
-
-    
-
-    
+        
+    </div> 
+ 
+     
 
 </body>
 
