@@ -30,9 +30,10 @@
                     <!-- Select attributes下方第一個combobox功能:"選擇table" -->
                     <div class="combobox1">
                         <label class="Download-label">Select attributes</label>
-                        <select onchange="Download_selectTable()" style="width:115px;">
+                        <select id="Download_tableList" onchange="Download_selectTable()" style="width:115px;">
                             <option style="display:none;">--table--</option>
                             <option>User Table</option>
+                            <option>焊點</option>
                         </select>
                     </div>
 
@@ -51,12 +52,6 @@
                     <div class="combobox1">
                         <select id="Download_selectItem" onchange="Download_selectItem()" disabled style="width:115px;">
                             <option style="display:none;">--attributes--</option>
-                            <option>item1</option>
-                            <option>item2</option>
-                            <option>item3</option>
-                            <option>item4</option>
-                            <option>item5</option>
-                            <option>item6</option>
                         </select>
                     </div>
                     <!-- Select attributes下方第二個combobox功能:"顯示所選table之欄位" -->
@@ -69,8 +64,10 @@
                             onclick="Download_downloadFile()" disabled>
                             <i class="fa fa-download"></i>Download CSV_file
                         </button>
-                        <button class="btn btn-success" disabled><i class="fa fa-download"></i>Download
-                            PNG</button>
+                        <button class="btn btn-success" id="Download_downloadPNGBtn" type="submit"
+                            onclick="Download_exportToPNG()" disabled>
+                            <i class="fa fa-download"></i>Download PNG
+                        </button>
                     </div>
                     <!-- 搜尋&下載檔案及圖片按鈕功能 -->
                     </br>
@@ -112,6 +109,27 @@
                         <a onclick="Download_removeSelectedItem('item6')" class="tag is-dark is-small"
                             style="display: none" value="item6">
                             <font color="white">item6</font>
+                            <button class="delete is-small"></button>
+                        </a>
+
+                        <a onclick="Download_removeSelectedItem('time')" class="tag is-dark is-small"
+                            style="display: none" value="time">
+                            <font color="white">time</font>
+                            <button class="delete is-small"></button>
+                        </a>
+                        <a onclick="Download_removeSelectedItem('No.')" class="tag is-dark is-small"
+                            style="display: none" value="No.">
+                            <font color="white">No.</font>
+                            <button class="delete is-small"></button>
+                        </a>
+                        <a onclick="Download_removeSelectedItem('label')" class="tag is-dark is-small"
+                            style="display: none" value="label">
+                            <font color="white">label</font>
+                            <button class="delete is-small"></button>
+                        </a>
+                        <a onclick="Download_removeSelectedItem('raw')" class="tag is-dark is-small"
+                            style="display: none" value="raw">
+                            <font color="white">raw</font>
                             <button class="delete is-small"></button>
                         </a>
                     </div>

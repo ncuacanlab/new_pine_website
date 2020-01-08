@@ -1,4 +1,6 @@
 var Download = {
+    imgsrc: 'data:image/bmp;base64,',
+    currentTable: 0,
     items: [],
     selectedAttributes: [],
     toptitle: [],
@@ -22,7 +24,7 @@ function Download_searchInTheList(searchText, currentPage) {
     if (searchText == undefined) {
         Download.filteredItems = Download.items;
     } else {
-        Download.filteredItems = Download.items.filter(function(v) {
+        Download.filteredItems = Download.items.filter(function (v) {
             if (searchText.search('=') === -1) {
                 for (let i in v) {
                     if (v[i].toString().toUpperCase().search(searchText.toUpperCase()) > -1) {
@@ -90,7 +92,7 @@ function Download_selectPage(page) {
     }
     Download_refreshPage();
 
-    Download.paginatedItems = Download.filteredItems.filter(function(v, k) {
+    Download.paginatedItems = Download.filteredItems.filter(function (v, k) {
         return Math.ceil((k + 1) / Download.pagination.itemPerPage) == Download.pagination.currentPage;
     });
     console.log(Download.paginatedItems);
@@ -174,14 +176,31 @@ function Download_removeSelectedItem(item) {
 
 // 於Select attributes區塊中上方combobox選取table名稱
 function Download_selectTable() {
-    Download.selectedAttributes = [];
-    document.getElementById("Download_selectItem").disabled = false;
+    var table = document.getElementById("Download_tableList").selectedIndex;
+    if (Download.currentTable != table) {
+        Download.currentTable = table;
+        Download.selectedAttributes = [];
+        Download_refreshSelectedAttributes();
+
+        var attributes = [['item1', 'item2', 'item3', 'item4', 'item5', 'item6'],
+        ['time', 'No.', 'label', 'raw']];
+        var attributeList = document.getElementById("Download_selectItem");
+        for (var i = attributeList.children.length - 1; i > 0; i--) {
+            attributeList.remove(i);
+        }
+        attributes[table - 1].forEach(attribute => {
+            var option = document.createElement("option");
+            option.text = attribute;
+            attributeList.add(option);
+        });
+        document.getElementById("Download_selectItem").disabled = false;
+    }
 }
 
 // 更新Attributes selected區塊
 function Download_refreshSelectedAttributes() {
     var attribute_Now = document.getElementById("Download_selectedAttributes").children;
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < 10; i++) {
         if (Download.selectedAttributes.indexOf(attribute_Now[i].getAttribute("value")) == -1) {
             attribute_Now[i].style.display = "none";
         } else {
@@ -202,29 +221,40 @@ function Download_search() {
     document.getElementById("Download_downloadBtn").disabled = false;
     document.getElementById("Download_searchItem").disabled = false;
     document.getElementById("Download_searchItemBtn").disabled = false;
-    d3.csv("./download/demo.csv")
-        .then(function(result) {
-            if (result.length <= 0) {
-                return 0;
-            }
-
-            Download_clear();
-            for (var i = 0; i < result.length; i++) {
-                var data = {};
-                for (var j = 0; j < Download.selectedAttributes.length; j++) {
-                    data[Download.selectedAttributes[j]] = result[i][Download.selectedAttributes[j]];
+    if (Download.currentTable == 2 && Download.selectedAttributes.indexOf('raw') != -1) {
+        document.getElementById("Download_downloadPNGBtn").disabled = false;
+    } else {
+        document.getElementById("Download_downloadPNGBtn").disabled = true;
+    }
+    var filePath = "";
+    if (Download.currentTable == 1) {
+        filePath = "./download/demo.csv";
+    } else if (Download.currentTable == 2) {
+        filePath = "./download/picture.csv";
+    }
+    d3.csv(filePath)
+            .then(function (result) {
+                if (result.length <= 0) {
+                    return 0;
                 }
-                Download.items.push(data);
-            }
-            for (var i = 0; i < Download.selectedAttributes.length; i++) {
-                Download.toptitle.push(Download.selectedAttributes[i]);
-            }
-            document.getElementById("Download_totalNumber").innerText = Download.items.length;
-            Download_searchInTheList(undefined);
-        })
-        .catch(function(error) {
-            console.log(error);
-        });
+
+                Download_clear();
+                for (var i = 0; i < result.length; i++) {
+                    var data = {};
+                    for (var j = 0; j < Download.selectedAttributes.length; j++) {
+                        data[Download.selectedAttributes[j]] = result[i][Download.selectedAttributes[j]];
+                    }
+                    Download.items.push(data);
+                }
+                for (var i = 0; i < Download.selectedAttributes.length; i++) {
+                    Download.toptitle.push(Download.selectedAttributes[i]);
+                }
+                document.getElementById("Download_totalNumber").innerText = Download.items.length;
+                Download_searchInTheList(undefined);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
 }
 
 // print Table
@@ -245,7 +275,7 @@ function Download_tabulate() {
         .enter()
         .append('th')
         .attr("class", "Download-table-index")
-        .text(function(d) { return d })
+        .text(function (d) { return d });
 
     var rows = new_table.selectAll('tr')
         .data(data)
@@ -253,14 +283,22 @@ function Download_tabulate() {
         .append('tr')
 
     var cells = rows.selectAll('td')
-        .data(function(row) {
-            return columns.map(function(column) {
+        .data(function (row) {
+            return columns.map(function (column) {
                 return { column: column, value: row[column] }
             })
         })
         .enter()
-        .append('td')
-        .text(function(d) { return d.value })
+        .append('td');
+    if (Download.currentTable == 1) {
+        cells.append('p')
+            .text(function (d) { return d.value; });
+    } else if (Download.currentTable == 2) {
+        cells.append('p')
+            .text(function (d) { if (d.column != 'raw') return d.value; });
+        cells.append('img')
+            .attr('src', function (d) { if (d.column == 'raw') return Download.imgsrc + d.value; });
+    }
 
     return new_table;
 }
@@ -299,7 +337,7 @@ function Download_exportToCsv(filename, rows) {
         temp2 = [];
     }
     console.log(temp);
-    var process = function(rows) {
+    var process = function (rows) {
         let csvfile = ''
         for (var i = 0; i < rows.length; i++) {
             var finalVal = '';
@@ -317,17 +355,17 @@ function Download_exportToCsv(filename, rows) {
             }
             csvfile += finalVal + '\n';
         }
-        return new P(function(resolve) {
+        return new P(function (resolve) {
             resolve(csvfile);
         })
     };
     process(temp)
-        .then(function(resp) {
+        .then(function (resp) {
             var zip = new JSZip()
             var testcontecnt = '\ufeff' + resp
             zip.file("download.csv", testcontecnt, { base64: false });
             zip.generateAsync({ type: "blob" })
-                .then(function(content) {
+                .then(function (content) {
                     saveAs(content, "download.zip")
                 })
             self.isDownloading = false;
@@ -338,4 +376,25 @@ function Download_exportToCsv(filename, rows) {
 // 下載CSV檔案
 function Download_downloadFile() {
     Download_exportToCsv('download.csv', Download.filteredItems)
+}
+
+// 下載PNG檔案
+function Download_exportToPNG() {
+    let temp = [];
+    let rows = Download.filteredItems;
+    console.log(rows);
+    var zip = new JSZip();
+    var img = zip.folder("images");
+    for (var m = 0; m < rows.length; m++) {
+        var imageName = "picture" + m + ".bmp";
+        temp.push([imageName,rows[m].raw]);
+    }
+    console.log(temp);
+    for (let i = 0; i < temp.length; i++) {
+        img.file(temp[i][0], temp[i][1], { base64: true });
+    }
+    zip.generateAsync({ type: "blob" })
+        .then(function (content) {
+            saveAs(content, "download.zip")
+        })
 }
