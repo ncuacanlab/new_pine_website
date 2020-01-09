@@ -132,10 +132,93 @@ URI     : https://colorlib.com
             </div>
         </div>
         <!-- Line bar end -->
+
+        
+            
+        
+        
+        <!--stage 2-->
+        
+        <div class="dis pp" id="state2" >
+            <div class="hhh">
+                <button id ="b21"  onclick="modeC(2,1)"><strong>training data</strong></button>
+                <button id ="b22"  onclick="modeC(2,2)"><strong>label data</strong></button>
+            </div>
+            <br><br>
+            
+            <div  class="albox alm-form">
+            <h5 class="label">
+                Select preprocessing
+            </h5>
+            <div style="display:inline-block">
+                <form>
+                    <select id= "meo">
+                        <option value="1">Normalization</option>
+                        <option value="2">Standardization</option>
+                        <option value="3">LabelEncoder</option>
+                        <option value="4">None</option>
+                    </select>
+                </form>
+            </div>
+            <div  style="float:right">
+                <button class="btn btn-success" onclick="same()">process</button>
+            </div>
+            </div>
+            <div class = "dis" id ="liss">
+                <div class="albox alm-form">
+                    <table class="ser">
+                        <col width="100">
+                        <col width="10">
+                        <col width="1000">
+                        <tr>
+                          <th>voltage</th>
+                          <th>time</th>
+                          <th> </th>
+                        </tr>
+                        <tr>
+                          <td>0.3</td>
+                          <td>20180503143041</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>0.7</td>
+                          <td>20180503143042</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>0.8</td>
+                          <td>20180503143043</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>0.9</td>
+                          <td>20180503143044</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>0.4</td>
+                          <td>20180503143045</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>0.96</td>
+                          <td>20180503143046</td>
+                          <td></td>
+                        </tr>
+                      </table>
+                </div>
+                </div>
+            
+            <br>
+            <button id= "kkk" class="btn btn-success" onclick="changeState(-1)">previous</button>
+            <button id= "kkkk" class="btn btn-success" onclick="changeState(1)" style="float:right">next</button>
+        </div>
+
         <div class="" id="state1">
             <!-- 33-->
             
             <!--  33-->
+            <div id="forgood">
             <div class="hhh">
                 <button id ="b11"  onclick="modeC(1,1)"><strong>training data</strong></button>
                 <button id ="b12"  onclick="modeC(1,2)"><strong>label data</strong></button>
@@ -185,47 +268,14 @@ URI     : https://colorlib.com
             
             <button class="btn btn-success"  style="float:right" onclick="showt('lissss')">search</button>
             </div>
+            </div>
             <div class="dis" id ="lissss">
-            <div class="albox alm-form">
-                <table class="ser" id ="tabb">
+            <div class="albox alm-form" style="height:400px;overflow-y:scroll;overflow-x:none;">
+                <table class="ser" id ="tabb" >
                     <col id ="ritem1" width="100">
                     <col id ="ritem2" width="10">
                     <col id ="ritem3" width="1000">
-                    <tr>
-                      <th> </th>
-                      <th> </th>
-                      <th> </th>
-                    </tr>
-                    <tr>
-                      <td> </td>
-                      <td> </td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td> </td>
-                      <td> </td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td> </td>
-                      <td> </td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td> </td>
-                      <td> </td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td> </td>
-                      <td> </td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td> </td>
-                      <td></td>
-                      <td></td>
-                    </tr>
+
                   </table>
                   <div class="page" style="float:right">
                         <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>&nbsp;&nbsp;next&nbsp;&nbsp;</button><button>&nbsp;&nbsp;last&nbsp;&nbsp;</button>
@@ -237,87 +287,8 @@ URI     : https://colorlib.com
             </div>
             <br>
         <!--end-->
-        <button class="btn btn-success" style="float:right" onclick="changeState(2)">next</button>
-        </div>
-        
-            
-        
-        
-        <!--stage 2-->
-        
-        <div class="dis pp" id="state2" >
-            <div class="hhh">
-                <button id ="b21"  onclick="modeC(2,1)"><strong>training data</strong></button>
-                <button id ="b22"  onclick="modeC(2,2)"><strong>label data</strong></button>
-            </div>
-            <br><br>
-            
-            <div  class="albox alm-form">
-            <h5 class="label">
-                Select preprocessing
-            </h5>
-            <div style="display:inline-block">
-                <form>
-                    <select>
-                        <option value="1">test1</option>
-                        <option value="2">test2</option>
-                        <option value="3">test3</option>
-                        <option value="4">test4</option>
-                    </select>
-                </form>
-            </div>
-            <div  style="float:right">
-                <button class="btn btn-success" onclick="showt('liss')">process</button>
-            </div>
-            </div>
-            <div class = "dis" id ="liss">
-                <div class="albox alm-form">
-                    <table class="ser">
-                        <col width="100">
-                        <col width="10">
-                        <col width="1000">
-                        <tr>
-                          <th>voltage</th>
-                          <th>time</th>
-                          <th> </th>
-                        </tr>
-                        <tr>
-                          <td>0.3</td>
-                          <td>20180503143041</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>0.7</td>
-                          <td>20180503143042</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>0.8</td>
-                          <td>20180503143043</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>0.9</td>
-                          <td>20180503143044</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>0.4</td>
-                          <td>20180503143045</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>0.96</td>
-                          <td>20180503143046</td>
-                          <td></td>
-                        </tr>
-                      </table>
-                </div>
-                </div>
-            
-            <br>
-            <button class="btn btn-success" onclick="changeState(1)">previous</button>
-            <button class="btn btn-success" onclick="changeState(3)" style="float:right">next</button>
+        <button  class="btn btn-success" onclick="changeState(-1)">previous</button>
+        <button class="btn btn-success" style="float:right" onclick="changeState(1)">next</button>
         </div>
         <!--stage 3-->
         <div class="dis pp" id="state3">
@@ -325,11 +296,11 @@ URI     : https://colorlib.com
             <div>
                 <h5 class="label">Select analysis type</h5>
                 <form>
-                    <select onchange="appear(1);">
-                        <option value="1">test1</option>
-                        <option value="2">test2</option>
-                        <option value="3">test3</option>
-                        <option value="4">test4</option>
+                    <select id = "mmm" onchange="appear(1);">
+                        <option value="0"> </option>
+                        <option value="1">machine learning</option>
+                        <option value="2">deep learning</option>
+
                     </select>
                 </form>
             </div>
@@ -340,13 +311,15 @@ URI     : https://colorlib.com
                 <h5 class="label">Select model</h5>
                 <form>
                     <select name="YourLocation" onchange="appear(2)">
-                        <option>test1</option>
-                        <option>test2</option>
+                        <option value="0"> </option>
+                        <option id="qqq">test1</option>
+                        <option id="qq" >test2</option>
                     </select>
                 </form>
             </div>
             </div>
 
+            <div id = "SVMM">
             <div class="dis" id="stage2">
             <div  class="albox alm-form">
                 <h5 class="label">validation</h5>
@@ -391,11 +364,18 @@ URI     : https://colorlib.com
                     <input type="number" step="0.001" required="required">
                 </form>
             </div></div>
+            <div class="dis" id="stage10">
+                <div  class="albox alm-form">
+            <h5 class="label">shrinking</h5>
+            <form>
+                <input type="checkbox" >true
+            </form>
+            </div></div>
             <div class="dis" id="stage7">
                     <div  class="albox alm-form">
-                <h5 class="label">shrinking</h5>
+                <h5 class="label">probability</h5>
                 <form>
-                    <input type="checkbox" >true
+                    <input type="checkbox" >false
                 </form>
             </div></div>
             <div class="dis" id="stage8">
@@ -408,10 +388,292 @@ URI     : https://colorlib.com
                     </select>
                 </form>
             </div></div>
+            <div class="dis" id="stage9">
+                <div  class="albox alm-form">
+            <h5 class="label">tol</h5>
+            <form>
+                <input type="number" step="0.1" required="required">
+            </form>
+        </div></div>
+        </div>
+        <div class = "dis" id ="CNNN">
             
+            <div >
+                <div  class="albox alm-form">
+            <h4 class="label">validation</h4>
+            <h5 class="label">type</h5>
+            <form>
+                <select >
+                    <option>test1</option>
+                    <option>test2</option>
+                </select>
+            </form>
+        </div></div>
+        <div >
+            <div  class="albox alm-form">
+        <h5 class="label">type</h5>
+        <form>
+            <select >
+                <option>test1</option>
+                <option>test2</option>
+            </select>
+        </form>
+    </div></div>
+
+
+<div >
+    <div  class="albox alm-form">
+<h5 class="label">layers_num</h5>
+<form>
+    <input id= "layy" type="number" step="1" required="required" onchange="layerr()">
+</form>
+</div></div>  
+
+<div id = "ll0" class ="dis">
+    <div  class="albox alm-form">
+<h4 class="label">Layer1</h4>
+<h5 class="label">neuron_num</h5>
+<form>
+    <input  type="number" step="1" required="required">
+</form>
+<h5 class="label">activation</h5>
+<form>
+    <select >
+        <option>softmax</option>
+        <option>relu</option>
+        <option>tanh</option>
+    </select>
+</form>
+<h5 class="label">dropout</h5>
+<form>
+    <input  type="number" step="0.001" required="required">
+</form>
+</div></div><div id = "ll1" class ="dis">
+    <div  class="albox alm-form">
+<h4 class="label">Layer2</h4>
+<h5 class="label">neuron_num</h5>
+<form>
+    <input  type="number" step="1" required="required">
+</form>
+<h5 class="label">activation</h5>
+<form>
+    <select >
+        <option>softmax</option>
+        <option>relu</option>
+        <option>tanh</option>
+    </select>
+</form>
+<h5 class="label">dropout</h5>
+<form>
+    <input  type="number" step="0.001" required="required">
+</form>
+</div></div><div id = "ll2" class ="dis">
+    <div  class="albox alm-form">
+<h4 class="label">Layer3</h4>
+<h5 class="label">neuron_num</h5>
+<form>
+    <input  type="number" step="1" required="required">
+</form>
+<h5 class="label">activation</h5>
+<form>
+    <select >
+        <option>softmax</option>
+        <option>relu</option>
+        <option>tanh</option>
+    </select>
+</form>
+<h5 class="label">dropout</h5>
+<form>
+    <input  type="number" step="0.001" required="required">
+</form>
+</div></div><div id = "ll3" class ="dis">
+    <div  class="albox alm-form">
+<h4 class="label">Layer4</h4>
+<h5 class="label">neuron_num</h5>
+<form>
+    <input  type="number" step="1" required="required">
+</form>
+<h5 class="label">activation</h5>
+<form>
+    <select >
+        <option>softmax</option>
+        <option>relu</option>
+        <option>tanh</option>
+    </select>
+</form>
+<h5 class="label">dropout</h5>
+<form>
+    <input  type="number" step="0.001" required="required">
+</form>
+</div></div><div id = "ll4" class ="dis">
+    <div  class="albox alm-form">
+<h4 class="label">Layer5</h4>
+<h5 class="label">neuron_num</h5>
+<form>
+    <input  type="number" step="1" required="required">
+</form>
+<h5 class="label">activation</h5>
+<form>
+    <select >
+        <option>softmax</option>
+        <option>relu</option>
+        <option>tanh</option>
+    </select>
+</form>
+<h5 class="label">dropout</h5>
+<form>
+    <input  type="number" step="0.001" required="required">
+</form>
+</div></div><div id = "ll5" class ="dis">
+    <div  class="albox alm-form">
+<h4 class="label">Layer6</h4>
+<h5 class="label">neuron_num</h5>
+<form>
+    <input  type="number" step="1" required="required">
+</form>
+<h5 class="label">activation</h5>
+<form>
+    <select >
+        <option>softmax</option>
+        <option>relu</option>
+        <option>tanh</option>
+    </select>
+</form>
+<h5 class="label">dropout</h5>
+<form>
+    <input  type="number" step="0.001" required="required">
+</form>
+</div></div><div id = "ll6" class ="dis">
+    <div  class="albox alm-form">
+<h4 class="label">Layer7</h4>
+<h5 class="label">neuron_num</h5>
+<form>
+    <input  type="number" step="1" required="required">
+</form>
+<h5 class="label">activation</h5>
+<form>
+    <select >
+        <option>softmax</option>
+        <option>relu</option>
+        <option>tanh</option>
+    </select>
+</form>
+<h5 class="label">dropout</h5>
+<form>
+    <input  type="number" step="0.001" required="required">
+</form>
+</div></div><div id = "ll7" class ="dis">
+    <div  class="albox alm-form">
+<h4 class="label">Layer8</h4>
+<h5 class="label">neuron_num</h5>
+<form>
+    <input  type="number" step="1" required="required">
+</form>
+<h5 class="label">activation</h5>
+<form>
+    <select >
+        <option>softmax</option>
+        <option>relu</option>
+        <option>tanh</option>
+    </select>
+</form>
+<h5 class="label">dropout</h5>
+<form>
+    <input  type="number" step="0.001" required="required">
+</form>
+</div></div><div id = "ll8" class ="dis">
+    <div  class="albox alm-form">
+<h4 class="label">Layer9</h4>
+<h5 class="label">neuron_num</h5>
+<form>
+    <input  type="number" step="1" required="required">
+</form>
+<h5 class="label">activation</h5>
+<form>
+    <select >
+        <option>softmax</option>
+        <option>relu</option>
+        <option>tanh</option>
+    </select>
+</form>
+<h5 class="label">dropout</h5>
+<form>
+    <input  type="number" step="0.001" required="required">
+</form>
+</div></div><div id = "ll9" class ="dis">
+    <div  class="albox alm-form">
+<h4 class="label">Layer10</h4>
+<h5 class="label">neuron_num</h5>
+<form>
+    <input  type="number" step="1" required="required">
+</form>
+<h5 class="label">activation</h5>
+<form>
+    <select >
+        <option>softmax</option>
+        <option>relu</option>
+        <option>tanh</option>
+    </select>
+</form>
+<h5 class="label">dropout</h5>
+<form>
+    <input  type="number" step="0.001" required="required">
+</form>
+</div></div>
+
+
+<div >
+    <div  class="albox alm-form">
+<h4 class="label">output_layer</h4>
+<h5 class="label">activation</h5>
+<form>
+    <select >
+        <option>test1</option>
+        <option>test2</option>
+    </select>
+</form>
+</div></div>
+<div >
+    <div  class="albox alm-form">
+<h5 class="label">loss_function</h5>
+<form>
+    <select >
+        <option>test1</option>
+        <option>test2</option>
+    </select>
+</form>
+</div></div>
+<div >
+    <div  class="albox alm-form">
+<h5 class="label">optimizer</h5>
+<form>
+    <select >
+        <option>test1</option>
+        <option>test2</option>
+    </select>
+</form>
+</div></div>
+<div >
+    <div  class="albox alm-form">
+<h5 class="label">batch_size</h5>
+<form>
+    <input type="number" step="0.1" required="required">
+</form>
+</div></div>
+<div >
+    <div  class="albox alm-form">
+<h5 class="label">epoch</h5>
+<form>
+    <input type="number" step="0.1" required="required">
+</form>
+</div></div>
+        </div>
+
+
+
         <br>
-            <button class="btn btn-success" onclick="changeState(2)">previous</button>
-            <button class="btn btn-success" onclick="changeState(4)" style="float:right">next</button>
+            <button class="btn btn-success" onclick="changeState(-1)">previous</button>
+            <button class="btn btn-success" onclick="changeState(1)" style="float:right">next</button>
         </div>
  
         <!--stage 4-->
@@ -429,7 +691,7 @@ URI     : https://colorlib.com
                 </pre>
             </h5>
 
-            <button class="btn btn-success" onclick="changeState(3)">previous</button>
+            <button class="btn btn-success" onclick="changeState(-1)">previous</button>
         </div>
 
     </div>
