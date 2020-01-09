@@ -5,7 +5,7 @@
 <head>
     <title>PINE intro</title>
 
-    <link rel="icon" href="img/pine_title.ico" type="image/x-icon"/>
+    <link rel="icon" href="img/pine_title.ico" type="image/x-icon" />
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -41,40 +41,63 @@
 
     <!-- Main -->
     <!-- <script src="js/script.js"></script> -->
-    <script src="js/add_list.js"></script>
-    
+
+
 
     <script type="text/javascript">
-        $(document).ready(function(){
-            //$("#demo_list").load("list.html");
-            $("#demo_content").load("wed_content.html");
-            
+        $(document).ready(function () {
+            console.log();
+            $('a[href="#Upload"]').click(function () {
+                $("html, body").animate({
+                    scrollTop: ($("#up").offset().top - $("#get_hight").height())
+                }, "show");
+            });
+            $('a[href="#Download"]').click(function () {
+                $("html, body").animate({
+                    scrollTop: ($("#dow").offset().top - $("#get_hight").height())
+                }, "show");
+            });
+            $('a[href="#Analysis"]').click(function () {
+                $("html, body").animate({
+                    scrollTop: ($("#download123").offset().top - $("#get_hight").height())
+                }, "show");
+            });
+            $('a[href="#Managment"]').click(function () {
+                $("html, body").animate({
+                    scrollTop: ($("#man").offset().top - $("#get_hight").height())
+                }, "show");
+            });
+
         })
     </script>
-    
-    
+
+
 </head>
 
 <body data-spy="scroll" data-target="#navbar" data-offset="30">
 
     <!-- Nav Menu -->
 
-    <div class="nav-menu fixed-top">
+    <div class="nav-menu fixed-top" id="get_hight">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <nav class="navbar navbar-dark navbar-expand-lg">
 
-                            <img src="img/123.png" id="set_pine"  alt="logo"/>
-                            <!--   -->
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                        <img src="img/123.png" id="set_pine" alt="logo" />
+                        <!--   -->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span
+                                class="navbar-toggler-icon"></span> </button>
                         <div class="collapse navbar-collapse" id="navbar">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item"> <a class="nav-link active" href="index.html">HOME </a> </li>
                                 <li class="nav-item"> <a class="nav-link " href="index.html">Tutorial</a> </li>
-                                <li class="nav-item"> <a class="nav-link " href="document.html">Document<span class="sr-only">(current)</span></a> </li>
-                                <li class="nav-item"> <a class="nav-link " href="https://140.115.54.213:9000">PINE Server</a> </li>
-                                
+                                <li class="nav-item"> <a class="nav-link " href="document.html">Document<span
+                                            class="sr-only">(current)</span></a> </li>
+                                <li class="nav-item"> <a class="nav-link " href="https://140.115.54.213:9000">PINE
+                                        Server</a> </li>
+
                                 <li class="nav-item"> <a class="nav-link" href="">Source on Github</a> </li>
                             </ul>
                         </div>
@@ -85,10 +108,10 @@
     </div>
 
 
-    
-   
-    <div id="demo" >
-        <div id = "demo_list">
+
+
+    <div id="demo">
+        <div id="demo_list">
             <div id="column1">
                 <div>
                     <ul class="listbar clearfix">
@@ -105,12 +128,189 @@
             </div>
         </div>
 
-        <div id = "demo_content"></div>
+        <div id="demo_content">
+            <!-- UPLOAD -->
+            <div class="content">
+                <div id="up" class="anchor">
+                    <p class="set_content_title_font_size"><b><u>Upload</u></b></p>
+                </div>
+                <div class="content set_content_title_font_size">
+                    <div>
+                        <p>
+                            This is a function to upload the training data.
+                        </p>
+                        <p>
+                    </div>
+                    <div>
+                        <p>STEP 1:</p>
+                    </div>
+                    <div>
+                        <p class="content">
+                            Users can choose the options which you want to upload in the Select Table.<br>
+                            Now, we choose the option "焊點"
+                        </p>
+                        <div>
+                            <img class="image" src="img/upload/1.png">
+                        </div>
 
-        
-    </div> 
- 
-     
+
+                    </div>
+
+                    <div>
+                        <p>STEP 2:</p>
+                    </div>
+                    <div>
+                        <p class="content">
+                            when window shows up, users can click and drag the data to window.
+                        </p>
+                        <div>
+                            <img src="img/upload/2.png" class="image">
+                        </div>
+
+                    </div>
+                    <div>
+                        <p>STEP 3:</p>
+                    </div>
+                    <div>
+                        <p class="content">
+                            The progress bar will show on and it represents the progress of upload, and you can upload
+                            multiple data at the same time.
+                        </p>
+                        <div>
+                            <img src="img/upload/3.png" class="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Download -->
+            <div class="content">
+                <div id="dow">
+                    <p class="set_content_title_font_size">
+                        <b><u>Download</u></b>
+                    </p>
+                </div>
+                <div class="content set_content_title_font_size">
+                    <div>
+                        <p>
+                            This is a function to download the particular training data for PINE server.
+                        </p>
+                        <p>
+                    </div>
+                    <div>
+                        <p>STEP 1:</p>
+                    </div>
+                    <div>
+                        <p class="content">
+                            Select the table you want to download and set some attributes of it in the 'Select
+                            attributes' area.
+                            <br>
+                            Now, we choose the option "焊點" and all of 'Select attributes'
+                        </p>
+                        <div>
+                            <img class="image" src="img/download/1.png">
+                        </div>
+                    </div>
+                    <div>
+                        <p>STEP 2:</p>
+                    </div>
+                    <div>
+                        <p class="content">
+                            Push 'X' of the selected attribute to delete what you don’t want.
+                            <br>
+                            Now, we delete the attribute "raw".
+                        </p>
+                        <div>
+                            <img class="image" src="img/download/3.png">
+                        </div>
+                    </div>
+                    <div>
+                        <p>STEP 3:</p>
+                    </div>
+                    <div>
+                        <p class="content">
+                            Push 'Search' button in the 'Select attributes' area to show the data below.
+                        </p>
+                        <div>
+                            <img class="image" src="img/download/2.png">
+                        </div>
+                    </div>
+                    <div>
+                        <p>STEP 4:</p>
+                    </div>
+                    <div>
+                        <p class="content">
+                            Add message in 'Search Data' area and push 'Search' button beside that to search particular
+                            data.
+                            Now, we input "NG" in 'Search Data' and push 'Search' button.
+                        </p>
+                        <div>
+                            <img class="image" src="img/download/4.png">
+                        </div>
+                    </div>
+                    <div>
+                        <p>STEP 5:</p>
+                    </div>
+                    <div>
+                        <p class="content">
+                            Push 'Download' button to download these data to your computer.
+                        </p>
+                        <div>
+                            <img class="image" src="img/download/5.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MANAGEMENT -->
+            <div class="content">
+                <div id="man">
+                    <p class="set_content_title_font_size">
+                        <b><u>Managment</u></b>
+                    </p>
+                </div>
+                <div class="content set_content_title_font_size">
+                    <div>
+                        <p>
+                            This is a function for managers to check users' permissions and change them.
+                        </p>
+                    </div>
+                    <div>
+                        <p>STEP 1:</p>
+                    </div>
+                    <div>
+                        <p class="content">
+                            Search the user you want to check or change his permissions and Click the user's name to
+                            enter 'edit' page.
+                            <br>
+                            Now, we choose the "User1_1@test.com".
+                        </p>
+                        <div>
+                            <img class="image" src="img/management/1.png">
+                        </div>
+
+                    </div>
+                    <div>
+                        <p class="content">
+
+                        </p>
+                    </div>
+                    <div>
+                        <p>STEP 2:</p>
+                    </div>
+                    <div>
+                        <p class="content">
+                            Change his permission and push 'Update' button to confirm.
+                        </p>
+                        <div>
+                            <img class="image" src="img/management/2.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 
 </body>
 

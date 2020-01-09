@@ -44,8 +44,8 @@ $(function () {
 							upload_file_name +' ' + (upload_file_size / 1024).toFixed(2) + 'KB' 
 							+ '</p> <p class="pt-0 block_font_size">' + upload_file_type +
 		  					' </p> <div "class="progress" id = "progress_content"><div class = "aa">\
-		  					<div class="progress-bar progress-bar-striped progress-bar-animated  \
-		  					change_value background_animation style="width : 100%">0%</div></div></div></div>';
+		  					<div class="progress-bar progress-bar-striped  \
+		  					change_value background_animation" style="width : 100%">0%</div></div></div></div>';
 		$(".dropbox").append(div_content);
 
 		var element = document.getElementsByClassName("change_value");
