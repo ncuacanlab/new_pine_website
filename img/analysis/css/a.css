@@ -1,0 +1,77 @@
+
+.dis{
+    display:none;
+}
+.blackB{
+    border-radius: 50px;
+    background-color: #202020;
+    color: white;
+    display:none;
+}
+.ser {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+#step1{
+    background-color: #007bff;
+}
+
+.hhh button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .hhh button:hover {
+    background-color: #c0c0c0;
+  }
+  
+  /* Create an active/current tablink class */
+  .hhh button.active {
+    background-color: #c0c0c0;
+  }
+  
+  /* Style the tab content */
+  .hhhcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #c0c0c0;
+    border-top: none;
+  }
+
+  .pp{
+    margin-left: 1000px;
+  }
+
+  .page button {
+    background-color: #F0F0F0;
+    float: left;
+    border: none;
+    outline: none;
+    margin: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .page button.active {
+    background-color: #000000;
+  }
+
+
+   
