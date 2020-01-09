@@ -39,6 +39,7 @@ function appear(a) {
 nowStage = 1;
 selected = 0
 items = [0,0,0]
+var ii = ["accuracy", "raw", "ambiguity"];
 firstShow = 0;
 next = 1;
 
@@ -165,7 +166,7 @@ function showt(idd) {
                 
                 if(items[i] > 0){
                     var cell = row.insertCell();
-                    cell.innerHTML='item'+(i+1);
+                    cell.innerHTML=ii[i];
 
                 }
                 
@@ -211,13 +212,13 @@ function showt(idd) {
                 
                 if(items[u] > 0){
                     if(u ===1){
-                        tb.rows[0].cells[colnow].innerHTML='item'+(u+1);
+                        tb.rows[0].cells[colnow].innerHTML=ii[u];
                         for (var k = 1; k <100; k++) {
-                            tb.rows[k].cells[colnow].innerHTML= '<img src="here.png">';
+                            tb.rows[k].cells[colnow].innerHTML= '<img src="img/analPic/'+k+'.png">';
                         }
                         colnow = colnow +1;
                     }else{
-                        tb.rows[0].cells[colnow].innerHTML='item'+(u+1);
+                        tb.rows[0].cells[colnow].innerHTML=ii[u];
                         for (var k = 1; k <100; k++) {
                             tb.rows[k].cells[colnow].innerHTML=Math.random().toFixed(9)+'';
                         }
@@ -230,11 +231,15 @@ function showt(idd) {
     }
     colnow = 0;
 }
-function modeC(now,tab) {
+function modeC(now,tab,b) {
     aa = document.getElementById("state" + now);
     aa.style.display = "none";
     setTimeout(function () {
         aa.style.display = "inline";
+        if(b === 0){
+            clearr();
+        }
+        document.getElementById("lissss").style.display="none";
     }, 200);
 
     for (let i = 1; i <= 2; i++) {
@@ -243,6 +248,7 @@ function modeC(now,tab) {
     }
     bb = document.getElementById("b" + now+ tab);
     bb.style.backgroundColor="#b0b0b0";
+    
 }
 function same() {
     colnow = 0;
@@ -254,6 +260,7 @@ function same() {
     aa.style.display = "none";
     aa = document.getElementById("kkkk");
     aa.style.display = "none";
+    document.getElementById("lissss").style.display="inline";
     var table = document.getElementById("meo");
     var item = table.options[table.selectedIndex].value;
     var tb = document.getElementById('tabb');
@@ -273,13 +280,13 @@ for(let u = 0; u<=2; u++){
     
     if(items[u] > 0){
         if(u ===1){
-            tb.rows[0].cells[colnow].innerHTML='item'+(u+1);
+            tb.rows[0].cells[colnow].innerHTML=ii[u];
             for (var k = 1; k <100; k++) {
-                tb.rows[k].cells[colnow].innerHTML= '<img src="here.png">';
+                tb.rows[k].cells[colnow].innerHTML= '<img src="img/analPic/'+k+'.png">';
             }
             colnow = colnow +1;
         }else{
-            tb.rows[0].cells[colnow].innerHTML='item'+(u+1);
+            tb.rows[0].cells[colnow].innerHTML=ii[u];
 
             if(item === '1'){
                 

@@ -140,8 +140,8 @@ URI     : https://colorlib.com
         
         <div class="dis pp" id="state2" >
             <div class="hhh">
-                <button id ="b21"  onclick="modeC(2,1)"><strong>training data</strong></button>
-                <button id ="b22"  onclick="modeC(2,2)"><strong>label data</strong></button>
+                <button id ="b21"  onclick="modeC(2,1,1)"><strong>training data</strong></button>
+                <button id ="b22"  onclick="modeC(2,2,1)"><strong>label data</strong></button>
             </div>
             <br><br>
             
@@ -219,8 +219,8 @@ URI     : https://colorlib.com
             <!--  33-->
             <div id="forgood">
             <div class="hhh">
-                <button id ="b11"  onclick="modeC(1,1)"><strong>training data</strong></button>
-                <button id ="b12"  onclick="modeC(1,2)"><strong>label data</strong></button>
+                <button id ="b11"  onclick="modeC(1,1,0)"><strong>training data</strong></button>
+                <button id ="b12"  onclick="modeC(1,2,0)"><strong>label data</strong></button>
             </div>
             <br><br>
             
@@ -233,7 +233,6 @@ URI     : https://colorlib.com
                 <form>
                     <select onchange="">
                         <option style="display:none;"></option>
-                        <option>User Table</option>
                         <option>Mnist dataset</option>
                     </select>
                 </form>
@@ -246,9 +245,10 @@ URI     : https://colorlib.com
                 <form>
                     <select id="attr" onchange="selectItemm()" >
                         <option style="display:none;"></option>
-                        <option>item1</option>
-                        <option>item2</option>
-                        <option>item3</option>
+                        <option value="item1">accuracy</option>
+                        <option value="item2">raw</option>
+                        <option value="item3">ambiguity</optionvalue="item1">
+                            
 
                     </select>
                 </form>
@@ -259,9 +259,9 @@ URI     : https://colorlib.com
                 0 attribute selected
             </h5>
             <div>
-            <button class="blackB" id="item1" onclick="dis(1)">item1 x</button>
-            <button class="blackB" id="item2" onclick="dis(2)">item2 x</button>
-            <button class="blackB" id="item3" onclick="dis(3)">item3 x</button>
+            <button class="blackB" id="item1" onclick="dis(1)">accuracy x</button>
+            <button class="blackB" id="item2" onclick="dis(2)">raw x</button>
+            <button class="blackB" id="item3" onclick="dis(3)">ambiguity x</button>
             </div>
             <br>
             <button class="btn btn-success" style="display:inline-block" onclick="clearr()">clear</button>
