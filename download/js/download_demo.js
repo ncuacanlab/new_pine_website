@@ -1,5 +1,5 @@
 var Download = {
-    imgsrc: 'data:image/bmp;base64,',
+    imgsrc: 'data:image/png;base64,',
     currentTable: 0,
     items: [],
     selectedAttributes: [],
@@ -183,7 +183,7 @@ function Download_selectTable() {
         Download_refreshSelectedAttributes();
 
         var attributes = [['item1', 'item2', 'item3', 'item4', 'item5', 'item6'],
-        ['time', 'No.', 'label', 'raw']];
+        ['label', 'raw']];
         var attributeList = document.getElementById("Download_selectItem");
         for (var i = attributeList.children.length - 1; i > 0; i--) {
             attributeList.remove(i);
@@ -200,7 +200,7 @@ function Download_selectTable() {
 // 更新Attributes selected區塊
 function Download_refreshSelectedAttributes() {
     var attribute_Now = document.getElementById("Download_selectedAttributes").children;
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 8; i++) {
         if (Download.selectedAttributes.indexOf(attribute_Now[i].getAttribute("value")) == -1) {
             attribute_Now[i].style.display = "none";
         } else {
@@ -386,7 +386,7 @@ function Download_exportToPNG() {
     var zip = new JSZip();
     var img = zip.folder("images");
     for (var m = 0; m < rows.length; m++) {
-        var imageName = "picture" + m + ".bmp";
+        var imageName = "picture" + (m+1) + ".png";
         temp.push([imageName,rows[m].raw]);
     }
     console.log(temp);

@@ -33,7 +33,7 @@
                         <select id="Download_tableList" onchange="Download_selectTable()" style="width:115px;">
                             <option style="display:none;">--table--</option>
                             <option>User Table</option>
-                            <option>焊點</option>
+                            <option>Mnist dataset</option>
                         </select>
                     </div>
 
@@ -112,16 +112,6 @@
                             <button class="delete is-small"></button>
                         </a>
 
-                        <a onclick="Download_removeSelectedItem('time')" class="tag is-dark is-small"
-                            style="display: none" value="time">
-                            <font color="white">time</font>
-                            <button class="delete is-small"></button>
-                        </a>
-                        <a onclick="Download_removeSelectedItem('No.')" class="tag is-dark is-small"
-                            style="display: none" value="No.">
-                            <font color="white">No.</font>
-                            <button class="delete is-small"></button>
-                        </a>
                         <a onclick="Download_removeSelectedItem('label')" class="tag is-dark is-small"
                             style="display: none" value="label">
                             <font color="white">label</font>
@@ -132,6 +122,16 @@
                             <font color="white">raw</font>
                             <button class="delete is-small"></button>
                         </a>
+                        <!-- <a onclick="Download_removeSelectedItem('label')" class="tag is-dark is-small"
+                            style="display: none" value="label">
+                            <font color="white">label</font>
+                            <button class="delete is-small"></button>
+                        </a>
+                        <a onclick="Download_removeSelectedItem('raw')" class="tag is-dark is-small"
+                            style="display: none" value="raw">
+                            <font color="white">raw</font>
+                            <button class="delete is-small"></button>
+                        </a> -->
                     </div>
                     <!-- 顯示所選屬性功能 -->
 
