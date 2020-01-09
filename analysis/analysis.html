@@ -87,10 +87,9 @@ URI     : https://colorlib.com
         <!--  demo -->
 
         <a name="#Analysis_demo" id="ana_demo"></a>
-        <div class="anchor set_content_title_font_size">
-
-            Analysis demo
-        </div>
+        <p class="set_content_title_font_size">
+            <b><u>Analysis demo</u></b>
+        </p>
         <br>
         <div class="bs-stepper">
             <div class="bs-stepper-header">
@@ -235,6 +234,7 @@ URI     : https://colorlib.com
                     <select onchange="">
                         <option style="display:none;"></option>
                         <option>User Table</option>
+                        <option>Mnist dataset</option>
                     </select>
                 </form>
             </div>
@@ -310,10 +310,10 @@ URI     : https://colorlib.com
             <div  class="albox alm-form">
                 <h5 class="label">Select model</h5>
                 <form>
-                    <select name="YourLocation" onchange="appear(2)">
+                    <select id = "resultt" name="YourLocation" onchange="appear(2)">
                         <option value="0"> </option>
-                        <option id="qqq">test1</option>
-                        <option id="qq" >test2</option>
+                        <option value="1"id="qqq">test1</option>
+                        <option value="2"id="qq" >test2</option>
                     </select>
                 </form>
             </div>
@@ -678,15 +678,25 @@ URI     : https://colorlib.com
  
         <!--stage 4-->
         <div class="dis pp" id="state4">
+            <br>
             <h5 class="label" id="analWord">
                 Analysing...
             </h5>
+            <br><br>
             <h5 class="dis" id="analData">
                 <pre>
     {       "train_loss": 0.3142379206238371,
             "train_accuracy": 0.8257575757575758,
             "validation_loss": 0.35647172277623956,
             "validation_accuracy": 0.8068181818181818
+    }
+                </pre>
+            </h5>
+            <h5 class="dis" id="analData2">
+                <pre>
+    {       
+            "train_loss": 0.008550819009542465,
+            "validation_loss": 0.0.08273176103830338,
     }
                 </pre>
             </h5>

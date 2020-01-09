@@ -1,5 +1,6 @@
 
 threefirst = 1;
+ress = 1;
 function appear(a) {
             if (threefirst === 1) {
                 let obj = document.getElementById("stage1");
@@ -70,15 +71,32 @@ function changeState(gogo) {
 
     if(next === 4){
         wait5(1);
-    }
+    }    
+    if(next === 3){
+        aa = document.getElementById("analWord");
+        aa.style.display = "inline";
+    }  
 
 }
 
 function wait5(newState) {
+
+    aa = document.getElementById("analData");
+    aa.style.display = "none";
+    aa = document.getElementById("analData2");
+    aa.style.display = "none";
+
+
+    namee = '';
+    if(document.getElementById("resultt").value === '2'){
+        namee = "analData2";
+    }else{
+        namee = "analData";
+    }
     setTimeout(function () {
         aa = document.getElementById("analWord");
         aa.style.display = "none";
-        aa = document.getElementById("analData");
+        aa = document.getElementById(namee);
         aa.style.display = "inline";
     }, 3000);
 
