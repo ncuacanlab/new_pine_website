@@ -1,0 +1,26 @@
+
+
+
+.alm-form{
+margin-top: 10px;
+}
+
+.albox {
+  border-radius: 5px;
+  box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+  display: block;
+  padding: 20px;
+background-color: white
+}
+.albox::after{
+display: block;
+clear: both;
+}
+
+
+
+
+
+
+
+
