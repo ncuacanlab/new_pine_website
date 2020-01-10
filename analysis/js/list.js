@@ -189,7 +189,7 @@ function showt(idd,addi) {
                    if(items[i]===1){
                        if(i === 1){
                         var cell = row.insertCell();
-                        cell.innerHTML = '<img src="img/analPic/'+q+'.png">';
+                        cell.innerHTML = '<img src="img/analPic/'+q+'.png" width="300" height="300">';
                        }else{
                         var cell = row.insertCell();
                         cell.innerHTML = picNum[q-1];
@@ -224,7 +224,7 @@ function showt(idd,addi) {
                     if(u ===1){
                         tb.rows[0].cells[colnow].innerHTML=ii[u];
                         for (var k = 1; k <11; k++) {
-                            tb.rows[k].cells[colnow].innerHTML= '<img src="img/analPic/'+(k+addi-1)+'.png">';
+                            tb.rows[k].cells[colnow].innerHTML= '<img src="img/analPic/'+(k+addi-1)+'.png" width="300" height="300">';
                         }
                         colnow = colnow +1;
                     }else{
@@ -293,7 +293,7 @@ for(let u = 0; u<=2; u++){
         if(u ===1){
             tb.rows[0].cells[colnow].innerHTML=ii[u];
             for (var k = 1; k <11; k++) {
-                tb.rows[k].cells[colnow].innerHTML= '<img src="img/analPic/'+k+'.png">';
+                tb.rows[k].cells[colnow].innerHTML= '<img src="img/analPic/'+k+'.png" width="300" height="300">';
             }
             colnow = colnow +1;
         }else{
