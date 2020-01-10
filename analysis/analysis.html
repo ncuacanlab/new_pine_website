@@ -151,11 +151,12 @@ URI     : https://colorlib.com
             </h5>
             <div style="display:inline-block">
                 <form>
-                    <select id= "meo">
+                    <select id= "meo" disabled="disabled">
+                        <option value="4">None</option>
                         <option value="1">Normalization</option>
                         <option value="2">Standardization</option>
                         <option value="3">LabelEncoder</option>
-                        <option value="4">None</option>
+                        
                     </select>
                 </form>
             </div>
@@ -245,9 +246,9 @@ URI     : https://colorlib.com
                 <form>
                     <select id="attr" onchange="selectItemm()" >
                         <option style="display:none;"></option>
-                        <option value="item1">accuracy</option>
+                        <option value="item1">label</option>
                         <option value="item2">raw</option>
-                        <option value="item3">ambiguity</optionvalue="item1">
+                        <!-- <option value="item3"></optionvalue="item1"> -->
                             
 
                     </select>
@@ -259,18 +260,18 @@ URI     : https://colorlib.com
                 0 attribute selected
             </h5>
             <div>
-            <button class="blackB" id="item1" onclick="dis(1)">accuracy x</button>
+            <button class="blackB" id="item1" onclick="dis(1)">label x</button>
             <button class="blackB" id="item2" onclick="dis(2)">raw x</button>
-            <button class="blackB" id="item3" onclick="dis(3)">ambiguity x</button>
+            <button class="blackB" id="item3" onclick="dis(3)"> x</button>
             </div>
             <br>
             <button class="btn btn-success" style="display:inline-block" onclick="clearr()">clear</button>
             
-            <button class="btn btn-success"  style="float:right" onclick="showt('lissss')">search</button>
+            <button class="btn btn-success"  style="float:right" onclick="showt('lissss',1)">search</button>
             </div>
             </div>
             <div class="dis" id ="lissss">
-            <div class="albox alm-form" style="height:400px;overflow-y:scroll;overflow-x:none;">
+            <div class="albox alm-form" >
                 <table class="ser" id ="tabb" >
                     <col id ="ritem1" width="100">
                     <col id ="ritem2" width="10">
@@ -278,7 +279,7 @@ URI     : https://colorlib.com
 
                   </table>
                   <div class="page" style="float:right">
-                        <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>&nbsp;&nbsp;next&nbsp;&nbsp;</button><button>&nbsp;&nbsp;last&nbsp;&nbsp;</button>
+                        <button onclick="showt('lissss',1)">1</button><button onclick="showt('lissss',11)">2</button><button onclick="showt('lissss',21)">3</button><button onclick="showt('lissss',31)">4</button><button onclick="showt('lissss',41)">5</button><button onclick="showt('lissss',51)">6</button><button onclick="showt('lissss',61)">7</button><button onclick="showt('lissss',71)">8</button><button onclick="showt('lissss',81)">9</button><button onclick="showt('lissss',91)">10</button><button onclick="showt('lissss',-999)">&nbsp;&nbsp;next&nbsp;&nbsp;</buttononclick="showt('lissss',91)"><button onclick="showt('lissss',91)">&nbsp;&nbsp;last&nbsp;&nbsp;</button>
                         
                   </div>
                   <br>

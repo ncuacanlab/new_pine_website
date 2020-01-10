@@ -1,6 +1,7 @@
 
 threefirst = 1;
 ress = 1;
+noP = 1;
 function appear(a) {
             if (threefirst === 1) {
                 let obj = document.getElementById("stage1");
@@ -39,7 +40,8 @@ function appear(a) {
 nowStage = 1;
 selected = 0
 items = [0,0,0]
-var ii = ["accuracy", "raw", "ambiguity"];
+var ii = ["label", "raw", "ambiguity"];
+var picNum = [3,4,6,1,8,1,0,9,8,0,3,1,2,7,0,2,9,6,0,1,6,7,1,9,7,6,5,5,8,8,3,4,4,8,7,3,6,9,6,6,3,6,8,9,9,4,4,0,7,8,1,0,0,1,8,5,7,1,7,5,5,9,9,4,2,5,3,7,4,6,6,0,1,0,1,2,4,8,5,3,5,0,0,6,4,3,8,3,7,1,4,3,9,2,2,0,3,6,6,7];
 firstShow = 0;
 next = 1;
 
@@ -152,8 +154,16 @@ function clearr() {
     selected = 0;
     document.getElementById("attriu").textContent = "0 attribute selected";
 }
-function showt(idd) {
+function showt(idd,addi) {
     colnow = 0;
+    if(addi === -999){
+        if(noP+10 <= 91){
+            addi = noP+10;
+        }else{
+            addi = noP;
+        }
+        
+    }
     if(selected !== 0){
         aa = document.getElementById(idd);
         aa.style.display = "inline";
@@ -173,7 +183,7 @@ function showt(idd) {
             }
 
 
-            for(let q = 1 ; q<100;q++){
+            for(let q = 1 ; q<11;q++){
                 row = tb.insertRow(tb.rows.length);
                 for(i = 0; i<3;i++){
                    if(items[i]===1){
@@ -182,7 +192,7 @@ function showt(idd) {
                         cell.innerHTML = '<img src="img/analPic/'+q+'.png">';
                        }else{
                         var cell = row.insertCell();
-                        cell.innerHTML = Math.random().toFixed(9)+'';
+                        cell.innerHTML = picNum[q-1];
                        }
                    }
 
@@ -199,7 +209,7 @@ function showt(idd) {
             try {
                     for(let i = 0; i<=2; i++){
                 
-                        for (var k = 0; k <100; k++) {
+                        for (var k = 0; k <11; k++) {
                             tb.rows[k].cells[i].innerHTML='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
                         }
                     } 
@@ -213,20 +223,21 @@ function showt(idd) {
                 if(items[u] > 0){
                     if(u ===1){
                         tb.rows[0].cells[colnow].innerHTML=ii[u];
-                        for (var k = 1; k <100; k++) {
-                            tb.rows[k].cells[colnow].innerHTML= '<img src="img/analPic/'+k+'.png">';
+                        for (var k = 1; k <11; k++) {
+                            tb.rows[k].cells[colnow].innerHTML= '<img src="img/analPic/'+(k+addi-1)+'.png">';
                         }
                         colnow = colnow +1;
                     }else{
                         tb.rows[0].cells[colnow].innerHTML=ii[u];
-                        for (var k = 1; k <100; k++) {
-                            tb.rows[k].cells[colnow].innerHTML=Math.random().toFixed(9)+'';
+                        for (var k = 1; k <11; k++) {
+                            tb.rows[k].cells[colnow].innerHTML=picNum[k-1+addi-1];
                         }
                         colnow = colnow +1;
                     }
                 }
                 
             }
+            noP = addi;
         }
     }
     colnow = 0;
@@ -267,7 +278,7 @@ function same() {
     try {
         for(let i = 0; i<=2; i++){
     
-            for (var k = 0; k <100; k++) {
+            for (var k = 0; k <11; k++) {
                 tb.rows[k].cells[i].innerHTML='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
             }
         } 
@@ -281,7 +292,7 @@ for(let u = 0; u<=2; u++){
     if(items[u] > 0){
         if(u ===1){
             tb.rows[0].cells[colnow].innerHTML=ii[u];
-            for (var k = 1; k <100; k++) {
+            for (var k = 1; k <11; k++) {
                 tb.rows[k].cells[colnow].innerHTML= '<img src="img/analPic/'+k+'.png">';
             }
             colnow = colnow +1;
@@ -290,11 +301,11 @@ for(let u = 0; u<=2; u++){
 
             if(item === '1'){
                 
-                for (var k = 1; k <100; k++) {
+                for (var k = 1; k <11; k++) {
                     tb.rows[k].cells[colnow].innerHTML=Math.random().toFixed(9)+'';
                 }
             }else if(item === '2'){
-                for (var k = 1; k <100; k++) {
+                for (var k = 1; k <11; k++) {
                     if(Math.random()>0.7){
                         tb.rows[k].cells[colnow].innerHTML=Math.random().toFixed(9)+'';
                     }else{
@@ -302,12 +313,12 @@ for(let u = 0; u<=2; u++){
                     }
                 }
             }else if(item === '3'){
-                for (var k = 1; k <100; k++) {
+                for (var k = 1; k <11; k++) {
                     tb.rows[k].cells[colnow].innerHTML=Math.random().toFixed(2)*100+'';
                 }
             }else{
-                for (var k = 1; k <100; k++) {
-                    tb.rows[k].cells[colnow].innerHTML=Math.random().toFixed(2)/10+'';
+                for (var k = 1; k <11; k++) {
+                    tb.rows[k].cells[colnow].innerHTML=picNum[k-1];
                 }
             }
 
