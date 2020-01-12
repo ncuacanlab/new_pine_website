@@ -26,6 +26,7 @@ function appear(a) {
                     document.getElementById("CNNN").style.display = "none";
                 }
             }
+            
             var table = document.getElementById("mmm");
             var item = table.options[table.selectedIndex].value;
             if(item === '2'){
@@ -50,7 +51,8 @@ function changeState(gogo) {
     if(next<1){
         next = 1;
     }
-
+    aa = document.getElementById("pre1");
+    aa.style.display = "none";
     aa = document.getElementById("kkk");
     aa.style.display = "inline";
     aa = document.getElementById("kkkk");
@@ -271,6 +273,8 @@ function same() {
     aa.style.display = "none";
     aa = document.getElementById("kkkk");
     aa.style.display = "none";
+    aa = document.getElementById("pre1");
+    aa.style.display = "inline";
     document.getElementById("lissss").style.display="inline";
     var table = document.getElementById("meo");
     var item = table.options[table.selectedIndex].value;
