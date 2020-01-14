@@ -2,6 +2,7 @@
 threefirst = 1;
 ress = 1;
 noP = 1;
+mode = 1;
 function appear(a) {
             if (threefirst === 1) {
                 let obj = document.getElementById("stage1");
@@ -93,7 +94,7 @@ function wait5(newState) {
 
 
     namee = '';
-    if(document.getElementById("resultt").value === '2'){
+    if(mode !== 1){
         namee = "analData2";
     }else{
         namee = "analData";
@@ -191,10 +192,18 @@ function showt(idd,addi) {
                    if(items[i]===1){
                        if(i === 1){
                         var cell = row.insertCell();
-                        cell.innerHTML = '<img src="img/analPic/'+q+'.png" width="50" height="50">';
+                        if(mode === 1){
+                            cell.innerHTML = '<img src="img/analPic/'+q+'.png" width="50" height="50">';
+                        }else{
+                            cell.innerHTML = (Math.floor(Math.random()*10)+1)*10;
+                        }
                        }else{
                         var cell = row.insertCell();
-                        cell.innerHTML = picNum[q-1];
+                        if(mode === 1){
+                            cell.innerHTML = picNum[q-1];
+                        }else{
+                            cell.innerHTML = '60';
+                        }
                        }
                    }
 
@@ -226,13 +235,23 @@ function showt(idd,addi) {
                     if(u ===1){
                         tb.rows[0].cells[colnow].innerHTML=ii[u];
                         for (var k = 1; k <11; k++) {
-                            tb.rows[k].cells[colnow].innerHTML= '<img src="img/analPic/'+(k+addi-1)+'.png" width="50" height="50">';
+                            
+                            if(mode === 1){
+                                tb.rows[k].cells[colnow].innerHTML= '<img src="img/analPic/'+(k+addi-1)+'.png" width="50" height="50">';
+                            }else{
+                                tb.rows[k].cells[colnow].innerHTML=  (Math.floor(Math.random()*10)+1)*10;
+                            }
                         }
                         colnow = colnow +1;
                     }else{
                         tb.rows[0].cells[colnow].innerHTML=ii[u];
                         for (var k = 1; k <11; k++) {
-                            tb.rows[k].cells[colnow].innerHTML=picNum[k-1+addi-1];
+                            
+                            if(mode === 1){
+                                tb.rows[k].cells[colnow].innerHTML=picNum[k-1+addi-1];
+                            }else{
+                                tb.rows[k].cells[colnow].innerHTML= '60';
+                            }
                         }
                         colnow = colnow +1;
                     }
@@ -298,6 +317,11 @@ for(let u = 0; u<=2; u++){
             tb.rows[0].cells[colnow].innerHTML=ii[u];
             for (var k = 1; k <11; k++) {
                 tb.rows[k].cells[colnow].innerHTML= '<img src="img/analPic/'+k+'.png" width="50" height="50">';
+                if(mode === 1){
+                    tb.rows[k].cells[colnow].innerHTML= '<img src="img/analPic/'+k+'.png" width="50" height="50">';
+                }else{
+                    tb.rows[k].cells[colnow].innerHTML = (Math.floor(Math.random()*10)+1)*10;
+                }
             }
             colnow = colnow +1;
         }else{
@@ -322,7 +346,12 @@ for(let u = 0; u<=2; u++){
                 }
             }else{
                 for (var k = 1; k <11; k++) {
-                    tb.rows[k].cells[colnow].innerHTML=picNum[k-1];
+                    
+                    if(mode === 1){
+                        tb.rows[k].cells[colnow].innerHTML=picNum[k-1];
+                    }else{
+                        tb.rows[k].cells[colnow].innerHTML= '60';
+                    }
                 }
             }
 
@@ -351,5 +380,24 @@ function layerr(num) {
         }
     }catch(e){
 
+    }
+}
+
+function six(){
+    tmp = document.getElementById("userTable").value;
+    if(tmp === '1'){
+        document.getElementById("label1").innerHTML = 'label';
+        document.getElementById("label2").innerHTML = 'raw';
+        document.getElementById("item1").innerHTML = 'label X';
+        document.getElementById("item2").innerHTML = 'raw X';
+        ii = ['label','raw']
+        mode = 1;
+    }else{
+        document.getElementById("label1").innerHTML = 'Power(%)';
+        document.getElementById("label2").innerHTML = 'Frequency(KHz)';
+        document.getElementById("item1").innerHTML = 'Power(%) X';
+        document.getElementById("item2").innerHTML = 'Frequency(KHz) X';
+        ii = ['Power(%)','Frequency(KHz)']
+        mode = 2;
     }
 }

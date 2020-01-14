@@ -232,9 +232,10 @@ URI     : https://colorlib.com
                     Select table
                 </h5>
                 <form>
-                    <select onchange="">
-                        <option style="display:none;"></option>
-                        <option>Mnist dataset</option>
+                    <select id ="userTable" onchange="six()">
+                        <option  style="display:none;"></option>
+                        <option value='1'>Mnist dataset</option>
+                        <option value='2'>roundness_data</option>
                     </select>
                 </form>
             </div>
@@ -246,8 +247,8 @@ URI     : https://colorlib.com
                 <form>
                     <select id="attr" onchange="selectItemm()" >
                         <option style="display:none;"></option>
-                        <option value="item1">label</option>
-                        <option value="item2">raw</option>
+                        <option id= "label1"value="item1">label</option>
+                        <option id= "label2" value="item2">raw</option id= "label1">
                         <!-- <option value="item3"></optionvalue="item1"> -->
                             
 
