@@ -195,7 +195,7 @@ function showt(idd,addi) {
                         if(mode === 1){
                             cell.innerHTML = '<img src="img/analPic/'+q+'.png" width="50" height="50">';
                         }else{
-                            cell.innerHTML = (Math.floor(Math.random()*10)+1)*10;
+                            cell.innerHTML = (Math.floor(Math.random()*100)+1);
                         }
                        }else{
                         var cell = row.insertCell();
@@ -239,7 +239,7 @@ function showt(idd,addi) {
                             if(mode === 1){
                                 tb.rows[k].cells[colnow].innerHTML= '<img src="img/analPic/'+(k+addi-1)+'.png" width="50" height="50">';
                             }else{
-                                tb.rows[k].cells[colnow].innerHTML=  (Math.floor(Math.random()*10)+1)*10;
+                                tb.rows[k].cells[colnow].innerHTML=  (Math.floor(Math.random()*100)+1);
                             }
                         }
                         colnow = colnow +1;
@@ -320,7 +320,7 @@ for(let u = 0; u<=2; u++){
                 if(mode === 1){
                     tb.rows[k].cells[colnow].innerHTML= '<img src="img/analPic/'+k+'.png" width="50" height="50">';
                 }else{
-                    tb.rows[k].cells[colnow].innerHTML = (Math.floor(Math.random()*10)+1)*10;
+                    tb.rows[k].cells[colnow].innerHTML = (Math.floor(Math.random()*100)+1);
                 }
             }
             colnow = colnow +1;
