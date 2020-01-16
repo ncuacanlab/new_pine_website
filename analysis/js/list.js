@@ -259,7 +259,11 @@ function showt(idd,addi) {
                                 if(u === 2){
                                     tb.rows[k].cells[colnow].innerHTML= (Math.floor(Math.random()*999)+1)/1000;
                                 }else{
-                                    tb.rows[k].cells[colnow].innerHTML= '60';
+                                    if(addi <51){
+                                        tb.rows[k].cells[colnow].innerHTML= '60';
+                                    }else{
+                                        tb.rows[k].cells[colnow].innerHTML= '80';
+                                    }
                                 }
                                 
                             }
@@ -399,6 +403,7 @@ function layerr(num) {
 }
 
 function six(){
+    clearr();
     tmp = document.getElementById("userTable").value;
     if(tmp === '1'){
         document.getElementById("label1").innerHTML = 'label';
