@@ -195,6 +195,7 @@ function showt(idd,addi) {
                         if(mode === 1){
                             cell.innerHTML = '<img src="img/analPic/'+q+'.png" width="50" height="50">';
                         }else{
+                            
                             cell.innerHTML = (Math.floor(Math.random()*100)+1);
                         }
                        }else{
@@ -202,7 +203,12 @@ function showt(idd,addi) {
                         if(mode === 1){
                             cell.innerHTML = picNum[q-1];
                         }else{
-                            cell.innerHTML = '60';
+                            if(i === 2){
+                                cell.innerHTML = (Math.floor(Math.random()*999)+1)/1000;
+                            }else{
+                                cell.innerHTML = '60';
+                            }
+                            
                         }
                        }
                    }
@@ -250,7 +256,12 @@ function showt(idd,addi) {
                             if(mode === 1){
                                 tb.rows[k].cells[colnow].innerHTML=picNum[k-1+addi-1];
                             }else{
-                                tb.rows[k].cells[colnow].innerHTML= '60';
+                                if(u === 2){
+                                    tb.rows[k].cells[colnow].innerHTML= (Math.floor(Math.random()*999)+1)/1000;
+                                }else{
+                                    tb.rows[k].cells[colnow].innerHTML= '60';
+                                }
+                                
                             }
                         }
                         colnow = colnow +1;
@@ -350,7 +361,11 @@ for(let u = 0; u<=2; u++){
                     if(mode === 1){
                         tb.rows[k].cells[colnow].innerHTML=picNum[k-1];
                     }else{
-                        tb.rows[k].cells[colnow].innerHTML= '60';
+                        if(u === 2){
+                            tb.rows[k].cells[colnow].innerHTML= (Math.floor(Math.random()*999)+1)/1000;
+                        }else{
+                            tb.rows[k].cells[colnow].innerHTML= '60';
+                        }
                     }
                 }
             }
@@ -390,14 +405,18 @@ function six(){
         document.getElementById("label2").innerHTML = 'raw';
         document.getElementById("item1").innerHTML = 'label X';
         document.getElementById("item2").innerHTML = 'raw X';
+        document.getElementById("label3").style.display = 'none';
         ii = ['label','raw']
         mode = 1;
     }else{
         document.getElementById("label1").innerHTML = 'Power(%)';
         document.getElementById("label2").innerHTML = 'Frequency(KHz)';
+        document.getElementById("label3").innerHTML = 'roundness';
         document.getElementById("item1").innerHTML = 'Power(%) X';
         document.getElementById("item2").innerHTML = 'Frequency(KHz) X';
-        ii = ['Power(%)','Frequency(KHz)']
+        document.getElementById("item3").innerHTML = 'roundness X';
+        ii = ['Power(%)','Frequency(KHz)','roundness'];
+        document.getElementById("label3").style.display = 'inline';
         mode = 2;
     }
 }
